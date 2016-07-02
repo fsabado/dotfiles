@@ -22,6 +22,9 @@
     ~/.vimrc: vimrc
     ~/.zsh: zsh
     ~/.zshrc: zshrc
+    ~/.bashrc: bashrc
+    ~/.aliases: aliases
+    ~/.functions: functions
 
 - shell:
   - mkdir -p ~/.rtorrent/session ~/.rtorrent/watch ~/.rtorrent/downloads
