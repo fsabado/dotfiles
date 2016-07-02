@@ -1,0 +1,10 @@
+#SSH Aliases for our computers
+#Must use X11 for -X to work correctly
+alias bioware="ssh -X fcs@bioware.fsabado.com"
+alias turing="ssh -X fsabado@turing.uark.edu"
+alias mentor="ssh -X fsabado@mentor.uark.edu"
+alias digisrv2="ssh -X fsabado@digisrv2.ddns.uark.edu"
+alias digisrv1="ssh -X fsabado@digisrv1.ddns.uark.edu"
+alias comp="ssh -X fsabado@comp.uark.edu"
+alias toby2="rdesktop fsabado@toby2.ddns.uark.edu"
+alias eleg1="ssh -X fsabado@eleg-e120wl04.ddns.uark.edu"
