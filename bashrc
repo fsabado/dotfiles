@@ -8,8 +8,6 @@ include () {
     [[ -f "$1" ]] && source "$1"
 }
 
-
-
 #External plugins (initialized before)
 include ~/.bashrc_local_before
 

@@ -25,6 +25,7 @@
     ~/.bashrc: bashrc
     ~/.aliases: aliases
     ~/.functions: functions
+    ~/.bash: bash
 
 - shell:
   - mkdir -p ~/.rtorrent/session ~/.rtorrent/watch ~/.rtorrent/downloads

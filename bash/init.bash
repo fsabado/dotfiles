@@ -9,11 +9,11 @@ include () {
 include ~/.bash/aliases.bash
 
 #Environment
-include ~/.bash/env.bash
+include ~/.bash/.env.bash
 
 #Functions
-include ~/bash/functions.bash
+include ~/.bash/functions.bash
 
 #Prompts
 #include ~/.bash/solarized_bash_prompt.bash
-include ~/.bash/default_bash_prompt.bash
+include ~/dotfiles/bash/default_bash_prompt.bash
