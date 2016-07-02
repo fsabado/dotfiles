@@ -20,7 +20,7 @@ PS1="\[\033[35m\]\t\[\033[m\]-\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\e[37;1m
 #Remove the Beeping sound from Bash Shell
 setterm -blength 0
 
-export PATH=$HOME/bin:$PATH
+export PATH=$HOME/.dotfiles/bin:$PATH
 
 #Init Bash
 include ~/.bash/init.bash

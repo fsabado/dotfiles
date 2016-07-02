@@ -1,0 +1,4 @@
+#!/bin/env sh
+
+# Update dotfiles
+( cd ~/.dotfiles && git pullff && ./install -q  )
