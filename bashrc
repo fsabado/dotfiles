@@ -10,3 +10,12 @@ eval `dircolors ~/_env/colors/dircolors.ansi-dark`
 
 #Remove the Beeping sound from Bash Shell
 setterm -blength 0
+
+
+#Aliases
+if [[ -f $HOME/.aliases ]]; then
+	source $HOME/.aliases
+fi
+
+
+
