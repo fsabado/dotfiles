@@ -16,4 +16,4 @@ include ~/.bash/functions.bash
 
 #Prompts
 #include ~/.bash/solarized_bash_prompt.bash
-include ~/dotfiles/bash/default_bash_prompt.bash
+include ~/.bash/default_bash_prompt.bash
