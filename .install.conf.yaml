@@ -23,10 +23,13 @@
     ~/.zsh: zsh
     ~/.zshrc: zshrc
     ~/.bashrc: bashrc
-    ~/.aliases: aliases
-    ~/.functions: functions
     ~/.bash: bash
 
 - shell:
   - mkdir -p ~/.rtorrent/session ~/.rtorrent/watch ~/.rtorrent/downloads
   - git update-submodules # after linking ~/.gitconfig
+  - ~/.dotfiles/zsh/oh-my-zsh.zsh 
+  #- bash ~/.dotfiles/gnome-terminal-colors-solarized/install.sh #Gnome-solarized
+  #- ~/.dotfiles/oh-my-zsh/tools/install.sh
+  #- ~/.dotfiles/gnome-terminal-colors-solarized/install.sh
+  #- /home/fsabado/dotfiles/oh-my-zsh/tools

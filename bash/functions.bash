@@ -225,7 +225,7 @@ function tre() {
 }
 
 #Check Terminal Emulator
-container() {
+function container() {
     pid=$$
     while true; do
         pid=$(ps -h -o ppid -p $pid 2>/dev/null)
