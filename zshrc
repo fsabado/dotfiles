@@ -93,7 +93,228 @@ if [[ ! -z ${ENABLE_OH_MY_ZSH+x} ]] ; then
   # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
   # Example format: plugins=(rails git textmate ruby lighthouse)
   # Add wisely, as too many plugins slow down shell startup.
-  plugins=(git boot2docker colorize common-aliases command-not-found copydir copyfile cp docker docker-compose git-extras git-flow git-hub man sudo tmux ubuntu zsh_reload )
+
+  plugins=(
+  #  adb
+  #  ant
+  #  apache2-macports
+  #  arcanist
+  #  archlinux
+  #  asdf
+  #  autoenv
+  #  autojump
+  #  autopep8
+  #  aws
+    battery
+  #  bbedit
+  #  bgnotify
+    boot2docker
+  #  bower
+  #  branch
+  #  brew
+  #  brew-cask
+  #  bundler
+  #  bwana
+  #  cabal
+  #  cake
+  #  cakephp3
+  #  capistrano
+  #  cask
+  #  catimg
+  #  celery
+  #  chruby
+  #  chucknorris
+  #  cloudapp
+  #  codeclimate
+  #  coffee
+  #  colemak
+    colored-man-pages
+    colorize
+    command-not-found
+    common-aliases
+  #  compleat
+  #  composer
+    copydir
+  #  copyfile
+    cp
+  #  cpanm
+  #  debian
+  #  dircycle
+  #  dirhistory
+  #  dirpersist
+  #  django
+  #  dnf
+    docker
+    docker-compose
+  #  emacs
+  #  ember-cli
+  #  emoji
+  #  emoji-clock
+  #  emotty
+  #  encode64
+    extract
+  #  fabric
+  #  fancy-ctrl-z
+  #  fasd
+  #  fastfile
+  #  fbterm
+  #  fedora
+  #  forklift
+  #  fossil
+  #  frontend-search
+  #  gas
+  #  gb
+  #  geeknote
+  #  gem
+    git
+    git-extras
+    gitfast
+    git-flow
+    git-flow-avh
+    github
+    git-hubflow
+    gitignore
+    git-prompt
+    git-remote-branch
+  #  glassfish
+  #  gnu-utils
+  #  go
+  #  golang
+  #  gpg-agent
+    gradle
+  #  grails
+  #  grunt
+  #  gulp
+  #  heroku
+    history
+    history-substring-search
+  #  httpie
+  #  iwhois
+  #  jake-node
+  #  jhbuild
+  #  jira
+  #  jruby
+  #  jsontools
+  #  jump
+  #  kate
+  #  kitchen
+  #  knife
+  #  knife_ssh
+  #  laravel
+  #  laravel4
+  #  laravel5
+  #  last-working-dir
+  #  lein
+  #  lighthouse
+  #  lol
+  #  macports
+    man
+  #  marked2
+    mercurial
+  #  meteor
+  #  mix
+  #  mix-fast
+  #  mosh
+  #  mvn
+  #  mysql-macports
+  #  n98-magerun
+  #  nanoc
+  #  nmap
+  #  node
+  #  npm
+  #  nvm
+  #  nyan
+  #  osx
+  #  pass
+  #  paver
+  #  pep8
+  #  per-directory-history
+  #  perl
+  #  phing
+    pip
+  #  pj
+  #  plugin.list
+  #  pod
+  #  postgres
+  #  pow
+  #  powder
+  #  powify
+  #  profiles
+  #  pyenv
+  #  pylint
+    python
+  #  rails
+  #  rake
+  #  rake-fast
+  #  rand-quote
+  #  rbenv
+  #  rbfu
+  #  react-native
+  #  rebar
+  #  redis-cli
+  #  repo
+  #  rsync
+  #  ruby
+  #  rust
+  #  rvm
+  #  safe-paste
+  #  sbt
+  #  scala
+  #  scd
+  #  screen
+  #  scw
+  #  sfffe
+  #  singlechar
+  #  spring
+  #  sprunge
+    ssh-agent
+  #  stack
+  #  sublime
+    sudo
+  #  supervisor
+  #  suse
+    svn
+  #  svn-fast-info
+  #  symfony
+  #  symfony2
+  #  systemadmin
+  #  systemd
+  #  taskwarrior
+  #  terminalapp
+  #  terminitor
+  #  terraform
+  #  textastic
+  #  textmate
+  #  thefuck
+    themes
+  #  thor
+    tmux
+  #  tmux-cssh
+  #  tmuxinator
+  #  torrent
+  #  tugboat
+    ubuntu
+  #  urltools
+  #  vagrant
+  #  vault
+  #  vim-interaction
+  #  vi-mode
+  #  virtualenv
+  #  virtualenvwrapper
+  #  vundle
+  #  wakeonlan
+  #  wd
+  #  web-search
+  #  wp-cli
+  #  xcode
+  #  yii
+  #  yii2
+    yum
+  #  z
+  #  zeus
+    zsh-navigation-tools
+    zsh_reload
+  )
 
   # User configuration
 
