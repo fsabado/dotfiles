@@ -26,12 +26,21 @@ include ~/.zsh/aliases.zsh
 # Custom prompt
 include ~/.zsh/prompt.zsh
 
-# Syntax highlighting
-include ~/.zsh/syntax.zsh
+
+# Include Legacy Bash settings
+ENABLE_LEGACY_BASH="True"
+
+if [[ ! -z ${ENABLE_LEGACY_BASH+x} ]]; then
+  include ~/.bash/init.bash
+fi
+
+
 
 
 # Oh-my-zsh Settings
-if [[ -d ~/dotfiles/oh-my-zsh ]]; then
+ENABLE_OH_MY_ZSH="True"
+
+if [[ ! -z ${ENABLE_OH_MY_ZSH+x} ]] ; then
   #printf "Setting up zsh\n"
   # Path to your oh-my-zsh installation.
     export ZSH=$HOME/.oh-my-zsh
@@ -87,26 +96,7 @@ if [[ -d ~/dotfiles/oh-my-zsh ]]; then
   # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
   # Example format: plugins=(rails git textmate ruby lighthouse)
   # Add wisely, as too many plugins slow down shell startup.
-  plugins=(
-    git
-    boot2docker
-    colorize
-    common-aliases
-    command-not-found
-    copydir
-    copyfile
-    cp
-    docker
-    docker-compose
-    git-extras
-    git-flow
-    git-hub
-    man
-    sudo
-    tmux
-    ubuntu
-    zsh_reload
-  )
+  plugins=(git boot2docker colorize common-aliases command-not-found copydir copyfile cp docker docker-compose git-extras git-flow git-hub man sudo tmux ubuntu zsh_reload )
 
   # User configuration
 
@@ -141,6 +131,13 @@ if [[ -d ~/dotfiles/oh-my-zsh ]]; then
   # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 fi
+
+# Syntax highlighting
+#Why must zsh-syntax-highlighting.zsh be sourced at the end of the .zshrc file?
+#zsh-syntax-highlighting.zsh wraps ZLE widgets.
+#It must be sourced after all custom widgets have been created (i.e., after all zle -N calls and after running compinit).
+#Widgets created later will work, but will not update the syntax highlighting.
+include ~/.zsh/syntax.zsh
 
 # External plugins (initialized after)
 include ~/.zsh/plugins_after.zsh
