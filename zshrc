@@ -34,9 +34,6 @@ if [[ ! -z ${ENABLE_LEGACY_BASH+x} ]]; then
   include ~/.bash/init.bash
 fi
 
-
-
-
 # Oh-my-zsh Settings
 ENABLE_OH_MY_ZSH="True"
 
