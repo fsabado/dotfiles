@@ -350,6 +350,14 @@ if [[ ! -z ${ENABLE_OH_MY_ZSH+x} ]] ; then
 
 fi
 
+
+
+if [[ -d /usr/NX/bin ]]; then
+	export PATH=$PATH:/usr/NX/bin
+fi
+
+
+
 # Syntax highlighting
 #Why must zsh-syntax-highlighting.zsh be sourced at the end of the .zshrc file?
 #zsh-syntax-highlighting.zsh wraps ZLE widgets.
