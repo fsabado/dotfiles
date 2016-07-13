@@ -29,7 +29,7 @@
   - mkdir -p ~/.rtorrent/session ~/.rtorrent/watch ~/.rtorrent/downloads
   - git update-submodules # after linking ~/.gitconfig
   - ~/.dotfiles/zsh/oh-my-zsh.zsh 
-  #- bash ~/.dotfiles/gnome-terminal-colors-solarized/install.sh #Gnome-solarized
+  - ~/.dotfiles/gnome-terminal-colors-solarized/install.sh --scheme dark_alternative --profile Solarized && echo "Make 'Solarized' profile first"
   #- ~/.dotfiles/oh-my-zsh/tools/install.sh
   #- ~/.dotfiles/gnome-terminal-colors-solarized/install.sh
   #- /home/fsabado/dotfiles/oh-my-zsh/tools
