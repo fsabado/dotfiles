@@ -26,7 +26,6 @@ include ~/.zsh/aliases.zsh
 # Custom prompt
 include ~/.zsh/prompt.zsh
 
-
 # Include Legacy Bash settings
 ENABLE_LEGACY_BASH="True"
 

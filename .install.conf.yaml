@@ -24,6 +24,7 @@
     ~/.zshrc: zshrc
     ~/.bashrc: bashrc
     ~/.bash: bash
+    ~/.oh-my-zsh: oh-my-zsh
 
 - shell:
   - mkdir -p ~/.rtorrent/session ~/.rtorrent/watch ~/.rtorrent/downloads
