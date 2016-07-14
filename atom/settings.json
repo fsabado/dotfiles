@@ -1,0 +1,30 @@
+{
+	"asciidoc-preview": {
+		"showTitle": false
+	},
+	"atom-beautify": {
+		"general": {
+			"_analyticsUserId": "0e5013f5-74c7-4ce2-a3ba-6800db4b27ee"
+		}
+	},
+	"core": {
+		"themes": [
+			"seti-ui",
+			"monokai-seti"
+		]
+	},
+	"exception-reporting": {
+		"userId": "ae5f05ca-e8c5-e43d-003f-93ddf70737af"
+	},
+	"minimap": {
+		"adjustAbsoluteModeHeight": true,
+		"plugins": {
+			"find-and-replace": true,
+			"find-and-replaceDecorationsZIndex": 0
+		}
+	},
+	"sync-settings": {},
+	"welcome": {
+		"showOnStartup": false
+	}
+}
