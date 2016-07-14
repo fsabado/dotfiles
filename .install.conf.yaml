@@ -24,6 +24,7 @@
     ~/.zshrc: zshrc
     ~/.bashrc: bashrc
     ~/.bash: bash
+    ~/.config/terminator: config/terminator
 
 - shell:
   - mkdir -p ~/.rtorrent/session ~/.rtorrent/watch ~/.rtorrent/downloads
