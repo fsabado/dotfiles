@@ -5,5 +5,4 @@ dev
 .apm
 .node-gyp
 nohup.out
-packages
 blob-store
