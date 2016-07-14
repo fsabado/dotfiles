@@ -25,6 +25,7 @@
     ~/.bashrc: bashrc
     ~/.bash: bash
     ~/.config/terminator: config/terminator
+    ~/.atom: atom
 
 - shell:
   - mkdir -p ~/.rtorrent/session ~/.rtorrent/watch ~/.rtorrent/downloads
