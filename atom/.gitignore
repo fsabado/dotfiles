@@ -2,6 +2,7 @@ storage
 compile-cache
 dev
 .npm
+.apm
 .node-gyp
 nohup.out
 packages
