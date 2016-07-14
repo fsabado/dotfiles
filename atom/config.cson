@@ -1,0 +1,30 @@
+"*":
+  "asciidoc-preview":
+    showTitle: false
+  "atom-beautify":
+    general:
+      _analyticsUserId: "0e5013f5-74c7-4ce2-a3ba-6800db4b27ee"
+  core:
+    themes: [
+      "seti-ui"
+      "monokai-seti"
+    ]
+  editor:
+    fontSize: 10
+  "exception-reporting":
+    userId: "ae5f05ca-e8c5-e43d-003f-93ddf70737af"
+  minimap:
+    adjustAbsoluteModeHeight: true
+    plugins:
+      "find-and-replace": true
+      "find-and-replaceDecorationsZIndex": 0
+  "sync-settings":
+    _analyticsUserId: "7fec2e52-0220-4fdd-9198-6213caf9d891"
+    _lastBackupHash: "2c52db61621b6ede26acf4fbeaec53052f1be686"
+    gistId: "3d06c8d746adb6ce9d137c32b4528439"
+    personalAccessToken: "64cdd5db0e81d378a15fddeff334f022977b632e"
+  welcome:
+    showOnStartup: false
+".asciidoc.source":
+  editor:
+    softWrap: true
