@@ -10,7 +10,7 @@ RED="\e[31m"
 NC="\e[0m"  #Normal, Reset ALL attributes
 
 #Very Nice Script for extractions
-function extract () {
+extract () {
     if [ -f $1 ] ; then
         case $1 in
             *.tar.bz2)   tar xvjf $1    ;;
@@ -37,16 +37,16 @@ function extract () {
     fi
 }
 
-function my_ps() {
+f_my_ps() {
      ps $@ -u $USER -o pid,%cpu,%mem,bsdtime,command ;
  }
 
-function pp() {
+f_pp() {
      my_ps f | awk '!/awk/ && $0~var' var=${1:-".*"} ;
  }
 
 # Kill by process name.
-function killps(){
+f_killps(){
     local pid pname sig="-TERM"   # Default signal.
     if [ "$#" -lt 1 ] || [ "$#" -gt 2 ]; then
         echo "Usage: killps [-SIGNAL] pattern"
@@ -63,7 +63,7 @@ function killps(){
 
 
 # Get IP adresses.
-function my_ip(){
+f_my_ip(){
     MY_IP=$(/sbin/ifconfig ppp0 | awk '/inet/ { print $2 } ' | \
     sed -e s/addr://)
     MY_ISP=$(/sbin/ifconfig ppp0 | awk '/P-t-P/ { print $3 } ' | \
@@ -71,14 +71,13 @@ function my_ip(){
 }
 
 # Get current host related info.
-function ii(){
-    echo -e "\nYou are logged on ${RED}$HOSTNAME"
-    echo -e "\nUsername ${RED}$USER"
-    echo -e "\nAdditional information:$NC\n" ; uname -a
+f_ii(){
+    echo -e "\nYou are logged on ${RED}$HOST"
+    echo -e "\nAdditionnal information:$NC " ; uname -a
     echo -e "\n${RED}Users logged on:$NC " ; w -h
     echo -e "\n${RED}Current date :$NC " ; date
     echo -e "\n${RED}Machine stats :$NC " ; uptime
-    echo -e "\n${RED}Memory stats :$NC " ; free
+    echo -e "\n${RED}Memory stats :$NC " ; free 
     my_ip 2>&- ;
     echo -e "\n${RED}Local IP Address :$NC" ; echo ${MY_IP:-"Not connected"}
     echo -e "\n${RED}ISP Address :$NC" ; echo ${MY_ISP:-"Not connected"}
@@ -87,16 +86,16 @@ function ii(){
 }
 
 
-function warn() {
+f_warn() {
     echo "$1" >&2
 }
 
-function die() {
+f_die() {
     warn "$1"
     exit 1
 }
 
-function lnif() {
+f_lnif() {
     if [ ! -e $2 ] ; then
         ln -s $1 $2
     fi
@@ -106,7 +105,7 @@ function lnif() {
 }
 
 #Use this command to go up different part ex:"up 4" = cd ../../../..
-function up(){
+f_up(){
     local d=""
     limit=$1
     for ((i=1 ; i <= limit ; i++))
@@ -122,7 +121,7 @@ function up(){
 
 
 #netinfo - shows network information for your system
-function netinfo ()
+f_netinfo ()
 {
     echo "--------------- Network Information ---------------"
     /sbin/ifconfig | awk /'inet addr/ {print $2}'
@@ -135,7 +134,7 @@ function netinfo ()
 }
 
 
-function open(){
+f_open(){
     if [ -f $1 ]
     then
         gnome-open $1
@@ -146,7 +145,7 @@ function open(){
 
 
 # Simple calculator
-function calc() {
+f_calc() {
 	local result=""
 	result="$(printf "scale=10;$*\n" | bc --mathlib | tr -d '\\\n')"
 	#						└─ default (when `--mathlib` is used) is 20
@@ -165,12 +164,12 @@ function calc() {
 
 
 # Create a new directory and enter it
-function mkd() {
+f_mkd() {
 	mkdir -p "$@" && cd "$@"
 }
 
 # Make a temporary directory and enter it
-function tmpd() {
+f_tmpd() {
 	if [ $# -eq 0 ]; then
 		dir=`mktemp -d` && cd $dir
 	else
@@ -178,7 +177,7 @@ function tmpd() {
 	fi
 }
 
-function fs() {
+f_fs() {
     if du -b /dev/null > /dev/null 2>&1; then
         local arg=-sbh
     else
@@ -193,7 +192,7 @@ function fs() {
 }
 
 # Get colors in manual pages
-function man() {
+man() {
 	env \
 		LESS_TERMCAP_mb=$(printf "\e[1;31m") \
 		LESS_TERMCAP_md=$(printf "\e[1;31m") \
@@ -202,11 +201,11 @@ function man() {
 		LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
 		LESS_TERMCAP_ue=$(printf "\e[0m") \
 		LESS_TERMCAP_us=$(printf "\e[1;32m") \
-		man "$@"
+		command man "$@"
 }
 
 # Use feh to nicely view images
-function openimage() {
+f_openImage() {
 	local types='*.jpg *.JPG *.png *.PNG *.gif *.GIF *.jpeg *.JPEG'
 
 	cd $(dirname "$1")
@@ -223,12 +222,12 @@ function openimage() {
 # the `.git` directory, listing directories first. The output gets piped into
 # `less` with options to preserve color and line numbers, unless the output is
 # small enough for one screen.
-function tre() {
+f_tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
 
 #Check Terminal Emulator
-function container() {
+f_container() {
     pid=$$
     while true; do
         pid=$(ps -h -o ppid -p $pid 2>/dev/null)
@@ -241,6 +240,26 @@ function container() {
         [[ $(echo $pid) == 1 ]] && break
     done
 }
+
+#Get current script path
+#Source: http://stackoverflow.com/questions/242538/unix-shell-script-find-out-which-directory-the-script-file-resides
+f_currentPath(){
+	# Absolute path to this script, e.g. /home/user/bin/foo.sh
+	local SCRIPT=$(readlink -f "$0")
+	# Absolute path this script is in, thus /home/user/bin
+	local SCRIPTPATH=$(dirname "$SCRIPT")
+	echo $SCRIPTPATH
+}
+
+# On Linux, you can use ldconfig, which maintains the ld.so configuration and cache, to print out the directories search by ld.so with
+# ldconfig -v prints out the directories search by the linker (without a leading tab) and the 
+# shared libraries found in those directories (with a leading tab); the grep gets the directories.
+# Source: http://stackoverflow.com/questions/9922949/how-to-print-the-ldlinker-search-path
+f_ld_path(){
+	ldconfig -v 2>/dev/null | grep -v ^$'\t'
+}
+
+
 
 
 
