@@ -1,0 +1,19 @@
+#!/bin/bash -e
+
+function vts(){
+	echo $(date '+%d-%m-%Y_%H-%M-%S')
+	LOG_DIR="./Logs"
+	LOG_FILE="${LOG_DIR}"/CDS$(date '+%d-%m-%Y_%H-%M-%S').log
+	mkdir -p "${LOG_DIR}"
+	virtuoso -log ${LOG_FILE} -noblink &
+}
+
+function vts-batch(){
+	#echo $(date '+%d-%m-%Y_%H-%M-%S')
+	#LOG_DIR="./Logs"
+	#LOG_FILE="${LOG_DIR}"/CDS$(date '+%d-%m-%Y_%H-%M-%S').log
+	#mkdir -p "${LOG_DIR}"
+	virtuoso -nograph -replay ${1}
+}
+
+
