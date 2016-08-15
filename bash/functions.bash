@@ -5,7 +5,9 @@
 #-------------------------------------------------------------
 # Process/system related functions:
 #-------------------------------------------------------------
-
+# RED color
+RED="\e[31m"
+NC="\e[0m"  #Normal, Reset ALL attributes
 
 #Very Nice Script for extractions
 function extract () {
@@ -70,8 +72,9 @@ function my_ip(){
 
 # Get current host related info.
 function ii(){
-    echo -e "\nYou are logged on ${RED}$HOST"
-    echo -e "\nAdditionnal information:$NC " ; uname -a
+    echo -e "\nYou are logged on ${RED}$HOSTNAME"
+    echo -e "\nUsername ${RED}$USER"
+    echo -e "\nAdditional information:$NC\n" ; uname -a
     echo -e "\n${RED}Users logged on:$NC " ; w -h
     echo -e "\n${RED}Current date :$NC " ; date
     echo -e "\n${RED}Machine stats :$NC " ; uptime
@@ -240,4 +243,4 @@ function container() {
 }
 
 
-# !>
+
