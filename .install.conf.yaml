@@ -24,6 +24,7 @@
     ~/.zshrc: zshrc
     ~/.bashrc: bashrc
     ~/.bash: bash
+    ~/.oh-my-zsh: oh-my-zsh
     ~/.config/terminator: config/terminator
 
 - shell:
