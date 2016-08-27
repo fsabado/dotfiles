@@ -367,5 +367,9 @@ include ~/.zsh/syntax.zsh
 # External plugins (initialized after)
 include ~/.zsh/plugins_after.zsh
 
+# Remove miscellaenous for unsupported bus
+# http://unix.stackexchange.com/questions/230238/starting-x-applications-from-the-terminal-and-the-warnings-that-follow
+export NO_AT_BRIDGE=1
+
 # Allow local customizations in the ~/.zshrc_local_after file
 include ~/.zshrc_local_after

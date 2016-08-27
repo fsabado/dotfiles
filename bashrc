@@ -49,6 +49,10 @@ shopt -s cdspell
 	grep -v "[?*]" | cut -d " " -f2 | \
 	tr ' ' '\n')" scp sftp ssh
 
+# Remove miscellaenous for unsupported bus
+# http://unix.stackexchange.com/questions/230238/starting-x-applications-from-the-terminal-and-the-warnings-that-follow
+export NO_AT_BRIDGE=1
+
 
 #External plugins (initialized after)
 include ~/.bashrc_local_after
