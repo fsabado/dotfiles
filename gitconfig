@@ -55,13 +55,19 @@
 	targz = ! "targz() { git archive --format tar.gz --prefix=\"${PWD##*/}/\" HEAD -o ${1}; }; targz"
 	zip = ! "zip() { git archive --format zip --prefix=\"${PWD##*/}/\" HEAD -o ${1}; }; zip"
 
-[diff]
-	mnemonicPrefix = true
-	wordRegex = "[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+"
-	compactionHeuristic = true
+[diff]	
+	#mnemonicPrefix = true
+	#wordRegex = "[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+"
+	#compactionHeuristic = true
+	tool = meld
+
+[difftool "meld"]
+	cmd = meld \"$LOCAL\" \"$REMOTE\" --label \"DIFF (ORIGINAL MY)\"
 
 [color]
 	ui = auto
+	status = auto
+	branch = auto
 
 [color "grep"]
 	match = cyan bold
@@ -79,9 +85,19 @@
 
 [merge]
 	defaultToUpstream = true
-	tool = vimdiff
+	#tool = vimdiff
+	tool = meld
+	
+
+[mergetool "meld"]
+	cmd = meld --auto-merge \"$LOCAL\" \"$BASE\" \"$REMOTE\" --output \"$MERGED\" --label \"MERGE (REMOTE BASE MY)\"
+	keepBackup = false
 
 [mergetool]
+	# don't ask if we want to skip merge
+	prompt = false
+
+	# don't create backup *.orig files
 	keepBackup = false
 
 [push]
@@ -104,4 +120,4 @@
 	path = ~/.gitconfig_local
 [user]
 	name = Francis Sabado
-	email = fs8080@gmail.com
+	email = fsabado@sandia.gov
