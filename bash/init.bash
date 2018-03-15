@@ -9,7 +9,7 @@ include () {
 include ~/.bash/aliases.bash
 
 #Environment
-include ~/.bash/.env.bash
+include ~/.bash/env.bash
 
 #Functions
 include ~/.bash/functions.bash
