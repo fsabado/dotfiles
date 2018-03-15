@@ -6,13 +6,6 @@
 [keybindings]
 [layouts]
   [[default]]
-    [[[child1]]]
-      parent = window0
-      type = Terminal
-    [[[window0]]]
-      parent = ""
-      type = Window
-  [[lay42]]
     [[[child0]]]
       fullscreen = False
       last_active_term = 4d5a8c13-5c8d-49c5-b355-3150ca306178
