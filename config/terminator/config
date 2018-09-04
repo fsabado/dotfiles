@@ -83,7 +83,7 @@
   [[default]]
     background_image = None
     cursor_color = "#aaaaaa"
-    font = Monospace 16
+    font = Monospace 12
     use_system_font = False
   [[Solarized-Dark]]
     background_color = "#002b36"

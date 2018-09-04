@@ -27,7 +27,7 @@ export PATH=$HOME/.dotfiles/bin:$PATH
 
 #Load Components
 #Init Bash
-include ~/.bash/init.config
+. ~/.bash/init.config
 include ~/.git/init.git
 
 
