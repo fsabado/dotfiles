@@ -1,69 +1,64 @@
 [global_config]
   enabled_plugins = CustomCommandsMenu, EditorPlugin, TestPlugin, GitPlugin, ActivityWatch, LaunchpadCodeURLHandler, TerminalShot, OpenAnyFile, APTURLHandler, LaunchpadBugURLHandler
   suppress_multiple_term_dialog = True
+  title_font = Sans Bold 18
+  title_use_system_font = False
 [keybindings]
 [layouts]
   [[default]]
-    [[[child1]]]
-      parent = window0
-      type = Terminal
-    [[[window0]]]
-      parent = ""
-      type = Window
-  [[lay42]]
     [[[child0]]]
       fullscreen = False
-      last_active_term = 011fa7c6-69dc-41d4-8d4f-1a840ab02b3d
+      last_active_term = 4d5a8c13-5c8d-49c5-b355-3150ca306178
       last_active_window = True
-      maximised = True
+      maximised = False
       order = 0
       parent = ""
-      position = 1920:0
-      size = 1920, 1006
+      position = 1920:23
+      size = 1920, 1137
       title = /bin/bash
       type = Window
     [[[child1]]]
       order = 0
       parent = child0
-      position = 500
-      ratio = 0.5
+      position = 563
+      ratio = 0.499120492524
       type = VPaned
     [[[child2]]]
       order = 0
       parent = child1
-      position = 957
-      ratio = 0.5
+      position = 956
+      ratio = 0.500260416667
       type = HPaned
     [[[child5]]]
       order = 1
       parent = child1
-      position = 957
-      ratio = 0.5
+      position = 956
+      ratio = 0.500260416667
       type = HPaned
     [[[terminal3]]]
       order = 0
       parent = child2
-      profile = Solarized-Dark
+      profile = default
       type = Terminal
-      uuid = 011fa7c6-69dc-41d4-8d4f-1a840ab02b3d
+      uuid = 4d5a8c13-5c8d-49c5-b355-3150ca306178
     [[[terminal4]]]
       order = 1
       parent = child2
-      profile = Solarized-Dark
+      profile = default
       type = Terminal
-      uuid = c5891b27-29df-495c-a152-2e4b0616e066
+      uuid = 99af2f12-d173-442c-ad75-c4a1a3bf6ba8
     [[[terminal6]]]
       order = 0
       parent = child5
-      profile = Solarized-Dark
+      profile = default
       type = Terminal
-      uuid = 8ad69230-ec27-4722-bde9-b4b5086194e6
+      uuid = 51a1a40f-077d-4905-930b-c96be6b00515
     [[[terminal7]]]
       order = 1
       parent = child5
-      profile = Solarized-Dark
+      profile = default
       type = Terminal
-      uuid = 09c79565-2afe-4e6d-a160-c19ac61e1504
+      uuid = ad25e08e-6110-43c7-88dd-31618ab54cdf
 [plugins]
   [[CustomCommandsMenu]]
     [[[fsabado@digisrv1]]]
@@ -87,11 +82,13 @@
 [profiles]
   [[default]]
     background_image = None
-    font = Monospace 14
+    cursor_color = "#aaaaaa"
+    font = Monospace 16
     use_system_font = False
   [[Solarized-Dark]]
     background_color = "#002b36"
     background_image = None
+    cursor_color = "#839496"
     font = Monospace 14
     foreground_color = "#839496"
     use_system_font = False

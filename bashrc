@@ -25,8 +25,11 @@ setterm -blength 0
 
 export PATH=$HOME/.dotfiles/bin:$PATH
 
+#Load Components
 #Init Bash
 include ~/.bash/init.bash
+include ~/.git/init.git
+
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
