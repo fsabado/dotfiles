@@ -19,6 +19,19 @@ You can make local customizations for some programs by editing these files:
 * `hg` : `~/.hgrc_local`
 * `tmux` : `~/.tmux_local.conf`
 
+
+
+
+
+
+
+Synchronizing Intellij Setting
+https://blog.jetbrains.com/idea/2017/09/intellij-idea-2017-3-eap-better-synchronization-of-your-settings-across-devices-and-other-improvements/
+
+-use IDE Settings Sync
+
+
+
 License
 -------
 
