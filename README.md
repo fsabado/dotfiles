@@ -70,7 +70,7 @@ git commit -am "Pulled down update to submodule_dir"
 
 
 #One line to do all that
-git submodule git pull origin master
+git submodule foreach git pull origin master
 
 
 Editing Setting

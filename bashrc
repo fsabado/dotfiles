@@ -27,8 +27,7 @@ export PATH=$HOME/.dotfiles/bin:$PATH
 
 #Load Components
 #Init Bash
-. ~/.bash/init.config
-include ~/.git/init.git
+include ~/.bash/init.cfg
 
 
 # check the window size after each command and, if necessary,
