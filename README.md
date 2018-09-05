@@ -20,11 +20,6 @@ You can make local customizations for some programs by editing these files:
 * `tmux` : `~/.tmux_local.conf`
 
 
-
-
-
-
-
 Synchronizing Intellij Setting
 https://blog.jetbrains.com/idea/2017/09/intellij-idea-2017-3-eap-better-synchronization-of-your-settings-across-devices-and-other-improvements/
 
@@ -53,7 +48,8 @@ git submodule update --init --recursive
 
 Update all submodules to latest
 
-git submodule update --init --remote
+git submodule foreach --recursive git pull origin master
+
 
 Update a specific submodule to latest
 
@@ -72,6 +68,11 @@ cd ..
 # now the submodules are in the state you want, so
 git commit -am "Pulled down update to submodule_dir"
 
+
+#One line to do all that
+git submodule git pull origin master
+
+
 Editing Setting
 
 gedit $HOME/dotfiles/.install.conf.yaml
@@ -85,11 +86,7 @@ Possible Fix for Multi-system Dotfiles
 ---------------------------
 https://github.com/anishathalye/dotbot/pull/11#issuecomment-73082152
 
-License
--------
 
-Copyright (c) 2013-2016 Anish Athalye. Released under the MIT License. See
-[LICENSE.md][license] for details.
+[Based on https://github.com/anishathalye/dotfiles]
 
-[dotbot]: https://github.com/anishathalye/dotbot
-[license]: LICENSE.md
+
