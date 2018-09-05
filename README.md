@@ -43,8 +43,34 @@ Dotbot Useful Commands
 
 Adding Submodules
 
-git submodule add <github-submodule-path>
+git submodule add <github-submodule-path> <directory-name>
 
+
+Updating Submodules and checking out specified versions
+
+git submodule update --init --recursive
+
+
+Update all submodules to latest
+
+git submodule update --init --remote
+
+Update a specific submodule to latest
+
+# change to the submodule directory
+cd <submodule-directory>
+
+# checkout desired branch
+git checkout master
+
+# update
+git pull
+
+# get back to your project root
+cd ..
+
+# now the submodules are in the state you want, so
+git commit -am "Pulled down update to submodule_dir"
 
 Editing Setting
 
@@ -53,6 +79,11 @@ gedit $HOME/dotfiles/.install.conf.yaml
 Force Update the Installation
 ---------------------------
 touch install.conf.yaml
+
+
+Possible Fix for Multi-system Dotfiles
+---------------------------
+https://github.com/anishathalye/dotbot/pull/11#issuecomment-73082152
 
 License
 -------
