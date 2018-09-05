@@ -87,6 +87,9 @@ Possible Fix for Multi-system Dotfiles
 https://github.com/anishathalye/dotbot/pull/11#issuecomment-73082152
 
 
+TODO:
+install-profile and configurations
+
 [Based on https://github.com/anishathalye/dotfiles]
 
 
