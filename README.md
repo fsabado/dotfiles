@@ -38,6 +38,22 @@ cd ~ && git clone https://github.com/francissabado/dotfiles && cd dotfiles && ./
 
 
 
+Dotbot Useful Commands
+---------------------------
+
+Adding Submodules
+
+git submodule add <github-submodule-path>
+
+
+Editing Setting
+
+gedit $HOME/dotfiles/.install.conf.yaml
+
+Force Update the Installation
+---------------------------
+touch install.conf.yaml
+
 License
 -------
 
