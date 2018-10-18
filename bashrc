@@ -17,7 +17,7 @@ if [ -f /etc/bashrc ]; then
 fi
 
 
-PS1="\[\033[35m\]\t\[\033[m\]-\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\e[37;1m\]jobs:\j\[\033[33;1m\]\w\[\033[m\]\$\n> "
+PS1="\[\033[35m\]\t\[\033[m\]-\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\e[37;1m\]jobs:\j\[\033[33;1m\]\w\[\033[m\]\$>"
 #PS1="\n\[\e[32;1m\](\[\e[37;1m\]\u\[\e[32;1m\])-(\[\e[37;1m\]jobs:\j\[\e[32;1m\])-(\[\e[37;1m\]\w\[\e[32;1m\])\n(\[\[\e[37;1m\]! \!\[\e[32;1m\])-> \[\e[0m\]"
 
 #Remove the Beeping sound from Bash Shell
@@ -27,7 +27,7 @@ export PATH=$HOME/.dotfiles/bin:$PATH
 
 #Load Components
 #Init Bash
-include ~/.bash/init.cfg
+source ~/.bash/init.cfg
 
 
 # check the window size after each command and, if necessary,
@@ -63,3 +63,5 @@ export NO_AT_BRIDGE=1
 
 #External plugins (initialized after)
 include ~/.bashrc_local_after
+
+
