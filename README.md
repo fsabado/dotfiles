@@ -29,7 +29,7 @@ https://blog.jetbrains.com/idea/2017/09/intellij-idea-2017-3-eap-better-synchron
 One Click Install
 ---------------------------
 
-cd ~ && git clone https://github.com/francissabado/dotfiles && cd dotfiles && ./install
+cd ~ && git clone https://github.com/fsabado/dotfiles && cd dotfiles && ./install
 
 
 
