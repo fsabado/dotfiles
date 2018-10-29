@@ -1,0 +1,5 @@
+//Create a link on ../configs directory
+//Example
+
+cd ../configs
+ln -s ./prompts/solarized_bash_prompt.cfg prompt.cfg
