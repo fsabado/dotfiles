@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
+
 #Helper source
 include () {
     [[ -f "$1" ]] && source "$1"
