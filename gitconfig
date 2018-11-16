@@ -34,7 +34,7 @@
 	linecredit = ! "lc() { git ls-tree --name-only -z -r HEAD | xargs -0 -n1 git diff --no-index --numstat /dev/null 2>/dev/null | grep -v '^-' | cut -f 3- | cut -d ' ' -f 3- | xargs -n1 git blame --line-porcelain | grep '^author ' | cut -d ' ' -f 2- | sort | uniq -c | sort -nr; }; lc"
 	cc = rev-list HEAD --count
 	cca = rev-list --all --count
-	lg = log -p
+	lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr %an)%Creset' --abbrev-commit --date=relative
 	gr = log --graph --format=compact # graph
 	grl = log --graph --format=line # graph line
 	grd = log --graph --format=detail # graph detail
@@ -54,7 +54,10 @@
 	tar = ! "tar() { git archive --format tar --prefix=\"${PWD##*/}/\" HEAD -o ${1}; }; tar"
 	targz = ! "targz() { git archive --format tar.gz --prefix=\"${PWD##*/}/\" HEAD -o ${1}; }; targz"
 	zip = ! "zip() { git archive --format zip --prefix=\"${PWD##*/}/\" HEAD -o ${1}; }; zip"
-
+	last = log -1 HEAD
+	tree = !git lg --graph
+	progress = diff --stat
+	pg = diff --shortstat
 [diff]	
 	#mnemonicPrefix = true
 	#wordRegex = "[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+"
@@ -101,7 +104,7 @@
 	keepBackup = false
 
 [push]
-	default = upstream
+	default = simple
 
 [credential]
 	helper = cache --timeout=3600
