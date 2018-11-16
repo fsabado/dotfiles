@@ -1,6 +1,6 @@
-set editing-mode vi
+#Inputrc deals with the mapping of the keyboard for certain situations. This file is the start-up file used by readline, the input related library used by bash and most other shells.
 
-$if mode=vi
+set editing-mode vi
 
 set keymap vi-command
 Control-l: clear-screen
@@ -8,4 +8,31 @@ Control-l: clear-screen
 set keymap vi-insert
 Control-l: clear-screen 
 
-$endif
+#Readline Commands
+#https://codeinthehole.com/tips/the-most-important-command-line-tip-incremental-history-searching-with-inputrc/
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+"\e[C": forward-char
+"\e[D": backward-char
+
+
+#https://www.topbug.net/blog/2017/07/31/inputrc-for-humans/
+set colored-stats On
+set completion-ignore-case On
+set completion-prefix-display-length 3
+set mark-symlinked-directories On
+set show-all-if-ambiguous On
+set show-all-if-unmodified On
+set visible-stats On
+set expand-tilde on
+set convert-meta off
+set input-meta on
+set output-meta on
+
+#Go back to previous directory
+#Option + z
+"\ez": 'cd -\015'
+
+#Jump to the target folder of the last command and run ls with Option-x
+"\ex": 'cd !$ \015ls\015'
+
