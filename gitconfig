@@ -122,3 +122,6 @@
 # Allow local customizations in the .gitconfig_local file
 [include]
 	path = ~/.gitconfig_local
+[user]
+	email = fsabado@gmail.com
+	name = Francis Sabado

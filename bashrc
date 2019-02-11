@@ -20,6 +20,7 @@ fi
 #Load Components
 #Init Bash
 source ~/.bash/init.cfg
+source $HOME/dotfiles/spack/spack.cfg
 
 #External plugins (initialized after)
 include ~/.bashrc_local_after
