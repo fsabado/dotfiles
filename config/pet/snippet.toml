@@ -1,0 +1,89 @@
+[[snippets]]
+  description = "Search recursively all files for a string."
+  command = "grep -r \"word\" ."
+  output = ""
+
+[[snippets]]
+  description = "Search recursively all files for a string, ignoring case."
+  command = "grep -ri \"word\" ."
+  output = ""
+
+[[snippets]]
+  description = "List all the apps installed on the system."
+  command = "for app in /usr/share/applications/*.desktop ~/.local/share/applications/*.desktop; do app=\"${app##/*/}\"; echo \"${app::-8}\"; done"
+  output = ""
+
+[[snippets]]
+  description = "Create a ssh key using RSA."
+  command = "ssh keygen -t rsa"
+  output = ""
+
+[[snippets]]
+  description = "Add public ssh key to a remote server in one command."
+  command = "cat ~/.ssh/id_rsa.pub | ssh user@host \"cat - >> ~/.ssh/authorized_keys\""
+  output = ""
+
+[[snippets]]
+  description = "Get ip of the host. Modify the host name."
+  command = "getent hosts <hostname> | awk '{ print $1 }'"
+  output = ""
+
+[[snippets]]
+  description = "Start docker daemon"
+  command = "sudo service docker start"
+  output = ""
+
+[[snippets]]
+  description = "Check status of docker daemon."
+  command = "sudo service docker status"
+  output = ""
+
+[[snippets]]
+  description = "Stop docker daemon."
+  command = "sudo service docker stop"
+  output = ""
+
+[[snippets]]
+  description = "Add a linux user to a group."
+  command = "sudo usermode -aG <group> <username>"
+  output = ""
+
+[[snippets]]
+  description = "Fetch all pods in all namespaces."
+  command = "kubetctl get pods --all-namespaces"
+  output = ""
+
+[[snippets]]
+  description = "Git overwrite local files to the latest on origin."
+  command = "git fetch --all; git reset --hard origin/master"
+  output = ""
+
+[[snippets]]
+  description = "Git: revert or restore files."
+  command = "git checkout develop -- file/to/restore file2/to/restore"
+  output = ""
+
+[[snippets]]
+  description = "Mount network share folder"
+  command = "sudo mount -t cifs //network/share /share -o user=$(whoami)"
+  output = ""
+
+[[snippets]]
+  description = "id -u <username>"
+  command = "Get user UID"
+  output = ""
+
+[[snippets]]
+  description = "id -g <username>"
+  command = "get user group ID - GID"
+  output = ""
+
+[[snippets]]
+  description = "Show storage devices in human readable format."
+  command = "df -H"
+  output = ""
+
+[[snippets]]
+  description = "Add user to wheel group to allow sudo access."
+  command = "usermod -aG wheel <username> #assumed on root"
+  output = ""
