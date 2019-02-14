@@ -1,4 +1,119 @@
 [[snippets]]
+  description = "Manual"
+  command = "man <command>"
+  output = ""
+
+[[snippets]]
+  description = "Display directory contents.-l (long listing) -a (all)"
+  command = "ls -al"
+  output = ""
+
+[[snippets]]
+  description = "List Block Devices (lsblk). -l (list)"
+  command = "lsblk"
+  output = ""
+
+[[snippets]]
+  description = "Check MD5 Checksum"
+  command = "md5sum <filename>"
+  output = ""
+
+[[snippets]]
+  description = "Unix Name. Print detailed information about machine. -a (all)"
+  command = "uname -a"
+  output = ""
+
+[[snippets]]
+  description = "History (Event) Record. Print history of executed command on terminal.'Ctrl + R' to search history"
+  command = "history"
+  output = ""
+
+[[snippets]]
+  description = "Clear terminal"
+  command = "clear terminal"
+  output = ""
+
+[[snippets]]
+  description = "Super user do. (sudo). Execute command as super user or other user."
+  command = "sudo <command>"
+  output = ""
+
+[[snippets]]
+  description = "Make directory (mkdir). Create directory. -p (create hierarchy)"
+  command = "mkdir <directory>"
+  output = ""
+
+[[snippets]]
+  description = "Remove directory (rmdir)"
+  command = "rmdir <directory>"
+  output = ""
+
+[[snippets]]
+  description = "Remove file. -r (recursive), -f (force)"
+  command = "rm <filename>"
+  output = ""
+
+[[snippets]]
+  description = "Touch updates access and modification time of file. Create if nonexistent"
+  command = "touch <filename>"
+  output = ""
+
+[[snippets]]
+  description = "Change file mode bits (chmod). Changes permissions. Read (r)=4,Write(w)=2,Execute(x)=1"
+  command = "chmod <accessbits> <filename>"
+  output = ""
+
+[[snippets]]
+  description = "Change file owner and group (chown). Change group|user ownership"
+  command = "chown <user>:<group> <filename>"
+  output = ""
+
+[[snippets]]
+  description = "Package manager. Debian (apt). Redhat (yum)"
+  command = "yum"
+  output = ""
+
+[[snippets]]
+  description = "Tape Archive (tar). Create|extract archive. (-xvf : default extract) c – create,x - extract,t - list,r - append, C - tar to directory, v – verbose,f – filename, z - create gzip, j - create bz2. Source:https://www.tecmint.com/18-tar-command-examples-in-linux/"
+  command = "tar <options> archive1 archive2"
+  output = ""
+
+[[snippets]]
+  description = "Calendar"
+  command = "cal"
+  output = ""
+
+[[snippets]]
+  description = "Date"
+  command = "date"
+  output = ""
+
+[[snippets]]
+  description = "Concatenation (cat). Two or more files print contents to standard output"
+  command = "cat <file1> <file2>"
+  output = ""
+
+[[snippets]]
+  description = "Copy"
+  command = "cp <filename> <directory>"
+  output = ""
+
+[[snippets]]
+  description = "Move from one location to another"
+  command = "mv <file> <directory>"
+  output = ""
+
+[[snippets]]
+  description = "Print working directory"
+  command = "pwd"
+  output = ""
+
+[[snippets]]
+  description = "Change directory (cd)"
+  command = "cd <directory>"
+  output = ""
+
+[[snippets]]
   description = "Search recursively all files for a string."
   command = "grep -r \"word\" ."
   output = ""
@@ -86,4 +201,14 @@
 [[snippets]]
   description = "Add user to wheel group to allow sudo access."
   command = "usermod -aG wheel <username> #assumed on root"
+  output = ""
+
+[[snippets]]
+  description = "Find a file in a directory. -iname for case insensitive. -type f (file) -type d (directory). -delete the files found"
+  command = "find <directory> -type f -name \"<filename>\""
+  output = ""
+
+[[snippets]]
+  description = "Find a file in a directory that contains text"
+  command = "find . -type f -print | xargs grep \"example\""
   output = ""
