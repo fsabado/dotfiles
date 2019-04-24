@@ -1,5 +1,6 @@
 [global_config]
   enabled_plugins = CustomCommandsMenu, EditorPlugin, TestPlugin, GitPlugin, ActivityWatch, LaunchpadCodeURLHandler, TerminalShot, OpenAnyFile, APTURLHandler, LaunchpadBugURLHandler
+  geometry_hinting = False
   suppress_multiple_term_dialog = True
   title_font = Sans Bold 18
   title_use_system_font = False
@@ -82,7 +83,6 @@
 [profiles]
   [[default]]
     background_image = None
-    cursor_color = "#aaaaaa"
     font = Monospace 12
     use_system_font = False
   [[Solarized-Dark]]

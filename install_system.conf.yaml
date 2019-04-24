@@ -13,7 +13,7 @@
 
 
 #Clean commands specify directories that should be checked for dead symbolic links. These dead links are removed automatically. Only dead links that point to the dotfiles directory are removed unless the force option is set to true.
-- clean: ['~', '~/.config']
+#- clean: ['~', '~/.config']
 
 
 
@@ -61,28 +61,28 @@
 #      relink: true
 #Guide:https://github.com/anishathalye/dotbot#link
 - link:
-    ~/.agignore: agignore
-    ~/.aria2/aria2.conf: aria2.conf
-    ~/.axelrc: axelrc
-    ~/.dotfiles: ''
-    ~/.gitconfig: gitconfig
-    ~/.gitignore_global: gitignore_global
-    ~/.gnupg/gpg.conf: gpg.conf
-    ~/.hgrc: hgrc
-    ~/.inputrc: inputrc
-    ~/.rtorrent.rc: rtorrent.rc
-    ~/.screenrc: screenrc
-    ~/.tmux.conf: tmux.conf
-    ~/.vim: vim
-    ~/.vimrc: vimrc
-    ~/.zsh: zsh
-    ~/.zshrc: zshrc
-    ~/.bashrc: bashrc
-    ~/.bash_profile: bash_profile
-    ~/.bash: bash
-    ~/.oh-my-zsh: oh-my-zsh
-    ~/.config/terminator: config/terminator
-    ~/.config/pet/snippet.toml: config/pet/snippet.toml
+     /etc/sysctl.d/idea.conf: intellij/idea.conf
+#    ~/.agignore: agignore
+#    ~/.aria2/aria2.conf: aria2.conf
+#    ~/.axelrc: axelrc
+#    ~/.dotfiles: ''
+#    ~/.gitconfig: gitconfig
+#    ~/.gitignore_global: #gitignore_global
+#    ~/.gnupg/gpg.conf: gpg.conf
+#    ~/.hgrc: hgrc
+#    ~/.inputrc: inputrc
+#    ~/.rtorrent.rc: rtorrent.rc
+#    ~/.screenrc: screenrc
+#    ~/.tmux.conf: tmux.conf
+#    ~/.vim: vim
+#    ~/.vimrc: vimrc
+#    ~/.zsh: zsh
+#    ~/.zshrc: zshrc
+#    ~/.bashrc: bashrc
+#    ~/.bash: bash
+#    ~/.oh-my-zsh: oh-my-zsh
+#    ~/.config/terminator: config/terminator
+#    ~/.config/pet/snippet.toml: config/pet/snippet.toml
 
 #Put shell comands here
 #Guide:https://github.com/anishathalye/dotbot#shell
@@ -98,8 +98,8 @@
 #  -
 #    command: read fail
 #    stderr: true
-- shell:
-  - mkdir -p ~/.rtorrent/session ~/.rtorrent/watch ~/.rtorrent/downloads
-  - git update-submodules # after linking ~/.gitconfig
+#- shell:
+#  - mkdir -p ~/.rtorrent/session ~/.rtorrent/watch ~/.rtorrent/downloads
+#  - git update-submodules # after linking ~/.gitconfig
   #- ~/.dotfiles/gnome-terminal-colors-solarized/install.sh --scheme "dark_alternative" --profile "Default" && echo "Make 'Solarized' profile first"
-  - ~/.dotfiles/oh-my-zsh-install.sh
+#  - ~/.dotfiles/oh-my-zsh-install.sh

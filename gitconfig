@@ -123,5 +123,5 @@
 [include]
 	path = ~/.gitconfig_local
 [user]
-	email = fsabado@gmail.com
 	name = Francis Sabado
+	email = fsabado@sandia.gov

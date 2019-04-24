@@ -212,3 +212,58 @@
   description = "Find a file in a directory that contains text"
   command = "find . -type f -print | xargs grep \"example\""
   output = ""
+
+[[snippets]]
+  description = "Nvidia Graphics Card information"
+  command = "nvidia-smi"
+  output = "nvidia-smi"
+
+[[snippets]]
+  description = "Git clone with specific folder name or directory. Can also use . to denote current directory."
+  command = "git clone git@github.com:whatever <foldername>"
+  output = ""
+
+[[snippets]]
+  description = "Git pull all submodule."
+  command = "git submodule update --init --recursive"
+  output = ""
+
+[[snippets]]
+  description = "Disc usage (du). Command estimates <filepath> space usage. -s (summarize), -h (human-readable, -c --total"
+  command = "du -sh <filepath>"
+  output = ""
+
+[[snippets]]
+  description = "Rsync - fast,versatile, remote (and local) file-copying tool."
+  command = "rsync -a -v --ignore-existing <src> <dst>"
+  output = ""
+
+[[snippets]]
+  description = "Check all mounted locations."
+  command = "sudo cat /proc/mounts"
+  output = "sudo cat /proc/mounts"
+
+[[snippets]]
+  description = "[Redhat]Install 'yum-versionlock'. Will not allow to upgrade the Agent package to version greater than what was installed at the time the locking was performed. Allowed commands: add/exclude/list/delete/clear. Edit List: /etc/yum/pluginconf.d/versionlock.list. Example: # yum versionlock datastax-agent-5.2.5"
+  command = "yum versionlock add <package-wildcard>"
+  output = ""
+
+[[snippets]]
+  description = "The lscpu command reports information about the cpu and processing units. It does not have any further options or functionality. Hardware information.  "
+  command = "lscpu"
+  output = ""
+
+
+[[snippets]]
+  description = "[lshw] A general purpose utility, that reports detailed and brief information about multiple different hardware units such as cpu, memory, disk, usb controllers, network adapters etc. Lshw extracts the information from different /proc files. Req. sudo. "
+  command = "sudo lshw -short"
+  output = ""
+
+[[snippets]]
+  description = "[lspci] The lspci command lists out all the pci buses and details about the devices connected to them. The vga adapter, graphics card, network adapter, usb ports, sata controllers, etc all fall under this category. "
+  command = "lspci"
+  output = ""
+
+
+
+
