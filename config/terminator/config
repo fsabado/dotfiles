@@ -1,5 +1,6 @@
 [global_config]
-  enabled_plugins = CustomCommandsMenu, EditorPlugin, TestPlugin, GitPlugin, ActivityWatch, LaunchpadCodeURLHandler, TerminalShot, OpenAnyFile, APTURLHandler, LaunchpadBugURLHandler
+  always_split_with_profile = True
+  enabled_plugins = CustomCommandsMenu, EditorPlugin, TestPlugin, GitPlugin, LaunchpadCodeURLHandler, SSHMenu, TerminalShot, OpenAnyFile, APTURLHandler, LaunchpadBugURLHandler
   geometry_hinting = False
   suppress_multiple_term_dialog = True
   title_font = Sans Bold 18
@@ -14,50 +15,50 @@
       maximised = False
       order = 0
       parent = ""
-      position = 1920:23
-      size = 1920, 1137
+      position = 0:28
+      size = 1920, 1038
       title = /bin/bash
       type = Window
     [[[child1]]]
       order = 0
       parent = child0
-      position = 563
-      ratio = 0.499120492524
+      position = 515
+      ratio = 0.500481695568
       type = VPaned
     [[[child2]]]
       order = 0
       parent = child1
-      position = 956
-      ratio = 0.500260416667
+      position = 955
+      ratio = 0.499739583333
       type = HPaned
     [[[child5]]]
       order = 1
       parent = child1
-      position = 956
-      ratio = 0.500260416667
+      position = 955
+      ratio = 0.499739583333
       type = HPaned
     [[[terminal3]]]
       order = 0
       parent = child2
-      profile = default
+      profile = Solarized-Dark
       type = Terminal
       uuid = 4d5a8c13-5c8d-49c5-b355-3150ca306178
     [[[terminal4]]]
       order = 1
       parent = child2
-      profile = default
+      profile = Solarized-Dark
       type = Terminal
       uuid = 99af2f12-d173-442c-ad75-c4a1a3bf6ba8
     [[[terminal6]]]
       order = 0
       parent = child5
-      profile = default
+      profile = Solarized-Dark
       type = Terminal
       uuid = 51a1a40f-077d-4905-930b-c96be6b00515
     [[[terminal7]]]
       order = 1
       parent = child5
-      profile = default
+      profile = Solarized-Dark
       type = Terminal
       uuid = ad25e08e-6110-43c7-88dd-31618ab54cdf
 [plugins]

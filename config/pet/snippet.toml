@@ -264,6 +264,14 @@
   command = "lspci"
   output = ""
 
+[[snippets]]
+  description = "Download rpms using yum along with all its dependencies (at working directory). Install yum-utils."
+  command = "yumdownloader --resolve <package-name>"
+  output = ""
 
+[[snippets]]
+  description = "Install RPM files."
+  command = "rpm -ivh <rpm-files>"
+  output = ""
 
 
