@@ -83,6 +83,7 @@
     ~/.oh-my-zsh: oh-my-zsh
     ~/.config/terminator: config/terminator
     ~/.config/pet/snippet.toml: config/pet/snippet.toml
+    ~/.profile.d: profile.d
 
 #Put shell comands here
 #Guide:https://github.com/anishathalye/dotbot#shell
