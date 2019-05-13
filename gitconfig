@@ -104,7 +104,7 @@
 	keepBackup = false
 
 [push]
-	default = simple
+	default = current
 
 [credential]
 	helper = cache --timeout=3600
