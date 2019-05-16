@@ -1,27 +1,7 @@
 [global_config]
-  geometry_hinting = False
   enabled_plugins = CustomCommandsMenu, EditorPlugin, TestPlugin, GitPlugin, LaunchpadCodeURLHandler, SSHMenu, TerminalShot, OpenAnyFile, APTURLHandler, LaunchpadBugURLHandler
+  geometry_hinting = False
 [keybindings]
-[profiles]
-  [[default]]
-    use_system_font = False
-    font = Monospace 12
-    background_image = None
-  [[Solarized-Dark]]
-    use_system_font = False
-    background_image = None
-    cursor_color = "#839496"
-    foreground_color = "#839496"
-    font = Monospace 12
-    background_color = "#002b36"
-  [[Solarized-Light]]
-    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
-    background_image = None
-    use_system_font = False
-    cursor_color = "#002b36"
-    foreground_color = "#657b83"
-    font = Monospace 12
-    background_color = "#fdf6e3"
 [layouts]
   [[default]]
     [[[child0]]]
@@ -89,11 +69,31 @@
       enabled = True
       name = fsabado@digisrv2
       position = 0
-  [[SSHMenu]]
-    [[[Digisrv2]]]
-      command = ssh -X fsabado@digisrv2.ddns.uark.edu
-      name = Digisrv2
   [[EditorPlugin]]
     command = {filepath}
     editor = kate
     match = [^ \t\n\r\f\v:]+?\.(ini|conf|me|txt|xml|json)[ \n:]([0-9]+)*
+  [[SSHMenu]]
+    [[[Digisrv2]]]
+      command = ssh -X fsabado@digisrv2.ddns.uark.edu
+      name = Digisrv2
+[profiles]
+  [[default]]
+    background_image = None
+    font = Monospace 12
+    use_system_font = False
+  [[Solarized-Dark]]
+    background_color = "#002b36"
+    background_image = None
+    cursor_color = "#839496"
+    font = Monospace 12
+    foreground_color = "#839496"
+    use_system_font = False
+  [[Solarized-Light]]
+    background_color = "#fdf6e3"
+    background_image = None
+    cursor_color = "#002b36"
+    font = Monospace 12
+    foreground_color = "#657b83"
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    use_system_font = False

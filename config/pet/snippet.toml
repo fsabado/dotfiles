@@ -234,8 +234,8 @@
   output = ""
 
 [[snippets]]
-  description = "Rsync - fast,versatile, remote (and local) file-copying tool."
-  command = "rsync -a -v --ignore-existing <src> <dst>"
+  description = "Rsync - fast,versatile, remote (and local) file-copying tool. -a (archive/link) -r (recursive) -v (verbose) -n (dry-run) -z (compression) -P (allow partial) -h (human readable)"
+  command = "rsync -varzhP <src> <dst>"
   output = ""
 
 [[snippets]]
