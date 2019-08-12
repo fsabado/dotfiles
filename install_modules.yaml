@@ -61,7 +61,6 @@
 #      relink: true
 #Guide:https://github.com/anishathalye/dotbot#link
 - link:
-     /etc/sysctl.d/idea.conf: intellij/idea.conf
      ~/lua: lua
      ~/lmod: lmod 
 #    ~/.agignore: agignore
