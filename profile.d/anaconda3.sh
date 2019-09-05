@@ -1,0 +1,1 @@
+/ascldap/users/fsabado/dotfiles/anaconda3/anaconda3.sh

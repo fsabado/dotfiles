@@ -99,6 +99,12 @@
   output = ""
 
 [[snippets]]
+  description = "Force overwrite Copy (cp) without confirmation"
+  command = "yes | cp -rf <filename|directory> <directory>"
+  output = ""
+
+
+[[snippets]]
   description = "Move from one location to another"
   command = "mv <file> <directory>"
   output = ""

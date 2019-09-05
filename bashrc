@@ -4,9 +4,6 @@
 #TODO: Is this needed here?
 [ -z "$PS1" ] && return
 
-
-
-
 #Helper source
 include () {
     [[ -f "$1" ]] && source "$1"
