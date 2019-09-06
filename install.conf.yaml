@@ -96,8 +96,8 @@
 #  -
 #    command: read fail
 #    stderr: true
-- shell:
-  - mkdir -p ~/.rtorrent/session ~/.rtorrent/watch ~/.rtorrent/downloads
-  - git update-submodules # after linking ~/.gitconfig
+#- shell:
+#  - mkdir -p ~/.rtorrent/session ~/.rtorrent/watch ~/.rtorrent/downloads
+#  - git update-submodules # after linking ~/.gitconfig
   #- ~/.dotfiles/gnome-terminal-colors-solarized/install.sh --scheme "dark_alternative" --profile "Default" && echo "Make 'Solarized' profile first"
-  - ~/.dotfiles/oh-my-zsh-install.sh
+#  - ~/.dotfiles/oh-my-zsh-install.sh
