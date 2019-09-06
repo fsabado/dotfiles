@@ -18,30 +18,18 @@ SCRIPTHOME=$DIR
 
 #########MAIN########
 
-PROGRAM_NAME=Anaconda3
+PROGRAM_NAME=CHANGEME
 #Configuration settings
 #echo "Setting up ${PROGRAM_NAME}"
 
 #Set path variables here
 export PATH=$SCRIPTHOME/bin:$PATH
+export LD_LIBRARY_PATH=$SCRIPTHOME/lib:$LD_LIBRARY_PATH
 
-ANACONDA3_HOME=${HOME}/anaconda3
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-#Generate activation commands
-__conda_setup="$('${ANACONDA3_HOME}/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "${ANACONDA3_HOME}/etc/profile.d/conda.sh" ]; then
-        . "${ANACONDA3_HOME}/etc/profile.d/conda.sh"
-    else
-        export PATH="${ANACONDA3_HOME}/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+#Configurations
+
+#ADD configurations Here
 
 #Cleanup
 unset SOURCE
@@ -49,9 +37,5 @@ unset DIR
 unset SCRIPTHOME
 unset PROGRAM_NAME
 set +o xtrace
-
-
-
-
 
 
