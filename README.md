@@ -32,6 +32,29 @@ One Click Install
 cd ~ && git clone https://github.com/fsabado/dotfiles && cd dotfiles && ./install
 
 
+# Dotbot Help
+% ~/dotfiles .dotbot/bin/dotbot --help
+usage: dotbot [-h] [-Q] [-q] [-v] [-d BASEDIR] [-c CONFIGFILE] [-p PLUGIN]
+              [--disable-built-in-plugins] [--plugin-dir PLUGIN_DIR]
+              [--version]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -Q, --super-quiet     suppress almost all output
+  -q, --quiet           suppress most output
+  -v, --verbose         enable verbose output
+  -d BASEDIR, --base-directory BASEDIR
+                        execute commands from within BASEDIR
+  -c CONFIGFILE, --config-file CONFIGFILE
+                        run commands given in CONFIGFILE
+  -p PLUGIN, --plugin PLUGIN
+                        load PLUGIN as a plugin
+  --disable-built-in-plugins
+                        disable built-in plugins
+  --plugin-dir PLUGIN_DIR
+                        load all plugins in PLUGIN_DIR
+  --version             show program's version number and exit
+
 
 Dotbot Useful Commands
 ---------------------------
@@ -91,5 +114,18 @@ TODO:
 install-profile and configurations
 
 [Based on https://github.com/anishathalye/dotfiles]
+
+
+
+
+# Adding Program support
+cd ~/dotfiles
+cp -r ./program-template new-program
+cd ./new-program
+mv ./program-template new-program
+
+
+
+
 
 

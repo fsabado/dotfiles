@@ -19,21 +19,29 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
 SCRIPTHOME=$DIR
 
 #########MAIN########
-
-PROGRAM_NAME=Intellij
+PROGRAM_NAME=Maven
 #Configuration settings
 #echo "Setting up ${PROGRAM_NAME}"
 
-#Set path variables here
-export PATH=$SCRIPTHOME/bin:$PATH
-export LD_LIBRARY_PATH=$SCRIPTHOME/lib:$LD_LIBRARY_PATH
+#Shortcut for editing this file
+MAVENRC=${SOURCE}
+alias edit-programrc="${EDITOR} ${MAVENRC}"
+alias edit-mvn-settings="${EDUTIR} ${HOME}/.m2/settings.xml"
 
 #Configurations
 
-#Bash config to start ide
-INTELLIJRC=${SOURCE}
-alias start-ide="idea &"
-alias edit-intellijrc="${EDITOR} ${INTELLIJRC}"
+alias mvn-install="mvn install -T 1.8C"
+alias mvn-cleaninstall="mvn clean install -T 1.8C"
+alias mvn-install-skip="mvn install -DskipTests -T 1.8C"
+alias mvn-cleaninstall-skip="mvn clean install -DskipTests -T 1.8C"
+
+alias run-target="java -jar ./target/*-dependencies.jar"
+#Assuming the log levels exist
+alias run-target-log="java -jar ./target/*-dependencies.jar --console-level DEBUG"
+alias run-target-logfile="java -jar ./target/*-dependencies.jar --console-level DEBUG --file-level DEBUG"
+alias run-target-debug="java -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8007 -jar ./target/*-dependencies.jar --consolde-level DEBUG"
+#Log Levels:
+#DEBUG|INFO|WARN|ERROR|OFF, Default is WAR
 
 #Cleanup
 unset SOURCE
@@ -41,5 +49,4 @@ unset DIR
 unset SCRIPTHOME
 unset PROGRAM_NAME
 set +o xtrace
-
 

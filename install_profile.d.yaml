@@ -1,19 +1,24 @@
 #Rules
 #Must be idompotent - can be run multiple times without causing an issue
 #YAML is whitespace sensitive
-
+#Must only use whitespace, NOT tabs
+#You can bypass by changing tabs to whitespaces
 
 #Default options for plugins can be specified so that options don't have to be repeated many times. This can be very useful to use with the link command, for example.
 #
 #Defaults apply to all commands that follow setting the defaults. Defaults can be set multiple times; each change replaces the defaults with a new set of options.
 - defaults:
     link:
-      create: true
-      relink: true
+        create: true
+        relink: true
+        force: true
 
 
 #Clean commands specify directories that should be checked for dead symbolic links. These dead links are removed automatically. Only dead links that point to the dotfiles directory are removed unless the force option is set to true.
-- clean: ['~', '~/.config']
+#- clean: ['~', '~/.config']
+- clean: 
+    ~/dotfiles/profile.d: 
+        force: true
 
 #Put Links here
 #Format
@@ -59,33 +64,24 @@
 #      relink: true
 #Guide:https://github.com/anishathalye/dotbot#link
 - link:
-    ~/.agignore: agignore
-    ~/.aria2/aria2.conf: aria2.conf
-    ~/.axelrc: axelrc
-    ~/.dotfiles: ''
-    ~/.gitconfig: gitconfig
-    ~/.gitignore_global: gitignore_global
-    ~/.gnupg/gpg.conf: gpg.conf
-    ~/.hgrc: hgrc
-    ~/.inputrc: inputrc
-    ~/.rtorrent.rc: rtorrent.rc
-    ~/.screenrc: screenrc
-    ~/.tmux.conf: tmux.conf
-    ~/.vim: vim
-    ~/.vimrc: vimrc
-    ~/.zsh: zsh
-    ~/.zshrc: zshrc
-    ~/.bashrc: bashrc
-    ~/.bash_profile: bash_profile
-    ~/.bash: bash
-    ~/.oh-my-zsh: oh-my-zsh
-    ~/.config/terminator: config/terminator
-    ~/.config/pet/snippet.toml: config/pet/snippet.toml
+     ~/dotfiles/profile.d/intellij.sh: 
+        path: intellij/intellij.sh
+     ~/dotfiles/profile.d/anaconda3.sh: 
+        path: anaconda3/anaconda3.sh
+     ~/dotfiles/profile.d/assh.sh: 
+        path: assh/assh.sh
+     ~/dotfiles/profile.d/pycharm.sh: 
+        path: pycharm/pycharm.sh
+     ~/dotfiles/profile.d/git.sh: 
+        path: git/git.sh
+     ~/dotfiles/profile.d/maven.sh: 
+        path: maven/maven.sh
 
 #Put shell comands here
 #Guide:https://github.com/anishathalye/dotbot#shell
 #Shell commands specify shell commands to be run. Shell commands are run in the base directory (that is specified when running the installer).
 #- shell:
+# Reload all settings on profiles
 #  - mkdir -p ~/src
 #  - [mkdir -p ~/downloads, Creating downloads directory]
 #  -
@@ -96,8 +92,8 @@
 #  -
 #    command: read fail
 #    stderr: true
-- shell:
-  - mkdir -p ~/.rtorrent/session ~/.rtorrent/watch ~/.rtorrent/downloads
-  - git update-submodules # after linking ~/.gitconfig
+#- shell:
+#  - mkdir -p ~/.rtorrent/session ~/.rtorrent/watch ~/.rtorrent/downloads
+#  - git update-submodules # after linking ~/.gitconfig
   #- ~/.dotfiles/gnome-terminal-colors-solarized/install.sh --scheme "dark_alternative" --profile "Default" && echo "Make 'Solarized' profile first"
-  - ~/.dotfiles/oh-my-zsh-install.sh
+#  - ~/.dotfiles/oh-my-zsh-install.sh

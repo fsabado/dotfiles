@@ -1,1 +1,0 @@
-/ascldap/users/fsabado/dotfiles/pycharm/pycharm.sh
