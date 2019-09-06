@@ -1,4 +1,4 @@
-#!/ascldap/users/fsabado/lua/bin/lua
+#!/home/fsabado/lua/bin/lua
 -- -*- lua -*-
 
 --------------------------------------------------------------------------
@@ -29,6 +29,7 @@
 --  included in all copies or substantial portions of the Software.
 --
 --  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+
 --  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
 --  OF MERCHANTABILITY, FITNESS FOR A APRTICULAR PURPOSE AND
 --  NONINFRINGEMENT.  IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
@@ -43,12 +44,13 @@
 -- Use command name to add the command directory to the package.path
 ------------------------------------------------------------------------
 
-local sys_lua_path = "/ascldap/users/fsabado/lua/share/lua/5.1/?.lua;/ascldap/users/fsabado/lua/share/lua/5.1/?/init.lua;/ascldap/users/fsabado/lua/lib/lua/5.1/?.lua;/ascldap/users/fsabado/lua/lib/lua/5.1/?/init.lua"
+-- local sys_lua_path = "/ascldap/users/fsabado/lua/share/lua/5.1/?.lua;/ascldap/users/fsabado/lua/share/lua/5.1/?/init.lua;/ascldap/users/fsabado/lua/lib/lua/5.1/?.lua;/ascldap/users/fsabado/lua/lib/lua/5.1/?/init.lua"
+local sys_lua_path = "/home/fsabado/lua/share/lua/5.1/?.lua;/home/fsabado/lua/share/lua/5.1/?/init.lua;/home/fsabado/lua/lib/lua/5.1/?.lua;/home/fsabado/lua/lib/lua/5.1/?/init.lua"
 if (sys_lua_path:sub(1,1) == "@") then
    sys_lua_path = package.path
 end
 
-local sys_lua_cpath = "/ascldap/users/fsabado/lua/lib/lua/5.1/?.so;/ascldap/users/fsabado/lua/lib/lua/5.1/loadall.so"
+local sys_lua_cpath = "/home/fsabado/lua/lib/lua/5.1/?.so;/home/fsabado/lua/lib/lua/5.1/loadall.so"
 if (sys_lua_cpath:sub(1,1) == "@") then
    sys_lua_cpath = package.cpath
 end
