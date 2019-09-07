@@ -58,7 +58,7 @@
 	tree = !git lg --graph
 	progress = diff --stat
 	pg = diff --shortstat
-[diff]	
+[diff]
 	#mnemonicPrefix = true
 	#wordRegex = "[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+"
 	#compactionHeuristic = true
@@ -69,8 +69,12 @@
 
 [color]
 	ui = auto
-	status = auto
 	branch = auto
+
+[color "status"]
+	added = green bold
+	changed = blue bold
+	untracked = magenta bold
 
 [color "grep"]
 	match = cyan bold
@@ -81,16 +85,16 @@
 	separator = yellow
 	function = blue
 
-[pretty]
-	line = "%C(auto)%h%d %s %C(yellow)by %C(blue)%an %C(green)%ar"
-	compact = "%C(auto)%h %s %C(green)%ar%n %C(auto)%d%n"
-	detail = "%C(auto)%h %s%n  %C(yellow)by %C(blue)%an %C(magenta)<%ae> [%G?] %C(green)%ar%n %C(auto)%d%n"
+#[pretty]
+	#line = "%C(auto)%h%d %s %C(yellow)by %C(blue)%an %C(green)%ar"
+	#compact = "%C(auto)%h %s %C(green)%ar%n %C(auto)%d%n"
+	#detail = "%C(auto)%h %s%n  %C(yellow)by %C(blue)%an %C(magenta)<%ae> [%G?] %C(green)%ar%n %C(auto)%d%n"
 
 [merge]
 	defaultToUpstream = true
 	#tool = vimdiff
 	tool = meld
-	
+
 
 [mergetool "meld"]
 	cmd = meld --auto-merge \"$LOCAL\" \"$BASE\" \"$REMOTE\" --output \"$MERGED\" --label \"MERGE (REMOTE BASE MY)\"
