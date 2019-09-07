@@ -63,8 +63,6 @@
     ~/.aria2/aria2.conf: aria2.conf
     ~/.axelrc: axelrc
     ~/.dotfiles: ''
-    ~/.gitconfig: gitconfig
-    ~/.gitignore_global: gitignore_global
     ~/.gnupg/gpg.conf: gpg.conf
     ~/.hgrc: hgrc
     ~/.inputrc: inputrc

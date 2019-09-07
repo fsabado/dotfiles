@@ -4,8 +4,8 @@
 #Print bash commands
 #https://stackoverflow.com/questions/5750450/how-can-i-print-each-command-before-executing
 #https://wiki.bash-hackers.org/scripting/debuggingtips#use_shell_debug_output
-if [ ! -z ${TRACE+x} ]; then 
-	set -o xtrace 
+if [ ! -z ${TRACE+x} ]; then
+	set -o xtrace
 fi
 #Get current path
 SOURCE="${BASH_SOURCE[0]}"
@@ -32,21 +32,21 @@ PROGRAM_NAME=Git
 GITRC=${SOURCE}
 alias edit-gitrc="${EDITOR} ${GITRC}"
 
-alias gl='git pull --prune'
-alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
-alias gp='git push origin HEAD'
-alias gd='git diff'
-alias gc='git commit'
-alias gca='git commit -a'
-alias gco='git checkout'
-alias gcb='git copy-branch-name'
-alias gb='git branch'
-alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
-alias gac='git add -A && git commit -m'
+alias git-pull='git pull --prune'
+alias git-log="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+alias git-push='git push origin HEAD'
+alias git-diff='git diff'
+alias git-commit='git commit'
+alias git-commita='git commit -a'
+alias git-co='git checkout'
+alias git-cb='git copy-branch-name'
+alias git-b='git branch'
+alias git-status='git status' # upgrade your git if -sb breaks for you. it's fun.
+alias git-ac='git add -A && git commit -m'
 alias git-submodule-update='git pull origin master'
 
 # cd to git root directory
-alias cdgr='cd "$(git root)"'
+alias git-cdgr='cd "$(git root)"'
 
 # Use Git’s colored diff when available
 hash git &>/dev/null
@@ -62,7 +62,3 @@ unset DIR
 unset SCRIPTHOME
 unset PROGRAM_NAME
 set +o xtrace
-
-
-
-

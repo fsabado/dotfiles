@@ -15,8 +15,8 @@
 
 #Clean commands specify directories that should be checked for dead symbolic links. These dead links are removed automatically. Only dead links that point to the dotfiles directory are removed unless the force option is set to true.
 #- clean: ['~', '~/.config']
-#- clean: 
-#    ~/profile.d: 
+#- clean:
+#    ~/profile.d:
 #        force: true
 
 #Put Links here
@@ -63,7 +63,9 @@
 #      relink: true
 #Guide:https://github.com/anishathalye/dotbot#link
 - link:
-     ~/profile.d/git.sh: 
+    ~/.gitconfig: gitconfig
+    ~/.gitignore_global: gitignore_global
+    ~/profile.d/git.sh:
         path: config.sh
 
 #Put shell comands here
