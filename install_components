@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+set -e
+set -x
+
+
+CONFIG="install_conf.yaml"
+DOTBOT_DIR=".dotbot"
+
+DOTBOT_BIN="bin/dotbot"
+BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+#disabled
+# docker
+
+
+modules=(
+	assh
+	anaconda3
+	intellij
+	maven
+	git
+)
+
+cd "${BASEDIR}"
+#git submodule update --init --recursive "${DOTBOT_DIR}"
+
+for i in "${modules[@]}"
+do
+	cd ${BASEDIR}/${i}
+	"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}/${i}" -c "${BASEDIR}/${i}/${CONFIG}" "${@}"
+done
