@@ -59,7 +59,10 @@ Force update every 1 hour and append to the log
 #log in as root
 sudo su -
 crontab -e
-* 1 * * * /usr/sbin/ddclient -verbose >> /var/log/ddclient_updates.out
+# ddclient update
+# Place in /etc/cron.d or copy the command using crontab -e for normal users
+# Run update every hour
+* 1 * * * /usr/sbin/ddclient -verbose -force >> /var/log/ddclient_updates.out 2>&1
 
 #OR
 sudo su -
