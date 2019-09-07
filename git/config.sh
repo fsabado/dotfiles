@@ -33,6 +33,7 @@ GITRC=${SOURCE}
 alias edit-gitrc="${EDITOR} ${GITRC}"
 
 alias git-pull='git pull --prune'
+alias git-pp='git pull && git push'
 alias git-log="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias git-push='git push origin HEAD'
 alias git-diff='git diff'
