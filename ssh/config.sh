@@ -25,11 +25,16 @@ PROGRAM_NAME=CHANGEME
 #echo "Setting up ${PROGRAM_NAME}"
 
 #Shortcut for editing this file
-PROGRAMRC=${SOURCE}
-alias edit-programrc="${EDITOR} ${PROGRAMRC}"
+SSHRC=${SOURCE}
+alias edit-sshrc="${EDITOR} ${SSHRC}"
 
-#Set path variables here
-export PATH=$SCRIPTHOME/bin:$PATH
+# Add tab completion for SSH hostnames based on ~/.ssh/config
+# ignoring wildcards
+[[ -e "$HOME/.ssh/config" ]] && complete -o "default" \
+	-o "nospace" \
+	-W "$(grep "^Host" ~/.ssh/config | \
+	grep -v "[?*]" | cut -d " " -f2 | \
+	tr ' ' '\n')" scp sftp ssh
 
 #Cleanup
 unset SOURCE

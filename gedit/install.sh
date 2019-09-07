@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 #Exist on error
-# DO NOT SOURCE
 set -e
 set -x
 

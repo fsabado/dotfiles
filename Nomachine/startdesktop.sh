@@ -26,7 +26,7 @@ case ${DESKTOP} in
         sessionCmd="/usr/bin/cinnamon-session-cinnamon"
         ;;
     gnome-classic | GNOME-CLASSIC)
-        sessionCmd="env GNOME_SHELL_SESSION_MODE=classic gnome-session -session gnome-classic"
+        sessionCmd="env GNOME_SHELL_SESSION_MODE=classic gnome-session --session gnome-classic"
         ;;
     gnome | GNOME)
         sessionCmd="gnome-session"

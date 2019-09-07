@@ -20,16 +20,27 @@ SCRIPTHOME=$DIR
 
 #########MAIN########
 
-PROGRAM_NAME=CHANGEME
+PROGRAM_NAME=Pet
 #Configuration settings
 #echo "Setting up ${PROGRAM_NAME}"
+#source: https://github.com/knqyf263/pet
 
 #Shortcut for editing this file
-PROGRAMRC=${SOURCE}
-alias edit-programrc="${EDITOR} ${PROGRAMRC}"
+PETRC=${SOURCE}
+alias edit-petrc="${EDITOR} ${PETRC}"
 
-#Set path variables here
-export PATH=$SCRIPTHOME/bin:$PATH
+function prev() {
+  PREV=$(echo `history | tail -n2 | head -n1` | sed 's/[0-9]* //')
+  sh -c "pet new `printf %q "$PREV"`"
+}
+
+#By adding the following config to .bashrc, you can search snippets and output on the shell.
+function pet-select() {
+  BUFFER=$(pet search --query "$READLINE_LINE")
+  READLINE_LINE=$BUFFER
+  READLINE_POINT=${#BUFFER}
+}
+bind -x '"\C-x\C-r": pet-select'
 
 #Cleanup
 unset SOURCE

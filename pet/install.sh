@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 #Exist on error
-# DO NOT SOURCE
 set -e
 set -x
 
@@ -39,3 +38,5 @@ cd "${BASEDIR}"
 #  --version             show program's version number and exit
 
 "${DOTBOT_DIR}/bin/dotbot" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+
+

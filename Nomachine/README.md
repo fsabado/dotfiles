@@ -114,6 +114,7 @@ grep ^Exec /usr/share/xsessions/gnome.desktop
 
 
 ## Desktop	Command
+
 LXDE : DefaultDesktopCommand "/usr/bin/startlxde"
 XFCE : DefaultDesktopCommand "/usr/bin/startxfce4"
 KDE : DefaultDesktopCommand "/usr/bin/startkde"
@@ -122,6 +123,16 @@ CINNAMON : DefaultDesktopCommand "/usr/bin/cinnamon-session-cinnamon"
 UNITY : DefaultDesktopCommand "/etc/X11/Xsession 'gnome-session -session=ubuntu' "
 GNOME-CLASSIC (on RHEL 7/CentOS 7) : DefaultDesktopCommand "env GNOME_SHELL_SESSION_MODE=classic gnome-session -session gnome-classic"
 GNOME : DefaultDesktopCommand "gnome-session"
+
+TIP:
+To use dbus-launch, specify command to start the desktop in the dbus-launch --exit-with-session <desktop command> format. E.g:
+* DefaultDesktopCommand "dbus-launch --exit-with-session gnome-session --session=ubuntu"
+* DefaultDesktopCommand "dbus-launch --exit-with-session cinnamon-session"
+* DefaultDesktopCommand "dbus-launch --exit-with-session startkde"
+* DefaultDesktopCommand "dbus-launch --exit-with-session mate-session"
+
+Reference: https://www.nomachine.com/AR04K00667
+
 
 # Default Gnome 3 Session
 /usr/bin/gnome-session

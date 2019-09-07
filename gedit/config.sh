@@ -20,16 +20,16 @@ SCRIPTHOME=$DIR
 
 #########MAIN########
 
-PROGRAM_NAME=CHANGEME
+PROGRAM_NAME=Gedit
 #Configuration settings
 #echo "Setting up ${PROGRAM_NAME}"
 
 #Shortcut for editing this file
-PROGRAMRC=${SOURCE}
-alias edit-programrc="${EDITOR} ${PROGRAMRC}"
+GEDITRC=${SOURCE}
+alias edit-geditrc="${EDITOR} ${GEDITRC}"
 
 #Set path variables here
-export PATH=$SCRIPTHOME/bin:$PATH
+gsettings set org.gnome.gedit.preferences.editor tabs-size 4
 
 #Cleanup
 unset SOURCE

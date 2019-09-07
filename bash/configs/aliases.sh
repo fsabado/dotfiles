@@ -5,6 +5,12 @@
 alias reload-bash="source ~/.bash_profile"
 #alias reload-bash-clean="exec ${BASH}"
 
+# Temporarily disable bash alias
+## call alias with a backslash ##
+#\c
+#unalias aliasname
+
+
 #Editing
 alias edit-bashrc="${EDITOR} ~/.bashrc"
 alias edit-aliases="${EDITOR} ~/dotfiles/bash/configs/aliases.cfg"
@@ -51,7 +57,6 @@ alias search-text='grep -rnw . -e ' #include the pattern
 #    alias ls="ls -G"
 #fi
 
-
 # Directory navigation aliases
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -78,7 +83,6 @@ alias frak="fortune"
 # copy working directory
 alias cpwd='pwd | tr -d "\r\n" | xclip -selection clipboard'
 
-
 # Shortcuts
 alias dl="cd ~/Downloads"
 alias g="git"
@@ -86,6 +90,7 @@ alias h="history"
 alias gc=". /usr/local/bin/gitdate && git commit -v "
 alias j="jobs"
 alias cls='clear'
+alias c='clear'
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
@@ -100,3 +105,6 @@ alias cp='cp -i'
 
 # move file interactive
 alias mv='mv -i'
+
+#Show open ports
+alias ports='netstat -tulanp'

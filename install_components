@@ -20,6 +20,8 @@ modules=(
 	intellij
 	maven
 	git
+	gedit
+	pet
 )
 
 cd "${BASEDIR}"

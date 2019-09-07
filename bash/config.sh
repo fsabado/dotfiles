@@ -20,16 +20,24 @@ SCRIPTHOME=$DIR
 
 #########MAIN########
 
-PROGRAM_NAME=CHANGEME
+PROGRAM_NAME=Bash
 #Configuration settings
 #echo "Setting up ${PROGRAM_NAME}"
 
 #Shortcut for editing this file
-PROGRAMRC=${SOURCE}
-alias edit-programrc="${EDITOR} ${PROGRAMRC}"
+BASHRCS=${SOURCE}
+alias edit-bash-s-rc="${EDITOR} ${BASHRCS}"
+alias edit-bashrc="${EDITOR} ${HOME}/.bashrc"
 
-#Set path variables here
-export PATH=$SCRIPTHOME/bin:$PATH
+# Bash settings is large, we've divided in in the dotfiles/bash/configs
+#Run all the bash configs with *.cfg extension
+if [ -d ${DIR}/configs ]; then
+	for i in ${DIR}/configs/*.sh; do
+		[ -f "$i" ] || break
+		#echo "$i"
+		. "$i"
+	done
+fi
 
 #Cleanup
 unset SOURCE

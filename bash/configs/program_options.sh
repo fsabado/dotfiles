@@ -4,7 +4,6 @@
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-
 #ls
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -33,4 +32,3 @@ alias lh="ls -lh --color=auto"
 alias sl="ls --color=auto"
 alias s="ls --color=auto"
 alias ls="ls --color=auto"
-

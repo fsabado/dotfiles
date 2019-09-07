@@ -42,7 +42,7 @@ alias git-commita='git commit -a'
 alias git-co='git checkout'
 alias git-cb='git copy-branch-name'
 alias git-b='git branch'
-alias git-status='git status' # upgrade your git if -sb breaks for you. it's fun.
+alias git-s='git status' # upgrade your git if -sb breaks for you. it's fun.
 alias git-ac='git add -A && git commit -m'
 alias git-submodule-update='git pull origin master'
 

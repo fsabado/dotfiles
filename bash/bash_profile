@@ -1,0 +1,32 @@
+#!/bin/bash
+
+#https://medium.com/@kingnand.90/what-is-the-difference-between-bash-profile-and-bashrc-d4c902ac7308
+# .bash_profile -> login shell
+# .bashrc -> interactice non-login shell
+
+#X11 will look at your .bashrc while a "regular" Terminal will look at .bash_profile
+
+#However, if you add the following to your .bash_profile, you can then move everything into your .bashrc file
+#so as to consolidate everything into one place instead of two:
+# if [ -f $HOME/.bashrc ]; then
+#         source $HOME/.bashrc
+# fi
+
+# Set Defaults here, these will be overwritten on bashrc
+export EDITOR=vim
+
+# Check if running interactively,
+#https://stackoverflow.com/questions/31155381/what-does-i-mean-in-bash
+# This is required to prevent non-interactive commands from messing up with non-login shells
+#$- contains the current shell options.
+#
+# In [[ ... ]], the right hand side of a = is interpreted as a pattern if not quoted.
+# Therefore, *i* means i possibly preceded or followed by anything.
+#
+# In other words, it checks wheter the i option is present, i.e. whether the current shell is interactive.
+[[ $- = *i* ]] && [[ -f ${HOME}/.bashrc ]] && source ${HOME}/.bashrc
+
+# https://medium.com/@abhinavkorpal/bash-profile-vs-bashrc-c52534a787d3
+# The entire contents of .bash_profile should be:
+# [ -f $HOME/.bashrc ] && . $HOME/.bashrc
+# And put everything you actually want to set in .bashrc

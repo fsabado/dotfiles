@@ -1,19 +1,23 @@
 #Rules
 #Must be idompotent - can be run multiple times without causing an issue
 #YAML is whitespace sensitive
-
+#Must only use whitespace, NOT tabs
+#You can bypass by changing tabs to whitespaces
 
 #Default options for plugins can be specified so that options don't have to be repeated many times. This can be very useful to use with the link command, for example.
 #
 #Defaults apply to all commands that follow setting the defaults. Defaults can be set multiple times; each change replaces the defaults with a new set of options.
 - defaults:
     link:
-      create: true
-      relink: true
-
+        create: true
+        relink: true
+        force: true
 
 #Clean commands specify directories that should be checked for dead symbolic links. These dead links are removed automatically. Only dead links that point to the dotfiles directory are removed unless the force option is set to true.
-- clean: ['~', '~/.config']
+#- clean: ['~', '~/.config']
+#- clean:
+#    ~/profile.d:
+#        force: true
 
 #Put Links here
 #Format
@@ -59,28 +63,14 @@
 #      relink: true
 #Guide:https://github.com/anishathalye/dotbot#link
 - link:
-    ~/.agignore: agignore
-    ~/.aria2/aria2.conf: aria2.conf
-    ~/.axelrc: axelrc
-    ~/.dotfiles: ''
-    ~/.gnupg/gpg.conf: gpg.conf
-    ~/.hgrc: hgrc
-    ~/.inputrc: inputrc
-    ~/.rtorrent.rc: rtorrent.rc
-    ~/.screenrc: screenrc
-    ~/.tmux.conf: tmux.conf
-    ~/.vim: vim
-    ~/.vimrc: vimrc
-    ~/.zsh: zsh
-    ~/.zshrc: zshrc
-    ~/.oh-my-zsh: oh-my-zsh
-    ~/.config/terminator: config/terminator
-    ~/.config/pet/snippet.toml: config/pet/snippet.toml
+     ~/profile.d/ssh.sh: 
+        path: config.sh
 
 #Put shell comands here
 #Guide:https://github.com/anishathalye/dotbot#shell
 #Shell commands specify shell commands to be run. Shell commands are run in the base directory (that is specified when running the installer).
 #- shell:
+# Reload all settings on profiles
 #  - mkdir -p ~/src
 #  - [mkdir -p ~/downloads, Creating downloads directory]
 #  -

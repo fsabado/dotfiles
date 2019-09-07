@@ -3,8 +3,6 @@
 #Bash Options
 #Source:https://www.digitalocean.com/community/tutorials/how-to-use-bash-history-commands-and-expansions-on-a-linux-vps
 
-
-
 #History Commands
 #history
 #history 5 //limit output
@@ -43,7 +41,6 @@ shopt -s cdspell
 # http://unix.stackexchange.com/questions/230238/starting-x-applications-from-the-terminal-and-the-warnings-that-follow
 export NO_AT_BRIDGE=1
 
-
 #https://www.computerhope.com/unix/uumask.htm
 # Return, or set, the value of the system's file mode creation mask.
 #u	User (the owner of the file)
@@ -61,8 +58,6 @@ export NO_AT_BRIDGE=1
 #Default is 0666 file, 0777 for directories
 umask 022 #set 644 (666 - 022) for files, 755 (777 - 022) for directories
 
-
-
 # Sensible Bash - An attempt at saner Bash defaults
 # Maintainer: mrzool <http://mrzool.cc>
 # Repository: https://github.com/mrzool/bash-sensible
@@ -72,9 +67,9 @@ umask 022 #set 644 (666 - 022) for files, 755 (777 - 022) for directories
 # Dependencies:
 # You have the Bash Completion package installed
 if ((BASH_VERSINFO[0] < 4))
-then 
-  echo "sensible.bash: Looks like you're running an older version of Bash." 
-  echo "sensible.bash: You need at least bash-4.0 or some options will not work correctly." 
+then
+  echo "sensible.bash: Looks like you're running an older version of Bash."
+  echo "sensible.bash: You need at least bash-4.0 or some options will not work correctly."
   echo "sensible.bash: Keep your software up-to-date!"
 fi
 
@@ -170,7 +165,3 @@ export dotfiles="$HOME/dotfiles"
 # export projects="$HOME/projects"
 # export documents="$HOME/Documents"
 # export dropbox="$HOME/Dropbox"
-
-
-
-

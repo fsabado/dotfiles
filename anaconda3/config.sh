@@ -4,7 +4,9 @@
 #Print bash commands
 #https://stackoverflow.com/questions/5750450/how-can-i-print-each-command-before-executing
 #https://wiki.bash-hackers.org/scripting/debuggingtips#use_shell_debug_output
-set -o xtrace
+if [ ! -z ${TRACE+x} ]; then
+	set -o xtrace
+fi
 #Get current path
 SOURCE="${BASH_SOURCE[0]}"
 while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
@@ -22,8 +24,9 @@ PROGRAM_NAME=Anaconda3
 #Configuration settings
 #echo "Setting up ${PROGRAM_NAME}"
 
-#Set path variables here
-export PATH=$SCRIPTHOME/bin:$PATH
+#Shortcut for editing this file
+ANACONDA3RC=${SOURCE}
+alias edit-programrc="${EDITOR} ${ANACONDA3RC}"
 
 ANACONDA3_HOME=${HOME}/anaconda3
 
@@ -49,5 +52,3 @@ unset DIR
 unset SCRIPTHOME
 unset PROGRAM_NAME
 set +o xtrace
-
-

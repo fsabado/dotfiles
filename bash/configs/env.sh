@@ -1,7 +1,9 @@
 #!/bin/bash
 
 # Make vim the default editor
-export EDITOR=gedit;
+
+
+
 export TERMINAL="urxvt";
 
 # Prefer US English and use UTF-8

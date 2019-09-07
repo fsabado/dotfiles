@@ -75,7 +75,7 @@ f_ii(){
     echo -e "\n${RED}Users logged on:$NC " ; w -h
     echo -e "\n${RED}Current date :$NC " ; date
     echo -e "\n${RED}Machine stats :$NC " ; uptime
-    echo -e "\n${RED}Memory stats :$NC " ; free 
+    echo -e "\n${RED}Memory stats :$NC " ; free
     my_ip 2>&- ;
     echo -e "\n${RED}Local IP Address :$NC" ; echo ${MY_IP:-"Not connected"}
     echo -e "\n${RED}ISP Address :$NC" ; echo ${MY_ISP:-"Not connected"}
@@ -250,7 +250,7 @@ f_currentPath(){
 }
 
 # On Linux, you can use ldconfig, which maintains the ld.so configuration and cache, to print out the directories search by ld.so with
-# ldconfig -v prints out the directories search by the linker (without a leading tab) and the 
+# ldconfig -v prints out the directories search by the linker (without a leading tab) and the
 # shared libraries found in those directories (with a leading tab); the grep gets the directories.
 # Source: http://stackoverflow.com/questions/9922949/how-to-print-the-ldlinker-search-path
 f_ld_path(){
@@ -273,13 +273,7 @@ function allcolors() {
     echo ""
 }
 
-
 timestamp() {
   date +"%m-%d-%Y %T"
 }
 #Sample output: 11-02-2018 16:02:04
-
-
-
-
-
