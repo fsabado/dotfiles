@@ -1,0 +1,49 @@
+# At README
+
+
+
+For both at and batch, commands are read from standard input or the file specified with the -f option and executed. The working directory, the environment (except for the variables BASH_VERSINFO, DISPLAY, EUID, GROUPS, SHELLOPTS, TERM, UID, and _) and the umask are retained from the time of invocation.
+
+
+```bash
+
+# Schedule job
+at -f <script> <time>
+
+at now + 1 minute
+at 4pm + 3 (days|weeks|months|years)
+at 10:00 AM July 25
+at 10:00 AM 6/22/2015
+at midnight
+
+#To exit the at prompt we should press the CTRL+d key combination.
+
+at now + 1 minute -f script.sh
+
+# or
+
+echo "sh backup.sh" | at 9:00 AM
+
+
+
+# List jobs
+atq
+# 16      Wed Jul 11 02:00:00 2007 a ian
+# 17      Sat Jul 14 02:00:00 2007 a ian
+# 14      Sun Jul  8 22:00:00 2007 a ian
+# 15      Tue Jul 10 02:00:00 2007 a ian
+# Remove jobs
+atrm 16 14 15
+
+
+```
+
+# Displaying jobs
+
+
+
+ # References:
+ * https://www.ibm.com/developerworks/library/l-job-scheduling/index.html
+ * https://www.ibm.com/developerworks/library/l-job-scheduling/index.html
+ * https://linuxconfig.org/how-to-schedule-tasks-using-at-command-on-linux
+ * https://www.computerhope.com/unix/uat.htm
