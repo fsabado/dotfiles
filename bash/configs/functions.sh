@@ -7,9 +7,13 @@
 RED="\e[31m"
 NC="\e[0m"  #Normal, Reset ALL attributes
 
+# all functions here are prepended with f_*. Use this to search for the function
+
+
 #Very Nice Script for extractions
 extract () {
     if [ -f $1 ] ; then
+        #RPM extract: https://www.cyberciti.biz/tips/how-to-extract-an-rpm-package-without-installing-it.html
         case $1 in
             *.tar.bz2)   tar xvjf $1    ;;
             *.tar.gz)    tar xvzf $1    ;;
@@ -28,6 +32,7 @@ extract () {
             *.pax.Z)    uncompress $1 --stdout | pax -r     ;;
             *.rar)      unrar x $1 ;;
             *.xz)        tar -xJf $1    ;;
+            *.rpm)      rpm2cpio $1 | cpio -idmv ;;
             *)           echo "don't know how to extract '$1'..." ;;
         esac
     else
@@ -260,7 +265,7 @@ f_ld_path(){
 
 # credit to http://askubuntu.com/a/279014
 # Function to display all colors
-function allcolors() {
+f_allcolors() {
 
     for x in 0 1 4 5 7 8; do
         for i in `seq 30 37`; do
@@ -273,7 +278,7 @@ function allcolors() {
     echo ""
 }
 
-timestamp() {
+f_timestamp() {
   date +"%m-%d-%Y %T"
 }
 #Sample output: 11-02-2018 16:02:04
