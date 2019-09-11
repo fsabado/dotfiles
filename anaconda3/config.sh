@@ -26,15 +26,17 @@ PROGRAM_NAME=Anaconda3
 
 #Shortcut for editing this file
 ANACONDA3RC=${SOURCE}
-alias edit-programrc="${EDITOR} ${ANACONDA3RC}"
+alias edit-anaconda3rc="${EDITOR} ${ANACONDA3RC}"
 
 ANACONDA3_HOME=${HOME}/anaconda3
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 #Generate activation commands
+ENABLE_ANACONDA3=false
 __conda_setup="$('${ANACONDA3_HOME}/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
+
+if [[ $? -eq 0 && "${ENABLE_ANACONDA3}" = true ]]; then
     eval "$__conda_setup"
 else
     if [ -f "${ANACONDA3_HOME}/etc/profile.d/conda.sh" ]; then

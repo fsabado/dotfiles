@@ -1,6 +1,5 @@
 #/usr/bin/env bash
 
-
 #Script Pre-setup
 #Print bash commands
 #https://stackoverflow.com/questions/5750450/how-can-i-print-each-command-before-executing
@@ -21,33 +20,18 @@ SCRIPTHOME=$DIR
 
 #########MAIN########
 
-PROGRAM_NAME=Anaconda2
+PROGRAM_NAME=Clion
 #Configuration settings
 #echo "Setting up ${PROGRAM_NAME}"
 
 #Shortcut for editing this file
-ANACONDA2RC=${SOURCE}
-alias edit-programrc="${EDITOR} ${ANACONDA2RC}"
+CLIONRC=${SOURCE}
+alias edit-clionrc="${EDITOR} ${CLIONRC}"
 
-ANACONDA2_HOME=${HOME}/anaconda2
+CLIONPATH=clion-2019.2.1
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-#Generate activation commands
-ENABLE_ANACONDA2=true
-__conda_setup="$('${ANACONDA2_HOME}/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-
-if [[ $? -eq 0 && "${ENABLE_ANACONDA2}"=true ]]; then
-    eval "$__conda_setup"
-else
-    if [ -f "${ANACONDA2_HOME}/etc/profile.d/conda.sh" ]; then
-        . "${ANACONDA2_HOME}/etc/profile.d/conda.sh"
-    else
-        export PATH="${ANACONDA2_HOME}/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+#Set path variables here
+export PATH=${HOME}/software/${CLIONPATH}/bin:$PATH
 
 #Cleanup
 unset SOURCE
