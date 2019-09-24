@@ -1,4 +1,4 @@
-#/usr/bin/env bash
+#!/bin/bash
 
 #Script Pre-setup
 #Print bash commands
@@ -20,20 +20,31 @@ SCRIPTHOME=$DIR
 
 #########MAIN########
 
-PROGRAM_NAME=Clion
+PROGRAM_NAME=Spack
 #Configuration settings
 #echo "Setting up ${PROGRAM_NAME}"
 
-#Shortcut for editing this file
-CLIONRC=${SOURCE}
-alias edit-clionrc="${EDITOR} ${CLIONRC}"
+#Configurations
 
-CLIONPATH=clion-2019.2.1
+#Bash config to start ide
+SPACKRC=${SOURCE}
+alias edit-spackrc="${EDITOR} ${SPACKRC}"
 
-#Set path variables here
-if ! echo ${PATH} | /usr/bin/grep -q ${HOME}/software/${CLIONPATH}/bin; then
-	export PATH=${HOME}/software/${CLIONPATH}/bin:$PATH
+export SPACK_ROOT=${HOME}/spack
+
+#Clone to home directory if doesn't exist
+if [[ ! -d ${SPACK_ROOT} ]]; then
+	prev_dir = $(pwd)
+	cd ${HOME}
+	git clone https://github.com/spack/spack.git
+	cd ${prev_dir}
 fi
+
+if [ -e "${SPACK_ROOT}" ]; then
+	. $SPACK_ROOT/share/spack/setup-env.sh
+fi
+
+alias reload-spack="source ${SPACK_ROOT}/share/spack/setup-env.sh"
 
 #Cleanup
 unset SOURCE
