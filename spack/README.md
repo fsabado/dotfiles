@@ -33,6 +33,10 @@ spack extensions python
 spack load python
 spack load py-numpy
 
+# Refresh modulefiles
+spack module lmod refresh
+spack module tcl refresh
+spack module dotkit refresh
 
 # Getting help
 spack help
@@ -58,3 +62,5 @@ spack find --paths
 
 
 # References
+* https://spack.readthedocs.io/en/latest/tutorial_modules.html
+* https://www.cyberciti.biz/faq/how-to-curl-ignore-ssl-certificate-warnings-command-option/

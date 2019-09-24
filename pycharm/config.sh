@@ -21,7 +21,7 @@ SCRIPTHOME=$DIR
 #Set path variables here
 
 #Pycharm Configuration
-PYCHARM_HOME=${HOME}/opt/pycharm-community-2019.2.1
+PYCHARM_HOME=${HOME}/software/pycharm-community-2019.2.2
 
 #Docs
 #${PYCHARM_HOME}/Install-Linux-tar.txt
