@@ -4,6 +4,11 @@
 
 For both at and batch, commands are read from standard input or the file specified with the -f option and executed. The working directory, the environment (except for the variables BASH_VERSINFO, DISPLAY, EUID, GROUPS, SHELLOPTS, TERM, UID, and _) and the umask are retained from the time of invocation.
 
+As at is currently implemented as a setuid program, other environment variables (e.g., LD_LIBRARY_PATH or LD_PRELOAD) are also not exported. This may change in the future. As a workaround, set these variables explicitly in your job.
+
+An at or batch command run from a su shell will retain the current userid. The user will be mailed standard error and standard output from his commands, if any. Mail will be sent using the command /usr/sbin/sendmail. If at is executed from a su shell, the owner of the login shell will receive the mail.
+
+The superuser may always use these commands. For other users, permission to use at is determined by the files /etc/at.allow and /etc/at.deny. See at.allow for details.
 
 ```bash
 
@@ -38,8 +43,7 @@ atrm 16 14 15
 
 ```
 
-# Displaying jobs
-
+# Options
 
 
  # References:
