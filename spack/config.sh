@@ -20,11 +20,13 @@ SCRIPTHOME=$DIR
 
 #########MAIN########
 
-PROGRAM_NAME=SPACK
+PROGRAM_NAME=Spack
 #Configuration settings
 #echo "Setting up ${PROGRAM_NAME}"
 
-#Shortcut for editing this file
+#Configurations
+
+#Bash config to start ide
 SPACKRC=${SOURCE}
 alias edit-spackrc="${EDITOR} ${SPACKRC}"
 
@@ -32,10 +34,14 @@ alias edit-spackrc="${EDITOR} ${SPACKRC}"
 export SPACK_ROOT=${HOME}/spack
 export PATH=${SPACK_ROOT}/bin:${PATH}
 
+
+
 if [ -e "${SPACK_ROOT}" ]; then
 	. $(${SPACK_ROOT}/bin/spack location -i lmod)/lmod/lmod/init/bash
 	. ${SPACK_ROOT}/share/spack/setup-env.sh
 fi
+
+alias reload-spack="source ${SPACK_ROOT}/share/spack/setup-env.sh"
 
 #Cleanup
 unset SOURCE

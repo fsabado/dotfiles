@@ -31,7 +31,9 @@ alias edit-clionrc="${EDITOR} ${CLIONRC}"
 CLIONPATH=clion-2019.2.1
 
 #Set path variables here
-export PATH=${HOME}/software/${CLIONPATH}/bin:$PATH
+if ! echo ${PATH} | /usr/bin/grep -q ${HOME}/software/${CLIONPATH}/bin; then
+	export PATH=${HOME}/software/${CLIONPATH}/bin:$PATH
+fi
 
 #Cleanup
 unset SOURCE

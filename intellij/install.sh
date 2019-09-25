@@ -2,7 +2,6 @@
 
 #Exist on error
 set -e
-set -x
 
 CONFIG="install_conf.yaml"
 #Modify this if it changes
@@ -38,5 +37,3 @@ cd "${BASEDIR}"
 #  --version             show program's version number and exit
 
 "${DOTBOT_DIR}/bin/dotbot" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
-
-

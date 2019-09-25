@@ -1,4 +1,7 @@
+# Spack README
 
+
+# Bootstrapping environment modules
 
 
 
@@ -20,56 +23,68 @@ spack module tcl loads curl >>~/.bashrc
 export PATH=`spack location --install-dir curl`/bin:$PATH
 
 
+# Bootstrap
+spack bootstrap
+source $SPACK_ROOT/share/spack/setup-env.sh
+
+#Reload Spck
+#reload-spack
+
+# Modules
+spack load <app>@<version>
+spack unload <app>@<version>
+module show <module-name>
+module load <module-name>
+module unload <module-name>
+module list #show load modules
+
+
 # Core Utilities
 #curl, env, git, go, hg, svn, tar, unzip, patch, environment-modules
 spack bootstrap
 
-```
+#Install another compiler
+spack install gcc@5.3
+spack load gcc@5.3
+spack compiler find
 
+#Python and extension
+spack find python
+spack extensions python
 
+spack load python
+spack load py-numpy
 
-```bash
 # Set up to use Lmod instead of tcl
 export SPACK_ROOT=~/spack
 . $(spack location -i lmod)/lmod/lmod/init/bash
 . ${SPACK_ROOT}/share/spack/setup-env.sh
 
-
-
-```
-
-
-
-
-```bash
-module install <package>@<version>
-module avail
-module list
-module load <package>
-module unload <package>
-module show <package>
-module purge
-module use <path-to-modules>
-module unuse <path-to-modules>
-```
-
-
-```bash
-spack load <package>
-spack unload <package>
-spack compilers
-spack compiler list
-spack compiler add
-spack compiler find
-spack info
-
 # Refresh modulefiles
 spack module lmod refresh -y
 spack module tcl refresh -y
 spack module dotkit refresh -y
+
+# Getting help
+spack help
+
 ```
 
 
+
+# Most useful commands
+
+#TODO: add descriptions
+```bash
+spack install <app>@<version>
+spack install <app>@<version>
+spack list
+
+spack find
+spack find --paths
+
+
+```
 
 ## System Packages
 
@@ -96,6 +111,7 @@ spack --insecure install
 
 ## References
 - https://spack.readthedocs.io/en/latest/getting_started.html#installenvironmentmodules
-- https://spack.readthedocs.io/en/latest/tutorial_modules.html
+* https://spack.readthedocs.io/en/latest/tutorial_modules.html
+* https://www.cyberciti.biz/faq/how-to-curl-ignore-ssl-certificate-warnings-command-option/
 - https://spack.readthedocs.io/en/latest/features.html
 - https://spack.readthedocs.io/en/latest/module_file_support.html#shell-support

@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 
 #Exist on error
-# DO NOT SOURCE
-set -e
-set -x
-
 CONFIG="install_conf.yaml"
 #Modify this if it changes
 #Assumes the the repository is cloned with name of 'dotfiles'

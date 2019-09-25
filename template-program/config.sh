@@ -29,7 +29,9 @@ PROGRAMRC=${SOURCE}
 alias edit-programrc="${EDITOR} ${PROGRAMRC}"
 
 #Set path variables here
-export PATH=$SCRIPTHOME/bin:$PATH
+if ! echo ${PATH} | /usr/bin/grep -q ${HOME}/software/${CLIONPATH}/bin; then
+	export PATH=$SCRIPTHOME/bin:$PATH
+fi
 
 #Cleanup
 unset SOURCE
