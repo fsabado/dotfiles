@@ -9,7 +9,6 @@
 spack install sublime_text ^llvm@7.0.1
 ```
 
-
 ## Shortcuts
 
 Command Pallete : Ctrl + P
