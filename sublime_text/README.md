@@ -9,6 +9,24 @@
 spack install sublime_text ^llvm@7.0.1
 ```
 
+## Install on CentOS7
+
+
+
+```bash
+# Start by importing the official Sublime Text repository’s GPG key:
+sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+# Add the Yum repository to your system using the following command:
+sudo yum-config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
+#Once the repository is enabled, install Sublime Text 3 by typing:
+sudo yum install sublime-text
+# Start sublime text
+subl
+
+```
+
+https://linuxize.com/post/how-to-install-sublime-text-3-on-centos-7/
+
 ## Shortcuts
 
 Command Pallete : Ctrl + P
