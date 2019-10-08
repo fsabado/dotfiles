@@ -7,6 +7,7 @@
 # install spack
 # Stand alone installation
 spack install sublime_text ^llvm@7.0.1
+spack install sublime-text%gcc@4.8.5 ^llvm@7.0.1 ^icu4c@60.1
 ```
 
 ## Shortcuts
