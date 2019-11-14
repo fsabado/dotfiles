@@ -1,0 +1,5 @@
+[CentOS7Extras]
+baseurl = http://mirror.centos.org/centos/7/extras/$basearch/
+gpgcheck = 0
+name = Centos7 Extras
+

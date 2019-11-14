@@ -1,0 +1,5 @@
+[pgdg94]
+baseurl = https://download.postgresql.org/pub/repos/yum/9.4/redhat/rhel-$releasever-$basearch
+gpgcheck = 0
+name = PostgreSQL 9.4 $releasever - $basearch
+
