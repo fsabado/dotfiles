@@ -297,3 +297,31 @@ f_timestamp() {
 f_checkPorts() {
     sudo lsof -i -P -n | grep LISTEN
 }
+
+#Add append parameter to path.
+f_addPATH() {
+    for ADDPATH in "$@"
+    do
+        #Set path variables here
+        if ! echo ${PATH} | grep -q ${ADDPATH}; then
+            export PATH=${ADDPATH}:$PATH
+        fi
+    done
+}
+
+#Remove from path
+f_removePATH() {
+    for REMOVEPATH in "$@"
+    do
+#        Remove start
+        PATH=$(echo "$PATH" | sed -e "s|^${REMOVEPATH}:[:]||g")
+#        Remove middle
+        PATH=$(echo "$PATH" | sed "s|[:]${REMOVEPATH}[:]|:|g")
+#        Remove end
+        PATH=$(echo "$PATH" | sed -e "s|[:]${REMOVEPATH}$||g")
+    done
+    export PATH
+
+#https://askubuntu.com/questions/76808/how-do-i-use-variables-in-a-sed-command
+#https://stackoverflow.com/questions/13210880/replace-one-substring-for-another-string-in-shell-script
+}
