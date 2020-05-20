@@ -325,3 +325,31 @@ f_removePATH() {
 #https://askubuntu.com/questions/76808/how-do-i-use-variables-in-a-sed-command
 #https://stackoverflow.com/questions/13210880/replace-one-substring-for-another-string-in-shell-script
 }
+
+#Add append parameter to path.
+f_addLIBRARY() {
+    for ADDPATH in "$@"
+    do
+        #Set path variables here
+        if ! echo ${LD_LIBRARY_PATH} | grep -q ${ADDPATH}; then
+            export LD_LIBRARY_PATH=${ADDPATH}:$LD_LIBRARY_PATH
+        fi
+    done
+}
+
+#Remove from path
+f_removeLIBRARY() {
+    for REMOVEPATH in "$@"
+    do
+#        Remove start
+        LD_LIBRARY_PATH=$(echo "$LD_LIBRARY_PATH" | sed -e "s|^${REMOVEPATH}:[:]||g")
+#        Remove middle
+        LD_LIBRARY_PATH=$(echo "$LD_LIBRARY_PATH" | sed "s|[:]${REMOVEPATH}[:]|:|g")
+#        Remove end
+        LD_LIBRARY_PATH=$(echo "$LD_LIBRARY_PATH" | sed -e "s|[:]${REMOVEPATH}$||g")
+    done
+    export LD_LIBRARY_PATH
+
+#https://askubuntu.com/questions/76808/how-do-i-use-variables-in-a-sed-command
+#https://stackoverflow.com/questions/13210880/replace-one-substring-for-another-string-in-shell-script
+}
