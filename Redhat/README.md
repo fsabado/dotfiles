@@ -45,6 +45,8 @@ pvdisplay
 
 vgextend nameOfGroup /dev/sda5
 
+nameOfGroup = "vg00"
+
 lvdisplay
 
 ```bash

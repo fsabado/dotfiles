@@ -1,6 +1,75 @@
+#Source:https://unix.stackexchange.com/questions/433046/how-do-i-enable-centos-repositories-on-rhel-red-hat
+#Source:https://github.com/cloudrouter/centos-repo/blob/master/CentOS-Base.repo
+#curl http://mirror.centos.org/centos/7/os/x86_64/RPM-GPG-KEY-CentOS-7 >/etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+#or gpgkey=http://mirror.centos.org/centos/7/os/x86_64/RPM-GPG-KEY-CentOS-7
+
 [centos]
-name=CentOS-7
-baseurl=http://ftp.heanet.ie/pub/centos/7/os/x86_64/
+name=CentOS 7 - $basearch
+baseurl=http://ftp.heanet.ie/pub/centos/7/os/$basearch/
+enabled=1
+gpgcheck=0
+
+[base]
+name=CentOS-7 - Base
+mirrorlist=http://mirrorlist.centos.org/?release=7&arch=
+$basearch&repo=os
+baseurl=http://mirror.centos.org/centos/7/os/$basearch/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+priority=1
+
+#released updates
+[updates]
+name=CentOS-7 - Updates
+mirrorlist=http://mirrorlist.centos.org/?release=7&arch=
+$basearch&repo=updates
+baseurl=http://mirror.centos.org/centos/7/updates/$basearch/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+priority=1
+
+#packages used/produced in the build but not released
+#[addons]
+#name=CentOS-7 - Addons
+#mirrorlist=http://mirrorlist.centos.org/?release=7&arch=
+#$basearch&repo=addons
+#baseurl=http://mirror.centos.org/centos/7/addons/$basearch/
+#enabled=1
+#gpgcheck=1
+#gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+#priority=1
+
+#additional packages that may be useful
+[extras]
+name=CentOS-7 - Extras
+mirrorlist=http://mirrorlist.centos.org/?release=7&arch=
+$basearch&repo=extras
+baseurl=http://mirror.centos.org/centos/7/extras/$basearch/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+priority=1
+
+#additional packages that extend functionality of existing packages
+[centosplus]
+name=CentOS-7 - Plus
+mirrorlist=http://mirrorlist.centos.org/?release=7&arch=
+$basearch&repo=centosplus
+baseurl=http://mirror.centos.org/centos/7/centosplus/$basearch/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+priority=2
+
+#contrib - packages by Centos Users
+[contrib]
+name=CentOS-7 - Contrib
+mirrorlist=http://mirrorlist.centos.org/?release=7&arch=
+$basearch&repo=contrib
+baseurl=http://mirror.centos.org/centos/7/contrib/$basearch/
 enabled=0
 gpgcheck=1
-gpgkey=http://ftp.heanet.ie/pub/centos/7/os/x86_64/RPM-GPG-KEY-CentOS-7
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+priority=2
