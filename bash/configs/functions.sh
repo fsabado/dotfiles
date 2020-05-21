@@ -10,7 +10,7 @@ NC="\e[0m" #Normal, Reset ALL attributes
 # all functions here are prepended with f_*. Use this to search for the function
 
 #Very Nice Script for extractions
-extract() {
+f_extract() {
     if [ -f $1 ]; then
         #RPM extract: https://www.cyberciti.biz/tips/how-to-extract-an-rpm-package-without-installing-it.html
         case $1 in
@@ -295,7 +295,9 @@ f_timestamp() {
 
 #Check currently used ports
 f_checkPorts() {
+    set -x
     sudo lsof -i -P -n | grep LISTEN
+    set +x
 }
 
 #Add append parameter to path.
@@ -339,6 +341,7 @@ f_addLIBRARY() {
 
 #Remove from path
 f_removeLIBRARY() {
+    set -x
     for REMOVEPATH in "$@"
     do
 #        Remove start
@@ -349,7 +352,7 @@ f_removeLIBRARY() {
         LD_LIBRARY_PATH=$(echo "$LD_LIBRARY_PATH" | sed -e "s|[:]${REMOVEPATH}$||g")
     done
     export LD_LIBRARY_PATH
-
+    set +x
 #https://askubuntu.com/questions/76808/how-do-i-use-variables-in-a-sed-command
 #https://stackoverflow.com/questions/13210880/replace-one-substring-for-another-string-in-shell-script
 }
