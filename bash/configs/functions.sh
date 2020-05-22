@@ -356,3 +356,12 @@ f_removeLIBRARY() {
 #https://askubuntu.com/questions/76808/how-do-i-use-variables-in-a-sed-command
 #https://stackoverflow.com/questions/13210880/replace-one-substring-for-another-string-in-shell-script
 }
+
+# Get system info
+f_systemInfo() {
+    cat /etc/os-release
+    lscpu
+    lsblk -a
+    lsusb -v
+    lspci
+}
