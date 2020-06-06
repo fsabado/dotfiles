@@ -1,10 +1,10 @@
-#/usr/bin/env bash
+#!/usr/bin/env bash
 
 #Script Pre-setup
 #Print bash commands
 #https://stackoverflow.com/questions/5750450/how-can-i-print-each-command-before-executing
 #https://wiki.bash-hackers.org/scripting/debuggingtips#use_shell_debug_output
-if [ ! -z ${TRACE+x} ]; then
+if [ -n "${TRACE}" ]; then
 	set -o xtrace
 fi
 #Get current path
