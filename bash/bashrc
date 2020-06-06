@@ -18,10 +18,12 @@ BASH_HOME=${HOME}/dotfiles/bash
 export PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
 #External plugins (initialized before)
-include ~/.bashrc_local_before
+if [ -f "${HOME}/.bashrc_local_before" ]; then
+    source ~/.bashrc_local_before
+fi
 
 #Source global definitions
-include /etc/bashrc
+source /etc/bashrc
 
 #Load local $HOME/.profile.d *.sh files
 # /etc/profile
@@ -35,7 +37,9 @@ include /etc/bashrc
 # will prevent the need for merging in future updates.
 
 #Base bash settings
-source ${BASH_HOME}/base.sh
+if [ -f "${BASH_HOME}/base.sh" ]; then
+    source ${BASH_HOME}/base.sh
+fi
 
 #Load all the files in the local $HOME/.profile.d folder if the folder exist
 #Don't quote the path with globbing or it will break
@@ -60,4 +64,6 @@ unset i
 #source $HOME/dotfiles/spack/spack.cfg
 
 #External plugins (initialized after)
-include ~/.bashrc_local_after
+if [ -f "${HOME}/.bashrc_local_after" ]; then
+    source ~/.bashrc_local_after
+fi

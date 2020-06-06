@@ -3,13 +3,13 @@
 #Easy reload of bashrc
 #https://stackoverflow.com/questions/2518127/how-do-i-reload-bashrc-without-logging-out-and-back-in
 alias reload-bash="source ~/.bash_profile"
+alias reload="source ~/.bash_profile"
 #alias reload-bash-clean="exec ${BASH}"
 
 # Temporarily disable bash alias
 ## call alias with a backslash ##
 #\c
 #unalias aliasname
-
 
 #Editing
 alias edit-bashrc="${EDITOR} ~/.bashrc"
@@ -25,6 +25,16 @@ alias rm='rm -Iv --one-file-system --preserve-root' #prevent any issues with rem
 
 #Search text
 alias search-text='grep -rnw . -e ' #include the pattern
+## Colorize the grep command output for ease of use (good for log files)##
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+#Start calculator with math support
+alias bc='bc -l'
+
+#Interative link
+alias ln='ln -i'
 
 #platform='unknown'
 #unamestr=`uname`
@@ -64,6 +74,23 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ~="cd ~" #`cd` is probably faster
 alias -- -="cd -"
+
+#colorize diff
+alias diff='colordiff'
+
+#Make mount command output pretty and human readable format
+alias mount='mount | column -t'
+
+#Jobs
+alias j='jobs -l'
+
+#Useful times
+alias path='echo -e ${PATH//:/\\n}'
+alias ld_library='echo -e ${LD_LIBRARY_PATH//:/\\n}'
+alias now='date +"%T"'
+alias nowtime=now
+alias nowdate='date +"%d-%m-%Y"'
+
 
 #Temp for Python shortcut
 alias py="python2.7"
@@ -108,3 +135,74 @@ alias mv='mv -i'
 
 #Show open ports
 alias ports='netstat -tulanp'
+
+#https://opensource.com/article/18/9/handy-bash-aliases
+#How many times have you needed to unpack a .tar file and couldn't remember the exact arguments needed? Aliases to the rescue! Just add the following to your .bash_profile file and then use untar FileName to unpack any .tar file.
+alias untar='tar -zxvf '
+#Want to download something but be able to resume if something goes wrong?
+alias wget='wget -c '
+#Need to generate a random, 20-character password for a new online account? No problem.
+alias getpass="openssl rand -base64 20"
+#Downloaded a file and need to test the checksum? We've got that covered too.
+alias sha='shasum -a 256 '
+#Generate sha1 digest
+alias sha1='openssl sha1'
+#A normal ping will go on forever. We don't want that. Instead, let's limit that to just five pings.
+alias ping='ping -c 5'
+# Do not wait interval 1 second, go fast #
+alias fastping='ping -c 100 -s.2'
+#Start a web server in any folder you'd like.
+alias www='python -m SimpleHTTPServer 8000'
+#Want to know how fast your network is? Just download Speedtest-cli and use this alias. You can choose a server closer to your location by using the speedtest-cli --list command.
+alias speed='speedtest-cli --server 2406 --simple'
+#How many times have you needed to know your external IP address and had no idea how to get that info? Yeah, me too.
+alias ipe='curl ipinfo.io/ip'
+#Need to know your local IP address?
+alias ipi='ipconfig getifaddr en0'
+#Finally, let's clear the screen.
+alias c='clear'
+
+
+
+## set some other defaults ##
+alias df='df -H'
+alias du='du -ch'
+# top is atop, just like vi is vim
+#alias top='atop'
+
+#https://stackoverflow.com/questions/18215973/how-to-check-if-running-as-root-in-a-bash-script
+alias isroot='id -u'
+
+#Root aliases
+# if user is not root, pass all commands via sudo #
+if [ $UID -ne 0 ]; then
+    alias reboot='sudo reboot'
+    alias apt-get='sudo apt-get'
+    alias yum='sudo yum'
+    alias yumy='sudo yum -y'
+    alias visudo='sudo visudo'
+
+
+    # reboot / halt / poweroff
+    alias reboot='sudo /sbin/reboot'
+    alias poweroff='sudo /sbin/poweroff'
+    alias halt='sudo /sbin/halt'
+    alias shutdown='sudo /sbin/shutdown'
+fi
+
+# become root #
+alias root='sudo -i'
+alias su='sudo -i'
+
+#System Information
+alias memory='free -m -l -t -h'
+# get top process eating memory
+alias psmem='ps auxf | sort -nr -k 4'
+alias psmem10='ps auxf | sort -nr -k 4 | head -10' ## get top process eating cpu ##
+# Get server cpu info
+alias cpuinfo='lscpu'
+# older system use /proc/cpuinfo
+alias cpuinfo1='less /proc/cpuinfo'
+# get GPU ram on desktop / laptop
+alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
+

@@ -7,6 +7,7 @@ set -e
 DOTFILES_HOME=${HOME}/dotfiles
 DOTBOT_HOME=${DOTFILES_HOME}/.dotbot
 export PATH=${PATH}:${DOTFILES_HOME}/.dotbot/bin
+export PATH=${PATH}:${DOTFILES_HOME}/bin
 
 getActualDir() {
 
