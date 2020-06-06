@@ -2,6 +2,7 @@
 
 #Must be ran in sudo
 set -e
+set -x
 
 CONFIG="install_system.conf.yaml"
 

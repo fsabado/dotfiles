@@ -41,16 +41,16 @@ alias ln='ln -i'
 #if [[ "$unamestr" == 'Linux' ]]; then
 #    platform='linux'
 #    # some more ls aliases
-#    alias ll='ls -alh --color=auto'
-#    alias la='ls -A --color=auto'
-#    alias l='ls -CFlh --color=auto'
-#    alias woo='fortune --color=auto'
-#    alias lsd="ls -alF | grep /$"
-#    alias lo="ls -o --color=auto"
-#    alias lh="ls -lh --color=auto"
-#    alias sl="ls --color=auto"
-#    alias s="ls --color=auto"
-#    alias ls="ls --color=auto"
+alias ll='ls -alh --color=auto'
+alias la='ls -A --color=auto'
+alias l='ls -CFlh --color=auto'
+alias woo='fortune --color=auto'
+alias lsd="ls -alF | grep /$"
+alias lo="ls -o --color=auto"
+alias lh="ls -lh --color=auto"
+alias sl="ls --color=auto"
+alias s="ls --color=auto"
+alias ls="ls --color=auto"
 #elif [[ "$unamestr" == 'Darwin' ]]; then
 #    platform='Mac'
 #    # some more ls aliases
@@ -103,6 +103,11 @@ alias mp="mplayer -fs"
 
 # Show me the size (sorted) of only the folders in this directory
 alias folders="find . -maxdepth 1 -type d -print | xargs du -sk | sort -rn"
+
+#find current directory
+alias find-pwd='find . -iname'
+alias find-pwd-file='find . -type f -iname'
+
 
 # This will keep you sane when you're about to smash the keyboard again.
 alias frak="fortune"
@@ -176,6 +181,10 @@ alias isroot='id -u'
 #Root aliases
 # if user is not root, pass all commands via sudo #
 if [ $UID -ne 0 ]; then
+    # become root #
+    alias root='sudo -i'
+    alias su='sudo -i'
+
     alias reboot='sudo reboot'
     alias apt-get='sudo apt-get'
     alias yum='sudo yum'
@@ -188,11 +197,8 @@ if [ $UID -ne 0 ]; then
     alias poweroff='sudo /sbin/poweroff'
     alias halt='sudo /sbin/halt'
     alias shutdown='sudo /sbin/shutdown'
+    alias shutdown-now='sudo /sbin/shutdown now'
 fi
-
-# become root #
-alias root='sudo -i'
-alias su='sudo -i'
 
 #System Information
 alias memory='free -m -l -t -h'
@@ -205,4 +211,7 @@ alias cpuinfo='lscpu'
 alias cpuinfo1='less /proc/cpuinfo'
 # get GPU ram on desktop / laptop
 alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
+#disk information
+alias diskinfo='lsblk'
 
+#https://www.howtogeek.com/412055/37-important-linux-commands-you-should-know/

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 set -e
-#set -x
+set -x
 
 DOTFILES_HOME=${HOME}/dotfiles
 source ${DOTFILES_HOME}/dotfilesBase.sh
