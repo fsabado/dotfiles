@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# Main base code for my dotfiles
+# Allows consolidation of the codes
 
 set -e
 
