@@ -353,3 +353,12 @@ f_removeLIBRARY() {
 #https://askubuntu.com/questions/76808/how-do-i-use-variables-in-a-sed-command
 #https://stackoverflow.com/questions/13210880/replace-one-substring-for-another-string-in-shell-script
 }
+
+#Extract rpm file
+f_rpmExtract() {
+    RPMFILE=$1
+    for RPMFILE in "$@"
+    do
+        rpm2cpio ${RPMFILE} | cpio -idmv
+    done
+}
