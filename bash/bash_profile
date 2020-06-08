@@ -30,3 +30,8 @@ export EDITOR=vim
 # The entire contents of .bash_profile should be:
 # [ -f $HOME/.bashrc ] && . $HOME/.bashrc
 # And put everything you actually want to set in .bashrc
+
+# mesg - display (or do not display) messages from other users, set
+# n      Disallow messages.
+# y      Allow messages to be displayed.
+tty -s && mesg n

@@ -64,10 +64,9 @@
 #Guide:https://github.com/anishathalye/dotbot#link
 - link:
     ~/.bash: ''
-    ~/profile.d/bash.sh:
-        path: config.sh
     ~/.bashrc: bashrc
     ~/.bash_profile: bash_profile
+    ~/.bash_logout: bash_logout
 
 
 #Put shell comands here

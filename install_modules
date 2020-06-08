@@ -2,14 +2,13 @@
 
 #Must be ran in sudo
 set -e
+set -x
 
 CONFIG="install_modules.yaml"
-DOTBOT_DIR=".dotbot"
 
-DOTBOT_BIN="bin/dotbot"
-BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DOTFILES_HOME=${HOME}/dotfiles
+source ${DOTFILES_HOME}/dotfilesBase.sh
 
-cd "${BASEDIR}"
-git submodule update --init --recursive "${DOTBOT_DIR}"
+CONFIG="install.conf.yaml"
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+dbot_install ${BASH_SOURCE[0]} ${CONFIG} "${@}"

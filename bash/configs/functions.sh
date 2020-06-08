@@ -10,7 +10,16 @@ NC="\e[0m" #Normal, Reset ALL attributes
 # all functions here are prepended with f_*. Use this to search for the function
 
 #Very Nice Script for extractions
-extract() {
+f_extract() {
+
+USAGE="
+Usage: f_extract [space separated file paths]
+"
+    if [ "$#" -lt 1 ]; then
+        echo "${USAGE}"
+        return
+    fi
+
     if [ -f $1 ]; then
         #RPM extract: https://www.cyberciti.biz/tips/how-to-extract-an-rpm-package-without-installing-it.html
         case $1 in
@@ -39,12 +48,17 @@ extract() {
     fi
 }
 
+#Show ps
 f_my_ps() {
+USAGE="
+Usage: f_my_ps
+"
     ps $@ -u $USER -o pid,%cpu,%mem,bsdtime,command
 }
 
+#Better ps
 f_pp() {
-    my_ps f | awk '!/awk/ && $0~var' var=${1:-".*"}
+    f_my_ps f | awk '!/awk/ && $0~var' var=${1:-".*"}
 }
 
 # Kill by process name.
@@ -73,23 +87,23 @@ f_my_ip() {
 
 # Get current host related info.
 f_ii() {
-    echo -e "\nYou are logged on ${RED}$HOST"
+    echo -e "\nYou are logged on ${Red}$HOSTNAME"
     echo -e "\nAdditionnal information:$NC "
     uname -a
-    echo -e "\n${RED}Users logged on:$NC "
+    echo -e "\n${Red}Users logged on:$NC "
     w -h
-    echo -e "\n${RED}Current date :$NC "
+    echo -e "\n${Red}Current date :$NC "
     date
-    echo -e "\n${RED}Machine stats :$NC "
+    echo -e "\n${Red}Machine stats :$NC "
     uptime
-    echo -e "\n${RED}Memory stats :$NC "
+    echo -e "\n${Red}Memory stats :$NC "
     free
     my_ip 2>&-
-    echo -e "\n${RED}Local IP Address :$NC"
+    echo -e "\n${Red}Local IP Address :$NC"
     echo ${MY_IP:-"Not connected"}
-    echo -e "\n${RED}ISP Address :$NC"
+    echo -e "\n${Red}ISP Address :$NC"
     echo ${MY_ISP:-"Not connected"}
-    echo -e "\n${RED}Open connections :$NC "
+    echo -e "\n${Red}Open connections :$NC "
     netstat -pan --inet
     echo
 }
@@ -295,70 +309,17 @@ f_timestamp() {
 
 #Check currently used ports
 f_checkPorts() {
+    set -x
     sudo lsof -i -P -n | grep LISTEN
+    set +x
 }
 
-#Add append parameter to path.
-f_addPATH() {
-    for ADDPATH in "$@"
-    do
-        #Set path variables here
-        if ! echo ${PATH} | grep -q ${ADDPATH}; then
-            export PATH=${ADDPATH}:$PATH
-        fi
-    done
-}
 
-#Remove from path
-f_removePATH() {
-    for REMOVEPATH in "$@"
-    do
-#        Remove start
-        PATH=$(echo "$PATH" | sed -e "s|^${REMOVEPATH}:[:]||g")
-#        Remove middle
-        PATH=$(echo "$PATH" | sed "s|[:]${REMOVEPATH}[:]|:|g")
-#        Remove end
-        PATH=$(echo "$PATH" | sed -e "s|[:]${REMOVEPATH}$||g")
-    done
-    export PATH
-
-#https://askubuntu.com/questions/76808/how-do-i-use-variables-in-a-sed-command
-#https://stackoverflow.com/questions/13210880/replace-one-substring-for-another-string-in-shell-script
-}
-
-#Add append parameter to path.
-f_addLIBRARY() {
-    for ADDPATH in "$@"
-    do
-        #Set path variables here
-        if ! echo ${LD_LIBRARY_PATH} | grep -q ${ADDPATH}; then
-            export LD_LIBRARY_PATH=${ADDPATH}:$LD_LIBRARY_PATH
-        fi
-    done
-}
-
-#Remove from path
-f_removeLIBRARY() {
-    for REMOVEPATH in "$@"
-    do
-#        Remove start
-        LD_LIBRARY_PATH=$(echo "$LD_LIBRARY_PATH" | sed -e "s|^${REMOVEPATH}:[:]||g")
-#        Remove middle
-        LD_LIBRARY_PATH=$(echo "$LD_LIBRARY_PATH" | sed "s|[:]${REMOVEPATH}[:]|:|g")
-#        Remove end
-        LD_LIBRARY_PATH=$(echo "$LD_LIBRARY_PATH" | sed -e "s|[:]${REMOVEPATH}$||g")
-    done
-    export LD_LIBRARY_PATH
-
-#https://askubuntu.com/questions/76808/how-do-i-use-variables-in-a-sed-command
-#https://stackoverflow.com/questions/13210880/replace-one-substring-for-another-string-in-shell-script
-}
-
-#Extract rpm file
-f_rpmExtract() {
-    RPMFILE=$1
-    for RPMFILE in "$@"
-    do
-        rpm2cpio ${RPMFILE} | cpio -idmv
-    done
+# Get system info
+f_systemInfo() {
+    cat /etc/os-release
+    lscpu
+    lsblk -a
+    lsusb -v
+    lspci
 }

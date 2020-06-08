@@ -1,0 +1,7 @@
+#!/bin/bash
+# ~/.bash_logout
+
+# clean terminal
+tty -s && reset
+
+#If you get an issue with TTY, using `tty -s` - prints name quietly (fails if not terminal)

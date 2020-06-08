@@ -11,21 +11,19 @@
 # Cheatsheets
 # https://devhints.io/bash
 
-
-#Helper source
-include () {
-    #Check parameter is a file, readable, exist. Then sources them
-    [[ -f "$1" ]] && [[ -r "${1}" ]] && source "$1"
-}
+DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
+BASH_HOME=${HOME}/dotfiles/bash
 
 # User specific environment and startup programs
 export PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
 #External plugins (initialized before)
-include ~/.bashrc_local_before
+if [ -f "${HOME}/.bashrc_local_before" ]; then
+    source ~/.bashrc_local_before
+fi
 
 #Source global definitions
-include /etc/bashrc
+source /etc/bashrc
 
 #Load local $HOME/.profile.d *.sh files
 # /etc/profile
@@ -37,6 +35,11 @@ include /etc/bashrc
 # are doing. It's much better to create a custom.sh shell script in
 # $HOME/.profile.d/ to make custom changes to your environment, as this
 # will prevent the need for merging in future updates.
+
+#Base bash settings
+if [ -f "${BASH_HOME}/base.sh" ]; then
+    source ${BASH_HOME}/base.sh
+fi
 
 #Load all the files in the local $HOME/.profile.d folder if the folder exist
 #Don't quote the path with globbing or it will break
@@ -61,4 +64,6 @@ unset i
 #source $HOME/dotfiles/spack/spack.cfg
 
 #External plugins (initialized after)
-include ~/.bashrc_local_after
+if [ -f "${HOME}/.bashrc_local_after" ]; then
+    source ~/.bashrc_local_after
+fi
