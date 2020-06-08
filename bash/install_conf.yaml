@@ -66,6 +66,7 @@
     ~/.bash: ''
     ~/.bashrc: bashrc
     ~/.bash_profile: bash_profile
+    ~/.bash_logout: bash_logout
 
 
 #Put shell comands here
