@@ -1,20 +1,27 @@
-# Sublime Text README
+= Sublime Text README
+:toc: left
+:experimental:
 
+++++
+<script src="https://darshandsoni.com/asciidoctor-skins/switcher.js" type="text/javascript"></script>
+++++
 
-## Install Standalone features
+== Install Standalone features
 
-```bash
+.Install.sh
+[source,bash,linenums]
+----
 # install spack
 # Stand alone installation
 spack install sublime_text ^llvm@7.0.1
 spack install sublime-text%gcc@4.8.5 ^llvm@7.0.1 ^icu4c@60.1
-```
+----
 
-## Install on CentOS7
+== Install on CentOS7
 
-
-
-```bash
+.Install on CentOS7.sh
+[source,bash,linenums]
+----
 # Start by importing the official Sublime Text repository’s GPG key:
 sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
 # Add the Yum repository to your system using the following command:
@@ -23,23 +30,21 @@ sudo yum-config-manager --add-repo https://download.sublimetext.com/rpm/stable/x
 sudo yum install sublime-text
 # Start sublime text
 subl
-
-```
+----
 
 https://linuxize.com/post/how-to-install-sublime-text-3-on-centos-7/
 
-## Shortcuts
+== Shortcuts
 
 Command Pallete : Ctrl + P
 Opens terminal at the folder : Ctrl + Alt + Shift + T
 Opens terminal at the folder : Ctrl + Shift + T
 
+== Sublime Text Cheatsheets
 
-## Sublime Text Cheatsheets
 * https://www.shortcutfoo.com/app/dojos/sublime-text-3-win/cheatsheet
 
-
-## References
+== References
 
 * https://kinsta.com/blog/best-text-editors/
 * https://www.shopify.com/partners/blog/sublime-text-plugins-2018

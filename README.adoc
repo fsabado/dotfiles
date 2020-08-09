@@ -1,5 +1,10 @@
-Dotfiles
-========
+= Dotfiles
+:toc: left
+:experimental:
+
+++++
+<script src="https://darshandsoni.com/asciidoctor-skins/switcher.js" type="text/javascript"></script>
+++++
 
 After cloning this repo, run `install` to automatically set up the development
 environment. Note that the install script is idempotent: it can safely be run
@@ -7,8 +12,7 @@ multiple times.
 
 Dotfiles uses [Dotbot][dotbot] for installation.
 
-Making Local Customizations
----------------------------
+== Making Local Customizations
 
 You can make local customizations for some programs by editing these files:
 
@@ -26,13 +30,16 @@ https://blog.jetbrains.com/idea/2017/09/intellij-idea-2017-3-eap-better-synchron
 -use IDE Settings Sync
 
 
-One Click Install
----------------------------
+== One Click Install
 
 cd ~ && git clone https://github.com/fsabado/dotfiles && cd dotfiles && ./install
 
 
-# Dotbot Help
+== Dotbot Help
+
+.Dotbot Help.sh
+[source,bash,linenums]
+----
 % ~/dotfiles .dotbot/bin/dotbot --help
 usage: dotbot [-h] [-Q] [-q] [-v] [-d BASEDIR] [-c CONFIGFILE] [-p PLUGIN]
               [--disable-built-in-plugins] [--plugin-dir PLUGIN_DIR]
@@ -54,77 +61,84 @@ optional arguments:
   --plugin-dir PLUGIN_DIR
                         load all plugins in PLUGIN_DIR
   --version             show program's version number and exit
+----
 
-
-Dotbot Useful Commands
----------------------------
+== Dotbot Useful Commands
 
 Adding Submodules
 
-git submodule add <github-submodule-path> <directory-name>
+`git submodule add <github-submodule-path> <directory-name>`
 
 
 Updating Submodules and checking out specified versions
 
-git submodule update --init --recursive
+`git submodule update --init --recursive`
 
 
 Update all submodules to latest
 
-git submodule foreach --recursive git pull origin master
+`git submodule foreach --recursive git pull origin master`
 
 
 Update a specific submodule to latest
 
-# change to the submodule directory
-cd <submodule-directory>
+change to the submodule directory
 
-# checkout desired branch
-git checkout master
+`cd <submodule-directory>`
 
-# update
-git pull
+checkout desired branch
 
-# get back to your project root
-cd ..
+`git checkout master`
 
-# now the submodules are in the state you want, so
-git commit -am "Pulled down update to submodule_dir"
+update
 
+`git pull`
 
-#One line to do all that
-git submodule foreach git pull origin master
+get back to your project root
 
+`cd ..`
+
+now the submodules are in the state you want, so
+
+`git commit -am "Pulled down update to submodule_dir"`
+
+One line to do all that
+
+`git submodule foreach git pull origin master`
 
 Editing Setting
 
-gedit $HOME/dotfiles/.install.conf.yaml
+`gedit $HOME/dotfiles/.install.conf.yaml`
 
-Force Update the Installation
----------------------------
+
+
+== Force Update the Installation
+
 touch install.conf.yaml
 
 
-Possible Fix for Multi-system Dotfiles
----------------------------
+== Possible Fix for Multi-system Dotfiles
+
 https://github.com/anishathalye/dotbot/pull/11#issuecomment-73082152
 
 
-TODO:
-install-profile and configurations
+NOTE: install-profile and configurations
 
 [Based on https://github.com/anishathalye/dotfiles]
 
 
 
 
-# Adding Program support
+== Adding Program support
+
+.Adding Program Support.sh
+[source,bash,linenums]
+----
 cd ~/dotfiles
 cp -r ./program-template new-program
 cd ./new-program
 mv ./program-template new-program
-
-
+----
 
 
 

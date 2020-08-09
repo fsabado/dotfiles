@@ -1,11 +1,19 @@
-# DDClient for Google Domains on CentOS7
+= DDClient for Google Domains on CentOS7
+:toc: left
+:experimental:
 
-# Installation
+++++
+<script src="https://darshandsoni.com/asciidoctor-skins/switcher.js" type="text/javascript"></script>
+++++
+
+== Installation
 
 sudo yum -y install ddclient perl-IO-Socket-SSL
 
 /etc/ddclient.conf
-```bash
+./etc/ddclient/conf
+[source,bash,linenums]
+----
 daemon=3600				# check every 1 hour
 ssl=yes					# use ssl-support.  Works with
 ##
@@ -18,9 +26,9 @@ password=<PASSWORD>
 use=web,web=checkip.dyndns.com
 #my.domain.tld, otherhost.domain.tld
 <DOMAIN>
-```
+----
 
-Instructions:
+Instructions::
 * protocol is set by your dynamic DNS provider. For namecheap the value is "namecheap"
 * server is the hostname of the dynamic DNS server. The dynamic DNS servers used by namecheap are located at "dynamicdns.park-your-domain.com"
 * login is your domain name
@@ -28,10 +36,11 @@ Instructions:
 * The last line is the subdomain to be modified. In my case this was backup, for backup.samhobbs.co.uk.
 If you wanted to update your root domain, you would put an @ symbol on this line instead
 
+== Debugging/Checking
 
-# Debugging/Checking
-
-```bash
+.Check Connecitons.sh
+[source,bash,linenums]
+----
 # Check WAN IP
 sudo ddclient -query
 
@@ -40,22 +49,23 @@ sudo ddclient -debug -verbose -noquiet
 # SUCCESS:  updating backup: good: IP address set to 1.2.3.4
 # CONNECT:  dynamicdns.park-your-domain.com
 # CONNECTED:  using SSL
-```
+----
 
-
-#Run daemon and update every 1 hour
-/etc/default/ddclient
-```bash
+Run daemon and update every 1 hour
+./etc/default/ddclient.sh
+[source,bash,linenums]
+----
 run_ipup="false"
 run_daemon="true"
 daemon_interval="3600"
 
 sudo systemctl enable ddclient && sudo systemctl start ddclient && sudo systemctl status ddclient
-
-```
+----
 
 Force update every 1 hour and append to the log
-```bash
+.Run_ddclient.sh
+[source,bash,linenums]
+----
 #log in as root
 sudo su -
 crontab -e
@@ -67,12 +77,13 @@ crontab -e
 #OR
 sudo su -
 cp ./ddclient.cron /etc/cron.d
-```
+----
 
-# Check Google Domains such that the ip is updated on synthetic records
+== Check Google Domains such that the ip is updated on synthetic records
 
 
-# References
+== References
+
 * https://blog.toloughlin.com/?p=478
 * https://samhobbs.co.uk/2015/01/dynamic-dns-ddclient-raspberry-pi-and-ubuntu
 * https://github.com/rharmonson/richtech/wiki/Dynamic-DNS-Client-using-ddclient-on-CentOS-7

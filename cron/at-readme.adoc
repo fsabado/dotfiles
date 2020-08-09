@@ -1,6 +1,10 @@
-# At README
+= At README
+:toc: left
+:experimental:
 
-
+++++
+<script src="https://darshandsoni.com/asciidoctor-skins/switcher.js" type="text/javascript"></script>
+++++
 
 For both at and batch, commands are read from standard input or the file specified with the -f option and executed. The working directory, the environment (except for the variables BASH_VERSINFO, DISPLAY, EUID, GROUPS, SHELLOPTS, TERM, UID, and _) and the umask are retained from the time of invocation.
 
@@ -10,8 +14,9 @@ An at or batch command run from a su shell will retain the current userid. The u
 
 The superuser may always use these commands. For other users, permission to use at is determined by the files /etc/at.allow and /etc/at.deny. See at.allow for details.
 
-```bash
-
+.At.sh
+[source,bash,linenums]
+----
 # Schedule job
 at -f <script> <time>
 
@@ -39,15 +44,14 @@ atq
 # 15      Tue Jul 10 02:00:00 2007 a ian
 # Remove jobs
 atrm 16 14 15
+----
+
+== Options
 
 
-```
+== References
 
-# Options
-
-
- # References:
- * https://www.ibm.com/developerworks/library/l-job-scheduling/index.html
- * https://www.ibm.com/developerworks/library/l-job-scheduling/index.html
- * https://linuxconfig.org/how-to-schedule-tasks-using-at-command-on-linux
- * https://www.computerhope.com/unix/uat.htm
+* https://www.ibm.com/developerworks/library/l-job-scheduling/index.html
+* https://www.ibm.com/developerworks/library/l-job-scheduling/index.html
+* https://linuxconfig.org/how-to-schedule-tasks-using-at-command-on-linux
+* https://www.computerhope.com/unix/uat.htm

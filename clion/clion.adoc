@@ -1,0 +1,21 @@
+= Installation Guide
+:toc: left
+:experimental:
+
+++++
+<script src="https://darshandsoni.com/asciidoctor-skins/switcher.js" type="text/javascript"></script>
+++++
+
+. copy the template folder
+
+.Clion.sh
+[source,bash,linenums]
+----
+cd ~/dotfiles
+cp -r template-program new-program
+----
+
+. Edit config.sh
+. Edit install_conf.yaml
+** change the name of the program to new-program
+. Run 'install.sh'

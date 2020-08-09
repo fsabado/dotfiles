@@ -4,9 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19c0d6a5-df72-405c-894a-e15244b12817" name="Default Changelist" comment="Added maven notes.">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oh-my-zsh" beforeDir="false" afterPath="$PROJECT_DIR$/oh-my-zsh" afterDir="false" />
+    <list default="true" id="19c0d6a5-df72-405c-894a-e15244b12817" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/tmux/tmux-main.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nomachine/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Nomachine/nomachine.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Redhat/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Redhat/redhat.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anaconda2/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/anaconda2/anaconda2.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anaconda3/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/anaconda3/anaconda3.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bash/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/bash/bash.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clion/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/clion/clion.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cron/At-README.md" beforeDir="false" afterPath="$PROJECT_DIR$/cron/at-readme.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cron/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/cron/cron.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ddclient/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/ddclient/ddclient.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dns/Bind9-README.md" beforeDir="false" afterPath="$PROJECT_DIR$/dns/Bind9.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gedit/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/gedit/gedit.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jinja2/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/jinja2/jinja2.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maven/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/maven/maven.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mount/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/mount/mount.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sublime_text/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/sublime_text/sublime.adoc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +41,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/SQL" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../workspace/WorldWindJava" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -50,38 +67,62 @@
       <option name="project" value="LOCAL" />
       <updated>1596271498309</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Updated gitignore to also include idea files.">
+      <created>1596271549447</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1596271549447</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added intellij idea files.">
+      <created>1596271579615</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1596271579615</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added maven notes." />
     <MESSAGE value="Added notes of postgresql." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added notes of postgresql." />
+    <MESSAGE value="Updated gitignore to also include idea files." />
+    <MESSAGE value="Added intellij idea files." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added intellij idea files." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1320" y="379" key="#Plugins" timestamp="1596164620176">
-      <screen x="0" y="0" width="3440" height="1440" />
+    <state x="2793" y="379" key="#Plugins" timestamp="1596961979535">
+      <screen x="0" y="0" width="7280" height="1440" />
     </state>
     <state x="1320" y="379" key="#Plugins/0.0.3440.1440@0.0.3440.1440" timestamp="1596164620176" />
+    <state x="2793" y="379" key="#Plugins/0.0.7280.1440@0.0.7280.1440" timestamp="1596961979535" />
+    <state x="2799" y="567" key="#com.intellij.codeInsight.template.impl.EditVariableDialog" timestamp="1596961267691">
+      <screen x="0" y="0" width="7280" height="1440" />
+    </state>
+    <state x="2799" y="567" key="#com.intellij.codeInsight.template.impl.EditVariableDialog/0.0.7280.1440@0.0.7280.1440" timestamp="1596961267691" />
     <state x="1389" y="538" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1596164244498">
       <screen x="0" y="0" width="3440" height="1440" />
     </state>
     <state x="1389" y="538" key="#com.intellij.fileTypes.FileTypeChooser/0.0.3440.1440@0.0.3440.1440" timestamp="1596164244498" />
-    <state x="1280" y="295" key="CommitChangelistDialog2" timestamp="1596271516252">
+    <state x="1280" y="295" key="CommitChangelistDialog2" timestamp="1596271579097">
       <screen x="0" y="0" width="3440" height="1440" />
     </state>
-    <state x="1280" y="295" key="CommitChangelistDialog2/0.0.3440.1440@0.0.3440.1440" timestamp="1596271516252" />
-    <state x="648" y="488" key="FileChooserDialogImpl" timestamp="1596260690106">
-      <screen x="0" y="0" width="3440" height="1440" />
+    <state x="1280" y="295" key="CommitChangelistDialog2/0.0.3440.1440@0.0.3440.1440" timestamp="1596271579097" />
+    <state x="1371" y="488" key="FileChooserDialogImpl" timestamp="1596702128831">
+      <screen x="0" y="0" width="7280" height="1440" />
     </state>
     <state x="648" y="488" key="FileChooserDialogImpl/0.0.3440.1440@0.0.3440.1440" timestamp="1596260690106" />
-    <state x="1214" y="370" key="SettingsEditor" timestamp="1596166252219">
-      <screen x="0" y="0" width="3440" height="1440" />
+    <state x="1371" y="488" key="FileChooserDialogImpl/0.0.7280.1440@0.0.7280.1440" timestamp="1596702128831" />
+    <state x="2569" y="370" key="SettingsEditor" timestamp="1596961270580">
+      <screen x="0" y="0" width="7280" height="1440" />
     </state>
     <state x="1214" y="370" key="SettingsEditor/0.0.3440.1440@0.0.3440.1440" timestamp="1596166252219" />
-    <state x="1383" y="439" width="672" height="678" key="search.everywhere.popup" timestamp="1596166219757">
-      <screen x="0" y="0" width="3440" height="1440" />
+    <state x="2569" y="370" key="SettingsEditor/0.0.7280.1440@0.0.7280.1440" timestamp="1596961270580" />
+    <state x="2927" y="439" width="1423" height="678" key="search.everywhere.popup" timestamp="1596961973856">
+      <screen x="0" y="0" width="7280" height="1440" />
     </state>
     <state x="1383" y="439" width="672" height="678" key="search.everywhere.popup/0.0.3440.1440@0.0.3440.1440" timestamp="1596166219757" />
+    <state x="2927" y="439" width="1423" height="678" key="search.everywhere.popup/0.0.7280.1440@0.0.7280.1440" timestamp="1596961973856" />
   </component>
 </project>
