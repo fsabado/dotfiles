@@ -59,6 +59,9 @@
 #      relink: true
 #Guide:https://github.com/anishathalye/dotbot#link
 - link:
+    ~/.bashrc: bash/bashrc
+    ~/.bash_profile: bash/bash_profile
+    ~/.bash: bash
     ~/.agignore: agignore
     ~/.aria2/aria2.conf: aria2.conf
     ~/.axelrc: axelrc
