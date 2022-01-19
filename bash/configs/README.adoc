@@ -1,7 +1,10 @@
 
-
 = README
 
 currently broken
 env.cfg
 
+== Tips and Tricks
+
+* Creating reusable bash scripts
+https://waylonwalker.com/reusable-bash/
