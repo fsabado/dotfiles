@@ -1,3 +1,5 @@
+
+#Documentation: https://git-scm.com/docs/git-config
 [alias]
 	exec = ! "exec"
 	st = status -sb
@@ -58,7 +60,7 @@
 	tree = !git lg --graph
 	progress = diff --stat
 	pg = diff --shortstat
-[diff]	
+[diff]
 	#mnemonicPrefix = true
 	#wordRegex = "[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+"
 	#compactionHeuristic = true
@@ -67,11 +69,35 @@
 [difftool "meld"]
 	cmd = meld \"$LOCAL\" \"$REMOTE\" --label \"DIFF (ORIGINAL MY)\"
 
+# Guide: https://nathanhoad.net/how-to-colours-in-git/
 [color]
 	ui = auto
 	status = auto
 	branch = auto
-
+[color "branch"]
+	  current = yellow reverse
+	  local = yellow
+	  remote = green
+	  upstream = normal
+	  plain = normal
+[color "diff"]
+	  meta = yellow bold
+	  frag = magenta bold
+	  old = blue bold
+	  new = green bold
+[color "status"]
+#https://git-scm.com/docs/git-config#Documentation/git-config.txt-colorstatusltslotgt
+	header = normal
+	added = green bold
+	update = yellow bold
+	changed = blue bold
+	untracked = magenta bold
+	branch = magenta bold
+	nobranch = yellow bold
+	localBranch = normal
+	remoteBranch = normal
+	unmerged = normal
+	deleted = yellow bold
 [color "grep"]
 	match = cyan bold
 	selected = blue
@@ -90,7 +116,6 @@
 	defaultToUpstream = true
 	#tool = vimdiff
 	tool = meld
-	
 
 [mergetool "meld"]
 	cmd = meld --auto-merge \"$LOCAL\" \"$BASE\" \"$REMOTE\" --output \"$MERGED\" --label \"MERGE (REMOTE BASE MY)\"
@@ -104,7 +129,7 @@
 	keepBackup = false
 
 [push]
-	default = simple
+	default = current
 
 [credential]
 	helper = cache --timeout=3600
@@ -117,10 +142,12 @@
 
 [core]
 	excludesfile = ~/.gitignore_global
+	autocrlf = input
 
 # Allow local customizations in the .gitconfig_local file
 [include]
 	path = ~/.gitconfig_local
+
 [user]
-	email = fsabado@gmail.com
+	email = fsabado@sandia.gov
 	name = Francis Sabado

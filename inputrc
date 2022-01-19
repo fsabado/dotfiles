@@ -1,3 +1,5 @@
+#Run 'bind -f ~/.inputrc' to source immediately instead of on login
+
 #Inputrc deals with the mapping of the keyboard for certain situations. This file is the start-up file used by readline, the input related library used by bash and most other shells.
 
 set editing-mode vi
@@ -33,6 +35,6 @@ set output-meta on
 #Option + z
 "\ez": 'cd -\015'
 
-#Jump to the target folder of the last command and run ls with Option-x
+#Jump to the target folder of the last command and run ls with Option-x (Options key=alt)
 "\ex": 'cd !$ \015ls\015'
 

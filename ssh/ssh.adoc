@@ -1,0 +1,30 @@
+= SSH Guide
+:toc: left
+:experimental:
+
+++++
+<script src="https://darshandsoni.com/asciidoctor-skins/switcher.js" type="text/javascript"></script>
+++++
+
+.SSH.sh
+[source,bash,linenums]
+----
+#https://www.ssh.com/ssh/tunneling/example
+#Local forwarding
+ssh -L 80:intra.example.com:80 gw.example.com
+
+
+#Remote forwarding
+ssh -R 8080:localhost:80 public.example.com
+
+----
+
+
+
+
+
+
+
+== References
+* https://www.ssh.com/ssh/tunneling/example
+

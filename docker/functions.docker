@@ -6,12 +6,12 @@ export DOCKER_REPO_PREFIX=jess
 #
 # Helper Functions
 #
-dcleanup(){
+function dcleanup(){
 	docker rm $(docker ps -aq 2>/dev/null) 2>/dev/null
 	docker rm -v $(docker ps --filter status=exited -q 2>/dev/null) 2>/dev/null
 	docker rmi $(docker images --filter dangling=true -q 2>/dev/null) 2>/dev/null
 }
-del_stopped(){
+function del_stopped(){
 	local name=$1
 	local state=$(docker inspect --format "{{.State.Running}}" $name 2>/dev/null)
 
@@ -19,7 +19,7 @@ del_stopped(){
 		docker rm $name
 	fi
 }
-relies_on(){
+function relies_on(){
 	local containers=$@
 
 	for container in $containers; do
@@ -32,7 +32,7 @@ relies_on(){
 	done
 }
 # creates an nginx config for a local route
-nginx_config(){
+function nginx_config(){
 	server=$1
 	route=$2
 
@@ -67,13 +67,13 @@ nginx_config(){
 #
 # Container Aliases
 #
-apt_file(){
+function apt_file(){
 	docker run --rm -it \
 		--name apt-file \
 		${DOCKER_REPO_PREFIX}/apt-file
 }
 alias apt-file="apt_file"
-audacity(){
+function audacity(){
 	del_stopped audacity
 
 	docker run -d \
@@ -86,14 +86,14 @@ audacity(){
 		--name audacity \
 		${DOCKER_REPO_PREFIX}/audacity
 }
-aws(){
+function aws(){
 	docker run -it --rm \
 		-v $HOME/.aws:/root/.aws \
 		--log-driver none \
 		--name aws \
 		${DOCKER_REPO_PREFIX}/awscli "$@"
 }
-bees(){
+function bees(){
 	docker run -it --rm \
 		-e NOTARY_TOKEN \
 		-v $HOME/.bees:/root/.bees \
@@ -103,7 +103,7 @@ bees(){
 		--name bees \
 		${DOCKER_REPO_PREFIX}/beeswithmachineguns "$@"
 }
-cadvisor(){
+function cadvisor(){
 	docker run -d \
 		--restart always \
 		-v /:/rootfs:ro \
@@ -117,7 +117,7 @@ cadvisor(){
 	sudo hostess add cadvisor $(docker inspect --format "{{.NetworkSettings.Networks.bridge.IPAddress}}" cadvisor)
 	browser-exec "http://cadvisor:8080"
 }
-cheese(){
+function cheese(){
 	del_stopped cheese
 
 	docker run -d \
@@ -131,7 +131,7 @@ cheese(){
 		--name cheese \
 		${DOCKER_REPO_PREFIX}/cheese
 }
-chrome(){
+function chrome(){
 	# add flags for proxy if passed
 	local proxy=
 	local map=
@@ -173,7 +173,7 @@ chrome(){
 		--host-resolver-rules="$map" $args
 
 }
-consul(){
+function consul(){
 	del_stopped consul
 
 	# check if we passed args and if consul is running
@@ -204,14 +204,14 @@ consul(){
 	sudo hostess add consul $(docker inspect --format "{{.NetworkSettings.Networks.bridge.IPAddress}}" consul)
 	browser-exec "http://consul:8500"
 }
-dcos(){
+function dcos(){
 	docker run -it --rm \
 		-v $HOME/.dcos:/root/.dcos \
 		-v $(pwd):/root/apps \
 		-w /root/apps \
 		${DOCKER_REPO_PREFIX}/dcos-cli "$@"
 }
-firefox(){
+function firefox(){
 	del_stopped firefox
 
 	docker run -d \
@@ -236,7 +236,7 @@ firefox(){
 	# exit current shell
 	exit 0
 }
-gcalcli(){
+function gcalcli(){
 	docker run --rm -it \
 		-v /etc/localtime:/etc/localtime:ro \
 		-v $HOME/.gcalcli/home:/home/gcalcli/home \
@@ -245,14 +245,14 @@ gcalcli(){
 		--name gcalcli \
 		${DOCKER_REPO_PREFIX}/gcalcli "$@"
 }
-gcloud(){
+function gcloud(){
 	docker run --rm -it \
 		-v $HOME/.gcloud:/root/.config/gcloud \
 		-v $HOME/.ssh:/root/.ssh:ro \
 		--name gcloud \
 		${DOCKER_REPO_PREFIX}/gcloud "$@"
 }
-gimp(){
+function gimp(){
 	del_stopped gimp
 
 	docker run -d \
@@ -266,25 +266,25 @@ gimp(){
 		--name gimp \
 		${DOCKER_REPO_PREFIX}/gimp
 }
-hollywood(){
+function hollywood(){
 	docker run --rm -it \
 		--name hollywood \
 		${DOCKER_REPO_PREFIX}/hollywood
 }
-htop(){
+function htop(){
 	docker run --rm -it \
 		--pid host \
 		--net none \
 		--name htop \
 		${DOCKER_REPO_PREFIX}/htop
 }
-http(){
+function http(){
 	docker run -t --rm \
 		-v /var/run/docker.sock:/var/run/docker.sock \
 		--log-driver none \
 		${DOCKER_REPO_PREFIX}/httpie "$@"
 }
-imagemin(){
+function imagemin(){
 	local image=$1
 	local extension="${image##*.}"
 	local filename="${image%.*}"
@@ -294,7 +294,7 @@ imagemin(){
 		-v $HOME/Pictures:/root/Pictures \
 		${DOCKER_REPO_PREFIX}/imagemin sh -c "imagemin /root/Pictures/${image} > /root/Pictures/${filename}_min.${extension}"
 }
-irssi() {
+function irssi() {
 	del_stopped irssi
 	# relies_on notify_osd
 
@@ -305,21 +305,21 @@ irssi() {
 		--name irssi \
 		${DOCKER_REPO_PREFIX}/irssi
 }
-john(){
+function john(){
 	local file=$(realpath $1)
 
 	docker run --rm -it \
 		-v ${file}:/root/$(basename ${file}) \
 		${DOCKER_REPO_PREFIX}/john $@
 }
-kernel_builder(){
+function kernel_builder(){
 	docker run --rm -it \
 		-v /usr/src:/usr/src \
 		--cpu-shares=512 \
 		--name kernel-builder \
 		${DOCKER_REPO_PREFIX}/kernel-builder
 }
-kvm(){
+function kvm(){
 	del_stopped kvm
 	relies_on pulseaudio
 
@@ -338,7 +338,7 @@ kvm(){
 		--privileged \
 		${DOCKER_REPO_PREFIX}/kvm
 }
-libreoffice(){
+function libreoffice(){
 	del_stopped libreoffice
 
 	docker run -d \
@@ -351,18 +351,18 @@ libreoffice(){
 		--name libreoffice \
 		${DOCKER_REPO_PREFIX}/libreoffice
 }
-lpass(){
+function lpass(){
 	docker run --rm -it \
 		-v $HOME/.lpass:/root/.lpass \
 		--name lpass \
 		${DOCKER_REPO_PREFIX}/lpass "$@"
 }
-lynx(){
+function lynx(){
 	docker run --rm -it \
 		--name lynx \
 		${DOCKER_REPO_PREFIX}/lynx "$@"
 }
-masscan(){
+function masscan(){
 	docker run -it --rm \
 		--log-driver none \
 		--net host \
@@ -370,7 +370,7 @@ masscan(){
 		--name masscan \
 		${DOCKER_REPO_PREFIX}/masscan "$@"
 }
-mpd(){
+function mpd(){
 	del_stopped mpd
 
 	# adding cap sys_admin so I can use nfs mount
@@ -386,7 +386,7 @@ mpd(){
 		--name mpd \
 		${DOCKER_REPO_PREFIX}/mpd
 }
-mutt(){
+function mutt(){
 	# subshell so we dont overwrite variables
 	(
 	local account=$1
@@ -416,7 +416,7 @@ mutt(){
 		${DOCKER_REPO_PREFIX}/mutt
 	)
 }
-ncmpc(){
+function ncmpc(){
 	del_stopped ncmpc
 
 	docker run --rm -it \
@@ -425,7 +425,7 @@ ncmpc(){
 		--name ncmpc \
 		${DOCKER_REPO_PREFIX}/ncmpc "$@"
 }
-neoman(){
+function neoman(){
 	del_stopped neoman
 
 	docker run -d \
@@ -437,7 +437,7 @@ neoman(){
 		--name neoman \
 		${DOCKER_REPO_PREFIX}/neoman
 }
-nes(){
+function nes(){
 	del_stopped nes
 	local game=$1
 
@@ -449,12 +449,12 @@ nes(){
 		--name nes \
 		${DOCKER_REPO_PREFIX}/nes /games/${game}.rom
 }
-netcat(){
+function netcat(){
 	docker run --rm -it \
 		--net host \
 		${DOCKER_REPO_PREFIX}/netcat "$@"
 }
-nginx(){
+function nginx(){
 	del_stopped nginx
 
 	docker run -d \
@@ -467,12 +467,12 @@ nginx(){
 	# add domain to hosts & open nginx
 	sudo hostess add jess 127.0.0.1
 }
-nmap(){
+function nmap(){
 	docker run --rm -it \
 		--net host \
 		${DOCKER_REPO_PREFIX}/nmap "$@"
 }
-notify_osd(){
+function notify_osd(){
 	del_stopped notify_osd
 
 	docker run -d \
@@ -487,13 +487,13 @@ notify_osd(){
 		${DOCKER_REPO_PREFIX}/notify-osd
 }
 alias notify-send=notify_send
-notify_send(){
+function notify_send(){
 	relies_on notify_osd
 	local args=${@:2}
 
 	docker exec -i notify_osd notify-send "$1" "${args}"
 }
-pandoc(){
+function pandoc(){
 	local file=${@: -1}
 	local lfile=$(readlink -m "$(pwd)/${file}")
 	local rfile=$(readlink -m "/$(basename $file)")
@@ -505,7 +505,7 @@ pandoc(){
 		--name pandoc \
 		${DOCKER_REPO_PREFIX}/pandoc ${args} ${rfile}
 }
-pivman(){
+function pivman(){
 	del_stopped pivman
 
 	docker run -d \
@@ -517,7 +517,7 @@ pivman(){
 		--name pivman \
 		${DOCKER_REPO_PREFIX}/pivman
 }
-pms(){
+function pms(){
 	del_stopped pms
 
 	docker run --rm -it \
@@ -526,7 +526,7 @@ pms(){
 		--name pms \
 		${DOCKER_REPO_PREFIX}/pms "$@"
 }
-pond(){
+function pond(){
 	del_stopped pond
 	relies_on torproxy
 
@@ -535,7 +535,7 @@ pond(){
 		--name pond \
 		${DOCKER_REPO_PREFIX}/pond
 }
-privoxy(){
+function privoxy(){
 	del_stopped privoxy
 	relies_on torproxy
 
@@ -549,7 +549,7 @@ privoxy(){
 
 	sudo hostess add privoxy $(docker inspect --format "{{.NetworkSettings.Networks.bridge.IPAddress}}" privoxy)
 }
-pulseaudio(){
+function pulseaudio(){
 	del_stopped pulseaudio
 
 	docker run -d \
@@ -561,7 +561,7 @@ pulseaudio(){
 		--name pulseaudio \
 		${DOCKER_REPO_PREFIX}/pulseaudio
 }
-rainbowstream(){
+function rainbowstream(){
 	docker run -it --rm \
 		-v /etc/localtime:/etc/localtime:ro \
 		-v $HOME/.rainbow_oauth:/root/.rainbow_oauth \
@@ -569,7 +569,7 @@ rainbowstream(){
 		--name rainbowstream \
 		${DOCKER_REPO_PREFIX}/rainbowstream
 }
-registrator(){
+function registrator(){
 	del_stopped registrator
 
 	docker run -d --restart always \

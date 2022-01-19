@@ -1,0 +1,31 @@
+#%Module -*- tcl -*-
+##
+## dot modulefile
+##
+## Htop 2.2.0 
+##
+## August 13,2019
+##
+
+# New Legion modules layout
+
+proc ModulesHelp { } {
+    puts stderr "Adds htop 2.2.0 to your environment."
+    puts ""
+}
+
+module-whatis "Adds htop 2.2.0 to your environment."
+
+# Location:
+
+set prefix /home/fsabado/dotfiles/centos7/htop-2.2.0-3.el7.x86_64
+
+#prereq gcc-libs
+conflict htop
+
+prepend-path PATH		$prefix/bin
+prepend-path LD_RUN_PATH        $prefix/lib
+prepend-path LD_LIBRARY_PATH    $prefix/lib
+prepend-path LIBRARY_PATH       $prefix/lib
+prepend-path MANPATH			$prefix/share/man
+

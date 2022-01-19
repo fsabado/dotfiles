@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+#Must be ran in sudo
+set -e
+set -x
+
+CONFIG="install_system.conf.yaml"
+
+DOTFILES_HOME=${HOME}/dotfiles
+source ${DOTFILES_HOME}/dotfilesBase.sh
+
+CONFIG="install.conf.yaml"
+
+dbot_install ${BASH_SOURCE[0]} ${CONFIG} "${@}"
+

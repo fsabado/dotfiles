@@ -1,0 +1,11 @@
+= Jinja2 Documentation
+:toc: left
+:experimental:
+
+++++
+<script src="https://darshandsoni.com/asciidoctor-skins/switcher.js" type="text/javascript"></script>
+++++
+
+== Reference
+
+* https://stackoverflow.com/questions/14214942/python-jinja2-shorthand-conditional

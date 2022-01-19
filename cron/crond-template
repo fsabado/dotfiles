@@ -1,0 +1,26 @@
+# Template /etc/cron.d/ script
+# Place in /etc/cron.d or copy the command using crontab -e for normal users (<user> is not required for crontab)
+#Minute(0-59) Hour(0-24) Day_of_month(1-31) Month(1-12) Day_of_week(0-6) <User> <Command_to_execute>
+
+SHELL=/bin/bash
+# bash -c "<command_to_execute>"
+* * * * * <user> <command_to_execute> >> /var/log/command.out 2>&1
+
+#Use Logging
+
+#*	any value
+#,	value list separator
+#-	range of values
+#/	step values
+# We can also use the following strings to define job.
+#@reboot	Run once, at startup.
+#@yearly	Run once a year.
+#@annually	(same as @yearly).
+#@monthly	Run once a month.
+#@weekly	Run once a week.
+#@daily	Run once a day.
+#@midnight	(same as @daily).
+#@hourly	Run once an hour.
+
+
+

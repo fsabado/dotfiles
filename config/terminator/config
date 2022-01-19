@@ -1,8 +1,6 @@
 [global_config]
-  enabled_plugins = CustomCommandsMenu, EditorPlugin, TestPlugin, GitPlugin, ActivityWatch, LaunchpadCodeURLHandler, TerminalShot, OpenAnyFile, APTURLHandler, LaunchpadBugURLHandler
-  suppress_multiple_term_dialog = True
-  title_font = Sans Bold 18
-  title_use_system_font = False
+  enabled_plugins = CustomCommandsMenu, EditorPlugin, TestPlugin, GitPlugin, LaunchpadCodeURLHandler, SSHMenu, TerminalShot, OpenAnyFile, APTURLHandler, LaunchpadBugURLHandler
+  geometry_hinting = False
 [keybindings]
 [layouts]
   [[default]]
@@ -13,50 +11,50 @@
       maximised = False
       order = 0
       parent = ""
-      position = 1920:23
-      size = 1920, 1137
+      position = 0:28
+      size = 1920, 1038
       title = /bin/bash
       type = Window
     [[[child1]]]
       order = 0
       parent = child0
-      position = 563
-      ratio = 0.499120492524
+      position = 515
+      ratio = 0.500481695568
       type = VPaned
     [[[child2]]]
       order = 0
       parent = child1
-      position = 956
-      ratio = 0.500260416667
+      position = 955
+      ratio = 0.499739583333
       type = HPaned
     [[[child5]]]
       order = 1
       parent = child1
-      position = 956
-      ratio = 0.500260416667
+      position = 955
+      ratio = 0.499739583333
       type = HPaned
     [[[terminal3]]]
       order = 0
       parent = child2
-      profile = default
+      profile = Solarized-Dark
       type = Terminal
       uuid = 4d5a8c13-5c8d-49c5-b355-3150ca306178
     [[[terminal4]]]
       order = 1
       parent = child2
-      profile = default
+      profile = Solarized-Dark
       type = Terminal
       uuid = 99af2f12-d173-442c-ad75-c4a1a3bf6ba8
     [[[terminal6]]]
       order = 0
       parent = child5
-      profile = default
+      profile = Solarized-Dark
       type = Terminal
       uuid = 51a1a40f-077d-4905-930b-c96be6b00515
     [[[terminal7]]]
       order = 1
       parent = child5
-      profile = default
+      profile = Solarized-Dark
       type = Terminal
       uuid = ad25e08e-6110-43c7-88dd-31618ab54cdf
 [plugins]
@@ -82,21 +80,20 @@
 [profiles]
   [[default]]
     background_image = None
-    cursor_color = "#aaaaaa"
     font = Monospace 12
     use_system_font = False
   [[Solarized-Dark]]
     background_color = "#002b36"
     background_image = None
     cursor_color = "#839496"
-    font = Monospace 14
+    font = Monospace 12
     foreground_color = "#839496"
     use_system_font = False
   [[Solarized-Light]]
     background_color = "#fdf6e3"
     background_image = None
     cursor_color = "#002b36"
-    font = Monospace 14
+    font = Monospace 12
     foreground_color = "#657b83"
     palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
     use_system_font = False

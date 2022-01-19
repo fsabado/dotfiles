@@ -1,0 +1,69 @@
+#!/bin/bash
+
+# set -x
+
+#Documentation
+
+# Conditionals : https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html
+#Ignore all outputs
+# >/dev/null 2>&1
+
+# Cheatsheets
+# https://devhints.io/bash
+
+DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
+BASH_HOME=${HOME}/dotfiles/bash
+
+# User specific environment and startup programs
+export PATH=$PATH:$HOME/.local/bin:$HOME/bin
+
+#External plugins (initialized before)
+if [ -f "${HOME}/.bashrc_local_before" ]; then
+    source ~/.bashrc_local_before
+fi
+
+#Source global definitions
+source /etc/bashrc
+
+#Load local $HOME/.profile.d *.sh files
+# /etc/profile
+
+# Local user environment and startup programs, for login setup
+# Functions and aliases go in /etc/bashrc
+
+# It's NOT a good idea to change this file unless you know what you
+# are doing. It's much better to create a custom.sh shell script in
+# $HOME/.profile.d/ to make custom changes to your environment, as this
+# will prevent the need for merging in future updates.
+
+#Base bash settings
+if [ -f "${BASH_HOME}/base.sh" ]; then
+    source ${BASH_HOME}/base.sh
+fi
+
+#Load all the files in the local $HOME/.profile.d folder if the folder exist
+#Don't quote the path with globbing or it will break
+if [[ -d ${HOME}/profile.d ]]; then
+	for i in ${HOME}/profile.d/*.sh; do
+	    if [[ -r "${i}" ]]; then
+    		if [[ "${-#*i}" != "$-" ]]; then
+    		    . "${i}"
+    		else
+    		    . "${i}" >/dev/null 2>&1
+    		fi
+	    fi
+	done
+fi
+
+#Unset i variable
+unset i
+#Unset pathmunge function
+#unset -f pathmunge
+
+#Spack setup
+#source $HOME/dotfiles/spack/spack.cfg
+
+#External plugins (initialized after)
+if [ -f "${HOME}/.bashrc_local_after" ]; then
+    source ~/.bashrc_local_after
+fi

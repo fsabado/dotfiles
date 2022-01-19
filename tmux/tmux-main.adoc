@@ -1,0 +1,29 @@
+= Tmux Notes
+:toc: left
+:experimental:
+
+++++
+<script src="https://darshandsoni.com/asciidoctor-skins/switcher.js" type="text/javascript"></script>
+++++
+
+Tmux and SSH X Server::
+Doesn't work because the X Server cannot be changed.
+https://www.reddit.com/r/commandline/comments/220qsr/how_to_get_tmux_x_display_to_come_back/
+
+
+kbd:[Ctrl+b] not working::
+Our settings uses kbd:[ctrl+a]
+https://superuser.com/questions/266725/tmux-ctrlb-not-working/1171345
+
+
+== Nomachine + Virtual GL + Floating Window (Recommended)
+
+Features over Tmux::
+* Session management, with support for UIs
+* Terminator
+* Better performance over SSH
+* Check Nomachine for settings/run configurations
+
+== References
+
+* https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/

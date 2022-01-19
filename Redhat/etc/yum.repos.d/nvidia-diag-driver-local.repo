@@ -1,0 +1,6 @@
+[nvidia-diag-driver-local]
+name=nvidia-diag-driver-local
+baseurl=file:///var/nvidia-diag-driver-local-repo
+enabled=1
+gpgcheck=1
+gpgkey=file:///var/nvidia-diag-driver-local-repo/7fa2af80.pub

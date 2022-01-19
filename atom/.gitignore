@@ -6,4 +6,5 @@ dev
 .node-gyp
 nohup.out
 blob-store
+/packages/
 /packages/*

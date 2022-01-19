@@ -1,0 +1,67 @@
+
+= PostgresQL
+
+[source,bash,linenums]
+.postgresql.sh
+----
+
+# Install on CentOS7
+sudo yum install postgresql-server postgresql-contrib
+
+#Init
+sudo postgresql-setup initdb
+
+# Start the database
+sudo systemctl start postgresql
+
+#Enable to start on boot
+sudo systemctl enable postgresql
+----
+
+[source,postgresql, linenums]
+.posgresql
+----
+# Wont work because peer authentication not enabled
+psql -U postgres
+
+psql -c "ALTER USER postgres WITH PASSWORD 'NewPassword';
+
+su - postgres #Log in as postgres
+psql #Start postgresql
+----
+
+.Commands
+[horizontal]
+Help:: \h
+Quit:: \q
+Get all commands:: \?
+List available functions:: \df
+List databases:: \l, \list
+List Tables:: \dt
+List available schemas:: \dn
+List views:: \dv
+List users:: \du
+Describe Table:: \d <table_name>
+Current Database:: \c <dbname> <username>
+Connection Info:: \conninfo
+Repeat previous command:: \g
+Command History:: \s
+Execute psql commands from file:: \i <filename>
+Turn on timing:: \timing
+Use editor:: \e
+
+
+NOTE: <word> denotes optional
+
+== Useful Command line options
+
+
+include::./psql-help.adoc[leveloffset=+1]
+
+== References
+
+* https://www.hostinger.com/tutorials/how-to-install-postgresql-on-centos-7/
+* https://www.liquidweb.com/kb/what-is-the-default-password-for-postgresql/
+* https://alvinalexander.com/blog/post/postgresql/log-in-postgresql-database/
+
+

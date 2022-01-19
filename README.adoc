@@ -1,0 +1,145 @@
+= Dotfiles
+:toc: left
+:experimental:
+
+++++
+<script src="https://darshandsoni.com/asciidoctor-skins/switcher.js" type="text/javascript"></script>
+++++
+
+After cloning this repo, run `install` to automatically set up the development
+environment. Note that the install script is idempotent: it can safely be run
+multiple times.
+
+Dotfiles uses [Dotbot][dotbot] for installation.
+
+== Making Local Customizations
+
+You can make local customizations for some programs by editing these files:
+
+* `vim` : `~/.vimrc_local`
+* `zsh` : `~/.zshrc_local_before` run before `.zshrc`
+* `zsh` : `~/.zshrc_local_after` run after `.zshrc`
+* `git` : `~/.gitconfig_local`
+* `hg` : `~/.hgrc_local`
+* `tmux` : `~/.tmux_local.conf`
+
+
+Synchronizing Intellij Setting
+https://blog.jetbrains.com/idea/2017/09/intellij-idea-2017-3-eap-better-synchronization-of-your-settings-across-devices-and-other-improvements/
+
+-use IDE Settings Sync
+
+
+== One Click Install
+
+cd ~ && git clone https://github.com/fsabado/dotfiles && cd dotfiles && ./install
+
+
+== Dotbot Help
+
+.Dotbot Help.sh
+[source,bash,linenums]
+----
+% ~/dotfiles .dotbot/bin/dotbot --help
+usage: dotbot [-h] [-Q] [-q] [-v] [-d BASEDIR] [-c CONFIGFILE] [-p PLUGIN]
+              [--disable-built-in-plugins] [--plugin-dir PLUGIN_DIR]
+              [--version]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -Q, --super-quiet     suppress almost all output
+  -q, --quiet           suppress most output
+  -v, --verbose         enable verbose output
+  -d BASEDIR, --base-directory BASEDIR
+                        execute commands from within BASEDIR
+  -c CONFIGFILE, --config-file CONFIGFILE
+                        run commands given in CONFIGFILE
+  -p PLUGIN, --plugin PLUGIN
+                        load PLUGIN as a plugin
+  --disable-built-in-plugins
+                        disable built-in plugins
+  --plugin-dir PLUGIN_DIR
+                        load all plugins in PLUGIN_DIR
+  --version             show program's version number and exit
+----
+
+== Dotbot Useful Commands
+
+Adding Submodules
+
+`git submodule add <github-submodule-path> <directory-name>`
+
+
+Updating Submodules and checking out specified versions
+
+`git submodule update --init --recursive`
+
+
+Update all submodules to latest
+
+`git submodule foreach --recursive git pull origin master`
+
+
+Update a specific submodule to latest
+
+change to the submodule directory
+
+`cd <submodule-directory>`
+
+checkout desired branch
+
+`git checkout master`
+
+update
+
+`git pull`
+
+get back to your project root
+
+`cd ..`
+
+now the submodules are in the state you want, so
+
+`git commit -am "Pulled down update to submodule_dir"`
+
+One line to do all that
+
+`git submodule foreach git pull origin master`
+
+Editing Setting
+
+`gedit $HOME/dotfiles/.install.conf.yaml`
+
+
+
+== Force Update the Installation
+
+touch install.conf.yaml
+
+
+== Possible Fix for Multi-system Dotfiles
+
+https://github.com/anishathalye/dotbot/pull/11#issuecomment-73082152
+
+
+NOTE: install-profile and configurations
+
+[Based on https://github.com/anishathalye/dotfiles]
+
+
+
+
+== Adding Program support
+
+.Adding Program Support.sh
+[source,bash,linenums]
+----
+cd ~/dotfiles
+cp -r ./program-template new-program
+cd ./new-program
+mv ./program-template new-program
+----
+
+
+
+
