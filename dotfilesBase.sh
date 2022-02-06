@@ -44,7 +44,7 @@ installDotbotConfig ${BASH_SOURCE[0]} <pathToConfig>
     cd "${BASEDIR}"
     if [ ! -f "${DOTBOT_HOME}/bin/dotbot" ]; then
         echo "Updating dotbot"
-        git submodule update --init --recursive "${DOTBOT_DIR}"
+        git submodule update --init --recursive "${DOTBOT_HOME}"
     fi
     "${DOTBOT_HOME}/bin/dotbot" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
 }

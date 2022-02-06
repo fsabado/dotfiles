@@ -23,7 +23,9 @@ if [ -f "${HOME}/.bashrc_local_before" ]; then
 fi
 
 #Source global definitions
-source /etc/bashrc
+if [ -f /etc/bashrc ]; then
+	source /etc/bashrc
+fi
 
 #Load local $HOME/.profile.d *.sh files
 # /etc/profile
