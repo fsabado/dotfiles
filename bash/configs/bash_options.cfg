@@ -26,9 +26,6 @@
 #Disable suspend and resume feature
 stty -ixon
 
-#Remove the Beeping sound from Bash Shell
-setterm -blength 0
-
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
 	xterm-color) color_prompt=yes;;
