@@ -325,6 +325,7 @@ f_systemInfo() {
 }
 
 # Start the ssh-agent if needed
+# Source: https://stackoverflow.com/questions/40549332/how-to-check-if-ssh-agent-is-already-running-in-bash
 f_start_agent() {
     if ps -p ${SSH_AGENT_PID} > /dev/null
     then
