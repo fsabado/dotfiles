@@ -26,10 +26,9 @@ PROGRAM_NAME=Maven
 #Shortcut for editing this file
 MAVENRC=${SOURCE}
 alias edit-programrc="${EDITOR} ${MAVENRC}"
-alias edit-mvn-settings="${EDUTIR} ${HOME}/.m2/settings.xml"
+alias edit-mvn-settings="${EDIT0R} ${HOME}/.m2/settings.xml"
 
 #Configurations
-
 alias mvn-install="mvn install -T 1.8C"
 alias mvn-cleaninstall="mvn clean install -T 1.8C"
 alias mvn-install-skip="mvn install -DskipTests -T 1.8C"
@@ -41,6 +40,12 @@ alias mvn-offline="mvn -fae -nsu dependency:go-offline"
 alias mvn-dependency-sources="mvn dependency:sources"
 #download javadoc of dependencies (if available)
 alias mvn-dependency-javadoc="mvn dependency:resolve -Dclassifier=javadoc"
+alias mvn-bootstrap="mvn archetype:generate \
+-DgroupId=com.mycompany.app \
+-DartifactId=my-app \
+-DarchetypeArtifactId=maven-archetype-quickstart \
+-DarchetypeVersion=1.4 \
+-DinteractiveMode=false"
 
 #Use different settings
 #mvn --settings path/to/settings.xml
