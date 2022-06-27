@@ -42,5 +42,6 @@ f_install_appimage \
 
 # Install latest neovim
 f_install_appimage \
-    https://github.com/neovim/neovim/releases/latest/download/nvim.appimage \
-    nvim
+    https://github.com/neovim/neovim/releases/download/v0.7.2/nvim.appimage \
+    nvim7.2
+    #cd ${HOME}/.bin && ln -s -f nvim7.2 nvim
