@@ -3,8 +3,9 @@
 
 INSTALL_DIR=${HOME}/.bin
 cd ${INSTALL_DIR}
+mkdir -p ${INSTALL_DIR}
 
-# Emacs 27.2
+# Function to install an app image
 f_install_appimage () {
     if [ $# -eq 2 ]; then
         app_url=$1
@@ -38,3 +39,8 @@ f_install_appimage \
 f_install_appimage \
     https://github.com/hackjutsu/Lepton/releases/download/v1.10.0/Lepton-1.10.0.AppImage \
     lepton1.10
+
+# Install latest neovim
+f_install_appimage \
+    https://github.com/neovim/neovim/releases/latest/download/nvim.appimage \
+    nvim
