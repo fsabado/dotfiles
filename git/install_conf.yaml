@@ -63,7 +63,7 @@
 #      relink: true
 #Guide:https://github.com/anishathalye/dotbot#link
 - link:
-    ~/.gitconfig: gitconfig
+    ~/.gitconfig_dotfiles: gitconfig_dotfiles
     ~/.gitignore_global: gitignore_global
     ~/profile.d/git.sh:
         path: config.sh
