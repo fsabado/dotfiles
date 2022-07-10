@@ -1,0 +1,7 @@
+
+
+[source, bash, linenums]
+----
+# Install homebrew and install
+brew install fish
+----
