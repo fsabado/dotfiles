@@ -1,0 +1,12 @@
+
+[source, bash, linenums]
+----
+# Update the bundle
+cd ~/dotfiles/homebrew && \
+brew bundle dump -fv
+
+#
+cd ~/dotfiles/homebrew && \
+brew bundle
+
+----
