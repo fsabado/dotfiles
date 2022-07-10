@@ -1,4 +1,30 @@
 
+
+.Homebrew Installation
+[source, bash, linenums]
+----
+# Install dependencies
+sudo yum groupinstall 'Development Tools'
+sudo yum install curl file git
+sudo yum install libxcrypt-compat
+
+# Install Homebrew
+cd ~
+bash # Run this in bash, had initial issues with other shells
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+# Post Install
+brew doctor
+brew install gcc
+
+# Optional, make sure that that path is in settings
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/${USER}/.zprofile
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+----
+
+
+.Set up package backups
 [source, bash, linenums]
 ----
 # Update the bundle
