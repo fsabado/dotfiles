@@ -36,4 +36,4 @@ export EDITOR=vim
 # y      Allow messages to be displayed.
 tty -s && mesg n
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+#eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
