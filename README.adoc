@@ -12,6 +12,18 @@ multiple times.
 
 Dotfiles uses [Dotbot][dotbot] for installation.
 
+==
+
+SSH
+
+[source, bash, linenums]
+----
+ssh-keygen -t rsa -b 4096
+ssh-keygen -t dsa 
+ssh-keygen -t ecdsa -b 521
+ssh-keygen -t ed25519
+----
+
 == Making Local Customizations
 
 You can make local customizations for some programs by editing these files:
