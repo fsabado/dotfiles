@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 #https://medium.com/@kingnand.90/what-is-the-difference-between-bash-profile-and-bashrc-d4c902ac7308
 # .bash_profile -> login shell
 # .bashrc -> interactice non-login shell
@@ -11,9 +13,6 @@
 # if [ -f $HOME/.bashrc ]; then
 #         source $HOME/.bashrc
 # fi
-
-# Set Defaults here, these will be overwritten on bashrc
-export EDITOR=vim
 
 # Check if running interactively,
 #https://stackoverflow.com/questions/31155381/what-does-i-mean-in-bash
