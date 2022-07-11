@@ -13,7 +13,7 @@
 
 
 #Clean commands specify directories that should be checked for dead symbolic links. These dead links are removed automatically. Only dead links that point to the dotfiles directory are removed unless the force option is set to true.
-- clean: ['~', '~/.config']
+- clean: ['~', '~/.config', '~/.profile.d']
 
 #Put Links here
 #Format
