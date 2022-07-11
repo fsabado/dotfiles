@@ -83,7 +83,7 @@
     # Submodules
     ~/.profile.d/homebrew.sh: homebrew/homebrew.sh
 
-#Put shell comands here
+#Put shell commands here
 #Guide:https://github.com/anishathalye/dotbot#shell
 #Shell commands specify shell commands to be run. Shell commands are run in the base directory (that is specified when running the installer).
 #- shell:
