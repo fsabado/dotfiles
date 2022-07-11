@@ -10,7 +10,7 @@ NC="\e[0m" #Normal, Reset ALL attributes
 # all functions here are prepended with f_*. Use this to search for the function
 
 #Very Nice Script for extractions
-f_extract() {
+function f_extract() {
 
 USAGE="
 Usage: f_extract [space separated file paths]
@@ -48,8 +48,16 @@ Usage: f_extract [space separated file paths]
     fi
 }
 
+# Tar up the arguments
+function f_tar-up(){
+    if [ -f $1 ] ; then
+        //Pass all the arguments to the function
+        GZIP=-9 tar cvfz "$@"
+    fi
+}
+
 #Show ps
-f_my_ps() {
+function f_my_ps() {
 USAGE="
 Usage: f_my_ps
 "
@@ -57,12 +65,12 @@ Usage: f_my_ps
 }
 
 #Better ps
-f_pp() {
+function f_pp() {
     f_my_ps f | awk '!/awk/ && $0~var' var=${1:-".*"}
 }
 
 # Kill by process name.
-f_killps() {
+function f_killps() {
     local pid pname sig="-TERM" # Default signal.
     if [ "$#" -lt 1 ] || [ "$#" -gt 2 ]; then
         echo "Usage: killps [-SIGNAL] pattern"
@@ -78,7 +86,7 @@ f_killps() {
 }
 
 # Get IP adresses.
-f_my_ip() {
+function f_my_ip() {
     MY_IP=$(/sbin/ifconfig ppp0 | awk '/inet/ { print $2 } ' |
         sed -e s/addr://)
     MY_ISP=$(/sbin/ifconfig ppp0 | awk '/P-t-P/ { print $3 } ' |
@@ -86,7 +94,7 @@ f_my_ip() {
 }
 
 # Get current host related info.
-f_ii() {
+function f_ii() {
     echo -e "\nYou are logged on ${Red}$HOSTNAME"
     echo -e "\nAdditionnal information:$NC "
     uname -a
@@ -108,16 +116,16 @@ f_ii() {
     echo
 }
 
-f_warn() {
+function f_warn() {
     echo "$1" >&2
 }
 
-f_die() {
+function f_die() {
     warn "$1"
     exit 1
 }
 
-f_lnif() {
+function f_lnif() {
     if [ ! -e $2 ]; then
         ln -s $1 $2
     fi
@@ -127,7 +135,7 @@ f_lnif() {
 }
 
 #Use this command to go up different part ex:"up 4" = cd ../../../..
-f_up() {
+function f_up() {
     local d=""
     limit=$1
     for ((i = 1; i <= limit; i++)); do
@@ -141,7 +149,7 @@ f_up() {
 }
 
 #netinfo - shows network information for your system
-f_netinfo() {
+function f_netinfo() {
     echo "--------------- Network Information ---------------"
     /sbin/ifconfig | awk /'inet addr/ {print $2}'
     /sbin/ifconfig | awk /'Bcast/ {print $3}'
@@ -153,7 +161,7 @@ f_netinfo() {
 }
 
 #Universal file opener
-f_open() {
+function f_open() {
     if [ -f $1 ]; then
         gnome-open $1
     else
@@ -162,7 +170,7 @@ f_open() {
 }
 
 # Simple calculator
-f_calc() {
+function f_calc() {
     local result=""
     result="$(printf "scale=10;$*\n" | bc --mathlib | tr -d '\\\n')"
     #						└─ default (when `--mathlib` is used) is 20
@@ -181,12 +189,12 @@ f_calc() {
 }
 
 # Create a new directory and enter it
-f_mkd() {
+function f_mkd() {
     mkdir -p "$@" && cd "$@"
 }
 
 # Make a temporary directory and enter it
-f_tmpd() {
+function f_tmpd() {
     if [ $# -eq 0 ]; then
         dir=$(mktemp -d) && cd $dir
     else
@@ -194,7 +202,7 @@ f_tmpd() {
     fi
 }
 
-f_fs() {
+function f_fs() {
     if du -b /dev/null >/dev/null 2>&1; then
         local arg=-sbh
     else
@@ -208,7 +216,7 @@ f_fs() {
 }
 
 # Get colors in manual pages
-man() {
+function man() {
     env \
         LESS_TERMCAP_mb=$(printf "\e[1;31m") \
         LESS_TERMCAP_md=$(printf "\e[1;31m") \
@@ -221,7 +229,7 @@ man() {
 }
 
 # Use feh to nicely view images
-f_openImage() {
+function f_openImage() {
     local types='*.jpg *.JPG *.png *.PNG *.gif *.GIF *.jpeg *.JPEG'
 
     cd $(dirname "$1")
@@ -238,12 +246,12 @@ f_openImage() {
 # the `.git` directory, listing directories first. The output gets piped into
 # `less` with options to preserve color and line numbers, unless the output is
 # small enough for one screen.
-f_tre() {
+function f_tre() {
     tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX
 }
 
 #Check Terminal Emulator
-f_container() {
+function f_container() {
     pid=$$
     while true; do
         pid=$(ps -h -o ppid -p $pid 2>/dev/null)
@@ -271,7 +279,7 @@ f_container() {
 
 #Get current script path
 #Source: http://stackoverflow.com/questions/242538/unix-shell-script-find-out-which-directory-the-script-file-resides
-f_currentPath() {
+function f_currentPath() {
     # Absolute path to this script, e.g. /home/user/bin/foo.sh
     local SCRIPT=$(readlink -f "$0")
     # Absolute path this script is in, thus /home/user/bin
@@ -283,13 +291,13 @@ f_currentPath() {
 # ldconfig -v prints out the directories search by the linker (without a leading tab) and the
 # shared libraries found in those directories (with a leading tab); the grep gets the directories.
 # Source: http://stackoverflow.com/questions/9922949/how-to-print-the-ldlinker-search-path
-f_ld_path() {
+function f_ld_path() {
     ldconfig -v 2>/dev/null | grep -v ^$'\t'
 }
 
 # credit to http://askubuntu.com/a/279014
 # Function to display all colors
-f_allcolors() {
+function f_allcolors() {
 
     for x in 0 1 4 5 7 8; do
         for i in $(seq 30 37); do
@@ -302,13 +310,13 @@ f_allcolors() {
     echo ""
 }
 
-f_timestamp() {
+function f_timestamp() {
     date +"%m-%d-%Y %T"
+    #Sample output: 11-02-2018 16:02:04
 }
-#Sample output: 11-02-2018 16:02:04
 
 #Check currently used ports
-f_checkPorts() {
+function f_checkPorts() {
     set -x
     sudo lsof -i -P -n | grep LISTEN
     set +x
@@ -316,7 +324,7 @@ f_checkPorts() {
 
 
 # Get system info
-f_systemInfo() {
+function f_systemInfo() {
     cat /etc/os-release
     lscpu
     lsblk -a
@@ -326,7 +334,7 @@ f_systemInfo() {
 
 # Start the ssh-agent if needed
 # Source: https://stackoverflow.com/questions/40549332/how-to-check-if-ssh-agent-is-already-running-in-bash
-f_start_agent() {
+function f_start_agent() {
     if ps -p ${SSH_AGENT_PID} > /dev/null
     then
         echo "ssh-agent is already running"
@@ -335,3 +343,22 @@ f_start_agent() {
     fi
 
 }
+
+function f_kinit_mwinit () {
+    # Auto kinit and mwinit.
+    max_yubi_age=36000
+    yubi_age=$(expr $max_yubi_age + 1)
+    yubi_cert="${HOME}/.ssh/id_rsa-cert.pub"
+    if [ -r "${yubi_cert}" ]; then
+      yubi_age=$(( $(date +"%s") - $(stat -c "%Y" "${yubi_cert}") ))
+    fi
+    # Kinit checker
+    if ! klist -s; then
+        kinit -f
+    fi
+    # mwinit checker
+    if [ "$yubi_age" -gt "${max_yubi_age}" ]; then
+        mwinit -o
+    fi
+}
+
