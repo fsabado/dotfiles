@@ -1,5 +1,4 @@
-
-
+= Homebrew
 
 .Installation
 [source,bash]
@@ -46,8 +45,16 @@ export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 cd ~/dotfiles/homebrew && \
 brew bundle dump -fv
 
+# For linux
+brew bundle dump --file=~/dotfiles/homebrew/Brewfile-linux
+
+# For mac
+brew bundle dump --file=~/dotfiles/homebrew/Brewfile-mac
+
 #
 cd ~/dotfiles/homebrew && \
-brew bundle
+brew bundle \
+    --file=~/dotfiles/homebrew/Brewfile-linux
+    --force cleanup \ # to match
 
 ----
