@@ -1,7 +1,6 @@
 #!/bin/bash
 
-set -x
-
+# set -x
 #Documentation
 
 # Conditionals : https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html
@@ -121,7 +120,6 @@ function f_addLIBRARY() {
 
 #Remove from path
 function f_removeLIBRARY() {
-    set -x
     for REMOVEPATH in "$@"; do
         #        Remove start
         LD_LIBRARY_PATH=$(echo "$LD_LIBRARY_PATH" | sed -e "s|^${REMOVEPATH}:[:]||g")

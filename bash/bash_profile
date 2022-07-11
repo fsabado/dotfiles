@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -x
+# set -x
 
 #https://medium.com/@kingnand.90/what-is-the-difference-between-bash-profile-and-bashrc-d4c902ac7308
 # .bash_profile -> login shell
