@@ -17,9 +17,15 @@ bash # Run this in bash, had initial issues with other shells
 brew doctor
 brew install gcc
 
+# Get help
+brew help
+
 # Optional, make sure that that path is in settings
 echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/${USER}/.zprofile
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# Export binaries to PATH
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 
 ----
 
