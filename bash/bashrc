@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# set -x
+set -x
 
 #Documentation
 
@@ -220,8 +220,15 @@ include ${BASH_HOME}/configs/editor.sh
 include ${BASH_HOME}/configs/env.sh
 include ${BASH_HOME}/configs/exports.sh
 include ${BASH_HOME}/configs/program_options.sh
-include ${BASH_HOME}/configs/prompt.sh
 include ${BASH_HOME}/configs/software.sh
+
+# Bash prompts (Enable only 1)
+include ${BASH_HOME}/configs/prompts/wolever_fast.sh
+#include ${BASH_HOME}/configs/prompts/default_bash_prompt.sh
+#include ${BASH_HOME}/configs/prompts/polyglot_prompt.sh
+#include ${BASH_HOME}/configs/prompts/robs_prompt.sh
+#include ${BASH_HOME}/configs/prompts/sexy_bash_prompt.sh
+#include ${BASH_HOME}/configs/prompts/solarized_bash_prompt.sh
 
 #Load all the files in the local $HOME/.profile.d folder if the folder exist
 #Don't quote the path with globbing or it will break
