@@ -1,13 +1,22 @@
 
 
+
+.Installation
+[source,bash]
+----
+# Install dependencies Ubuntu
+sudo apt-get update
+sudo apt-get install build-essential procps curl file git -y
+
+# Install dependencies (CentOS)
+sudo yum groupinstall 'Development Tools' -y
+sudo yum install curl file git -y
+sudo yum install libxcrypt-compat -y
+----
+
 .Homebrew Installation
 [source, bash, linenums]
 ----
-# Install dependencies
-sudo yum groupinstall 'Development Tools'
-sudo yum install curl file git
-sudo yum install libxcrypt-compat
-
 # Install Homebrew
 cd ~
 bash # Run this in bash, had initial issues with other shells
