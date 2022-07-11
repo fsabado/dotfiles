@@ -80,6 +80,9 @@
     ~/.config/terminator: config/terminator
     ~/.config/pet/snippet.toml: config/pet/snippet.toml
 
+    # Submodules
+    ~/.profile.d/homebrew.sh: homebrew/homebrew.sh
+
 #Put shell comands here
 #Guide:https://github.com/anishathalye/dotbot#shell
 #Shell commands specify shell commands to be run. Shell commands are run in the base directory (that is specified when running the installer).

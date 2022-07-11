@@ -230,8 +230,8 @@ include ${BASH_HOME}/configs/prompts/wolever_fast.sh
 
 #Load all the files in the local $HOME/.profile.d folder if the folder exist
 #Don't quote the path with globbing or it will break
-if [[ -d ${HOME}/profile.d ]]; then
-	for i in ${HOME}/profile.d/*.sh; do
+if [[ -d ${HOME}/.profile.d ]]; then
+	for i in ${HOME}/.profile.d/*.sh; do
 	    if [[ -r "${i}" ]]; then
     		if [[ "${-#*i}" != "$-" ]]; then
     		    . "${i}"
