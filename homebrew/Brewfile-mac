@@ -1,15 +1,52 @@
-tap "homebrew/core"
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "buo/cask-upgrade"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-drivers"
-brew "brew-cask-completion"
-brew "github-keygen"
-brew "gnupg"
-brew "pinentry-mac"
-brew "stow"
-brew "mas"
-brew "gh"
-cask "atom"
-cask "typora"
+# Taps
+tap 'homebrew/core'
+tap 'homebrew/bundle'
+tap 'homebrew/cask'
+tap 'buo/cask-upgrade'
+tap 'homebrew/cask-fonts'
+tap 'homebrew/cask-drivers'
+
+# Brews
+brew 'gcc'
+brew 'brew-cask-completion'
+brew 'git'
+brew 'bash-completion'
+brew 'tree'
+brew 'wget'
+brew 'github-keygen'
+brew 'gnupg'
+brew 'pinentry-mac'
+brew 'stow'
+brew 'mas'
+brew 'gh'
+brew 'fish'
+brew 'zsh'
+brew 'tmux'
+brew 'bash'
+brew 'bat'
+brew 'most'
+brew 'vim'
+brew 'pssh'
+brew 'fzf'
+brew 'tldr'
+brew 'unison'
+brew 'docker'
+brew 'xclip'
+brew 'htop'
+
+# Python
+brew 'python'
+brew 'python3'
+
+# Cask
+cask 'google-chrome'
+cask 'atom'
+cask 'typora'
+cask 'slack'
+cask 'dash'
+cask 'sublime'
+cask 'iterm2'
+cask 'macvim'
+
+
+
