@@ -362,3 +362,17 @@ function f_kinit_mwinit () {
     fi
 }
 
+function f_get_platform() {
+    #Source: https://stackoverflow.com/questions/3466166/how-to-check-if-running-in-cygwin-mac-or-linux
+    unameOut="$(uname -s)"
+    case "${unameOut}" in
+        Linux*)     machine="Linux";;
+        Darwin*)    machine="Mac";;
+        CYGWIN*)    machine="Cygwin";;
+        MINGW*)     machine="MinGw";;
+        *)          machine="UNKNOWN:${unameOut}"
+    esac
+    echo ${machine}
+}
+
+
