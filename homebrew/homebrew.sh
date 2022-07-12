@@ -15,9 +15,9 @@ export PATH=${PATH}:/home/linuxbrew/.linuxbrew/bin
 alias cask='brew install --cask'
 
 function f_brew_bootstrap (){
-    brew bundle --file=~/dotfiles/homebrew/Brewfile-brew
+    brew bundle --file ~/dotfiles/homebrew/Brewfile-brew
 
     if [ "$machine" == "Mac" ]; then
-        brew bundle --file=~/dotfiles/homebrew/Brewfile-cask
+        brew bundle --file ~/dotfiles/homebrew/Brewfile-cask
     fi
 }
