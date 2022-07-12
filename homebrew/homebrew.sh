@@ -2,6 +2,7 @@
 
 export PATH=${PATH}:/home/linuxbrew/.linuxbrew/bin
 
+alias cask='brew install -y --cask'
 
 function f_brew_bootstrap_mac (){
     brew bundle --file=~/dotfiles/homebrew/Brewfile-mac
