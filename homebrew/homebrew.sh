@@ -1,21 +1,23 @@
 #!/usr/bin/env bash
 
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)     machine="Linux";;
+    Darwin*)    machine="Mac";;
+    CYGWIN*)    machine="Cygwin";;
+    MINGW*)     machine="MinGw";;
+    *)          machine="UNKNOWN:${unameOut}"
+esac
+#echo ${machine}
+
 export PATH=${PATH}:/home/linuxbrew/.linuxbrew/bin
 
 alias cask='brew install --cask'
 
-function f_brew_bootstrap_mac (){
-    brew bundle --file=~/dotfiles/homebrew/Brewfile-mac
-}
+function f_brew_bootstrap (){
+    brew bundle --file=~/dotfiles/homebrew/Brewfile-brew
 
-function f_brew_backup_mac (){
-    brew bundle dump --file=~/dotfiles/homebrew/Brewfile-mac
-}
-
-function f_brew_bootstrap_linux (){
-    brew bundle --file=~/dotfiles/homebrew/Brewfile-linux
-}
-
-function f_brew_backup_linux (){
-    brew bundle dump --file=~/dotfiles/homebrew/Brewfile-linux
+    if [ "$machine" == "Mac" ]; then
+        brew bundle --file=~/dotfiles/homebrew/Brewfile-cask
+    fi
 }
