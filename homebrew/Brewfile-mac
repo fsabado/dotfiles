@@ -33,6 +33,7 @@ brew 'unison'
 brew 'docker'
 brew 'xclip'
 brew 'htop'
+brew 'neovim'
 
 # Python
 brew 'python'
