@@ -44,7 +44,7 @@ cask 'atom'
 cask 'typora'
 cask 'slack'
 cask 'dash'
-cask 'sublime'
+cask 'sublime-text'
 cask 'iterm2'
 cask 'macvim'
 
