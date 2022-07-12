@@ -27,3 +27,6 @@ cask 'quip'
 cask 'amazon-chime'
 cask 'vlc'
 cask 'docker'
+cask 'cheatsheet'
+cask 'rectangle'
+
