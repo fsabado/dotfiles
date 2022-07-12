@@ -12,7 +12,6 @@ brew 'brew-cask-completion'
 brew "cmake"
 brew "cmake-docs"
 brew "curl"
-brew "fish"
 brew "gcc"
 brew "fzf"
 brew "gedit"
@@ -25,11 +24,9 @@ brew "pyenv"
 brew "terminator"
 brew "tldr"
 brew "tmux"
-brew "unison"
 brew "watch"
 brew "wget"
 brew "z"
-brew "athrunsun/linuxbinary/atom"
 brew 'bash-completion'
 brew 'github-keygen'
 brew 'gnupg'
@@ -39,16 +36,11 @@ brew 'mas'
 brew 'gh'
 brew 'fish'
 brew 'zsh'
-brew 'tmux'
 brew 'bash'
 brew 'bat'
 brew 'most'
 brew 'vim'
 brew 'pssh'
-brew 'fzf'
 brew 'tldr'
-brew 'unison'
-brew 'docker'
 brew 'xclip'
-brew 'htop'
-brew 'neovim'
+brew 'readline'
