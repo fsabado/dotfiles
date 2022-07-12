@@ -16,6 +16,9 @@ BASH_HOME=${HOME}/dotfiles/bash
 # User specific environment and startup programs
 export PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
+# Remove Bash warning
+BASH_SILENCE_DEPRECATION_WARNING=1
+
 #External plugins (initialized before)
 if [ -f "${HOME}/.bashrc_local_before" ]; then
     source ~/.bashrc_local_before
