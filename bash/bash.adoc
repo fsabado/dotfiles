@@ -26,6 +26,19 @@ String Concatenation::
 https://stackoverflow.com/questions/4181703/how-to-concatenate-string-variables-in-bash
 
 
+== Troubleshooting
+
+[qanda]
+How to setup home and end properly::
+https://superuser.com/questions/48059/ctrl-e-and-ctrl-a-not-working-on-ubuntu-hardy
++
+[source,linenums, bash]
+----
+set -o emacs
+----
+
+
+
 
 == Reference
 
