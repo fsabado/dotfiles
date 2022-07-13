@@ -58,3 +58,18 @@ brew bundle \
     --force cleanup \ # to match
 
 ----
+
+== Troubleshooting
+
+[qanda]
+App is damage::
+[source,bash]
+----
+# Option 1: Install with --no-quarantine
+brew install <app> --no-quarantine
+
+# Option 2: Remove the xattr on the app
+xattr -cr /Applications/<App>.app
+# Source: https://www.reddit.com/r/MacOS/comments/q9d772/homebrew_chromium_is_damaged_and_cant_be_openend/
+----
+
