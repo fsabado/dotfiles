@@ -8,7 +8,6 @@ tap "aws/tap"
 #Brews
 brew "python@3.9"
 brew "cask"
-brew 'brew-cask-completion'
 brew "cmake"
 brew "cmake-docs"
 brew "curl"
@@ -27,7 +26,6 @@ brew "tmux"
 brew "watch"
 brew "wget"
 brew "z"
-brew 'bash-completion'
 brew 'github-keygen'
 brew 'gnupg'
 brew 'pinentry-mac'
@@ -44,3 +42,12 @@ brew 'pssh'
 brew 'tldr'
 brew 'xclip'
 brew 'readline'
+
+
+#Completion
+brew 'bash-completion'
+brew 'brew-cask-completion'
+brew 'docker-completion'
+brew 'docker-compose-completion'
+brew 'docker-machine-completion'
+
