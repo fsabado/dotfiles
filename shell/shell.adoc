@@ -1,0 +1,20 @@
+= Shell Information
+
+You know many shells exist in the UNIX world, but most of them are:
+
+Bourne shell:: /bin/sh (Inventor: Stephen Bourne)
+BASH (Bourne Again Shell):: /bin/bash (Inventor: Brian Fox, under GNU project) (powerful shell)
+C shell:: /bin/csh (Inventor: Bill Joy, Inventor of TCP/IP Stack)
+Korn shell:: /bin/ksh (Inventor: David Korn under Bell Labs)
+Z shell: /bin/zsh (Powerful shell)
+TENEX C shell: /bin/tcsh (derived from C Shell)
+Debian Almquist shell:: /bin/dash (Derived from Almquist shell (ash under NetBSD project)) (Dash born from lenny)
+
+But your question is about ~/.bash_profile and ~/.profile:
+
+== References
+
+* https://unix.stackexchange.com/questions/45684/what-is-the-difference-between-profile-and-bash-profile[Shells]
+
+
+
