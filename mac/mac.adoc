@@ -1,0 +1,10 @@
+= Mac Setup
+
+
+
+== References
+
+[bibliography]
+* [[[home-end]]] https://apple.stackexchange.com/questions/389525/how-do-i-do-home-and-end-in-iterm2
+
+* [[[term-home]]] https://apple.stackexchange.com/questions/12997/can-home-and-end-keys-be-mapped-when-using-terminal
