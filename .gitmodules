@@ -179,10 +179,6 @@
 	path = zsh/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
 	ignore = untracked
-[submodule "zsh/plugins/zsh-syntax-highlighting"]
-	path = zsh/plugins/zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-	ignore = untracked
 [submodule "spack"]
 	path = spack/spack_home
 	url = https://github.com/spack/spack.git
