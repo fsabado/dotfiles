@@ -187,10 +187,6 @@
 	path = zsh/plugins/zsh-completions
 	url = https://github.com/zsh-users/zsh-completions
 	ignore = untracked
-[submodule "oh-my-zsh"]
-	path = oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh.git
-	ignore = untracked
 [submodule "spack"]
 	path = spack/spack_home
 	url = https://github.com/spack/spack.git
