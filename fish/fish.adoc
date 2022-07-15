@@ -1,7 +1,89 @@
-
+= Fish Shell
 
 [source, bash, linenums]
 ----
 # Install homebrew and install
 brew install fish
 ----
+
+== Fisher - Plugin Manager
+
+[source,bash]
+.Fisher.sh
+----
+
+# Install packages
+fisher install jorgebucaran/nvm.fish
+
+# List plugins
+fisher list
+
+# Update plugins
+fisher update [package]
+
+# Remove plugin
+fisher remove [package]
+
+# Remove everything including fisher
+fisher list | fisher remove
+
+
+----
+
+== fish_plugins for dotfiles
+
+Whenever you install or remove a plugin from the command line, Fisher will write down all the installed plugins to `$__fish_config_dir/fish_plugins`. Adding this file to your dotfiles or version control is the easiest way to share your configuration across different systems.
+
+You can also edit this file and run `fisher update` to commit changes:
+
+[source,bash]
+----
+nano $__fish_config_dir/fish_plugins
+
+jorgebucaran/fisher
+ilancosman/tide@v5
+jorgebucaran/nvm.fish
++ PatrickF1/fzf.fish
+- /home/jb/path/to/plugin
+
+fisher update
+----
+
+
+
+== From Bash to Fish
+
+
+[bibliography]
+* [[[reddit]]] https://www.reddit.com/r/fishshell/comments/dvrr4w/moving_from_bash_to_fish/
+* https://github.com/jorgebucaran/replay.fish
+* https://github.com/edc/bass
+
+
+
+== Useful tips
+
+https://fishshell.com/docs/current/index.html[Tutorial]
+
+[qanda]
+How to set up PATH?::
+https://stackoverflow.com/questions/26208231/modifying-path-with-fish-shell
+[source,bash]
+----
+# As of fish 3.2.0, released in March 2021, the canonical answer is:
+
+fish_add_path /opt/mycoolthing/bin
+Existing answer for fish < 3.2.0:
+
+# The recommended commands for modifying PATH from fish's maintainers are:
+# If you want to run the command once:
+
+set -Ua fish_user_paths /path
+
+# If you want to add a command to a startup script, this is idempotent:
+
+contains /path $fish_user_paths; or set -Ua fish_user_paths /path
+
+----
+
+
