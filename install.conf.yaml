@@ -76,7 +76,6 @@
     ~/.vimrc: vimrc
     ~/.zsh: zsh
     ~/.zshrc: zshrc
-    ~/.oh-my-zsh: oh-my-zsh
     ~/.config/terminator: config/terminator
     ~/.config/pet/snippet.toml: config/pet/snippet.toml
 
@@ -102,3 +101,6 @@
 #  - git update-submodules # after linking ~/.gitconfig
   #- ~/.dotfiles/gnome-terminal-colors-solarized/install.sh --scheme "dark_alternative" --profile "Default" && echo "Make 'Solarized' profile first"
 #  - ~/.dotfiles/oh-my-zsh-install.sh
+
+- shell:
+    - curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
