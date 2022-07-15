@@ -2,7 +2,3 @@
 	path = .dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
-[submodule "spack"]
-	path = spack/spack_home
-	url = https://github.com/spack/spack.git
-	ignore = untracked
