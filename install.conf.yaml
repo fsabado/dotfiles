@@ -2,7 +2,6 @@
 #Must be idompotent - can be run multiple times without causing an issue
 #YAML is whitespace sensitive
 
-
 #Default options for plugins can be specified so that options don't have to be repeated many times. This can be very useful to use with the link command, for example.
 #
 #Defaults apply to all commands that follow setting the defaults. Defaults can be set multiple times; each change replaces the defaults with a new set of options.
@@ -11,9 +10,8 @@
       create: true
       relink: true
 
-
 #Clean commands specify directories that should be checked for dead symbolic links. These dead links are removed automatically. Only dead links that point to the dotfiles directory are removed unless the force option is set to true.
-- clean: ['~', '~/.config', '~/.profile.d']
+- clean: ["~", "~/.config", "~/.profile.d"]
 
 #Put Links here
 #Format
@@ -65,7 +63,7 @@
     ~/.agignore: agignore
     ~/.aria2/aria2.conf: aria2.conf
     ~/.axelrc: axelrc
-    ~/.dotfiles: ''
+    ~/.dotfiles: ""
     ~/.gnupg/gpg.conf: gpg.conf
     ~/.hgrc: hgrc
     ~/.inputrc: inputrc
@@ -80,6 +78,7 @@
 
     # Submodules
     ~/.profile.d/homebrew.sh: homebrew/homebrew.sh
+    ~/.profile.d/vim.sh: vim/vim.sh
 
 #Put shell commands here
 #Guide:https://github.com/anishathalye/dotbot#shell
@@ -98,7 +97,7 @@
 #- shell:
 #  - mkdir -p ~/.rtorrent/session ~/.rtorrent/watch ~/.rtorrent/downloads
 #  - git update-submodules # after linking ~/.gitconfig
-  #- ~/.dotfiles/gnome-terminal-colors-solarized/install.sh --scheme "dark_alternative" --profile "Default" && echo "Make 'Solarized' profile first"
+#- ~/.dotfiles/gnome-terminal-colors-solarized/install.sh --scheme "dark_alternative" --profile "Default" && echo "Make 'Solarized' profile first"
 #  - ~/.dotfiles/oh-my-zsh-install.sh
 
 - shell:
@@ -108,5 +107,3 @@
     #- vim -e -i NONE -c "PlugInstall" -c "qa"
     # Install oh-my-zsh
     - ~/dotfiles/scripts/install-oh-my-zsh
-
-
