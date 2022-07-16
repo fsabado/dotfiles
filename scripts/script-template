@@ -5,33 +5,37 @@
 
 Sources: 
 https://docs.python.org/3/library/argparse.html
+https://adamj.eu/tech/2021/10/09/a-python-script-template-with-and-without-type-hints-and-async/
+
+# Process execution:
+https://janakiev.com/blog/python-shell-commands/
 """
 
 import os
 import sys
 import argparse
+from typing import Sequence
 
-def main(arguments):
+def main(argsv: Sequence[str]) -> int:
 
     parser = argparse.ArgumentParser(
         description=__doc__,
         formatter_class=argparse.RawDescriptionHelpFormatter
     )
 
+    # Add arguments here
     parser.add_argument('--verbose', '-v', help="Verbosity. Could be multiple to increase level.",
                         action='count', default=0)
     parser.add_argument('-i','--infile', help="Input file", type=str)
     parser.add_argument('-o', '--outfile', help="Output file",
                         default=sys.stdout, type=str)
+    args = parser.parse_args(argsv)
+    print(argsv)
+    # Implement behavior here
 
-
-    args = parser.parse_args(arguments)
-
-    print(args)
+    
 
 if __name__ == '__main__':
-
-
     sys.exit(main(sys.argv[1:]))
 
 
