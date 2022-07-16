@@ -32,10 +32,17 @@ def main(arguments):
         return 1
     
     # Install plugins
-    pluginsInstalled = os.system('vim -e -i NONE -c "PlugInstall" -c "qa"') == 0
-    if not pluginsInstalled:
-        print("Plugin installation failed")
-        return 2
+    # pluginsInstalled = os.system('vim -e -i NONE -c "PlugInstall" -c "qa"') == 0
+    # process = subprocess.Popen(['vim', '-e', '-i NONE', '-c "PlugInstall"', '-c "qa"'], 
+    #                            stdout=subprocess.PIPE, stdin=subprocess.PIPE, shell=True)
+    # stdout, stderr = process.communicate()
+    # stdout, stderr
+    
+    # subprocess.call(['vim', '-e', '-c "PlugInstall"', '-c "qa"'])
+    
+    # if not pluginsInstalled:
+    #     print("Plugin installation failed")
+    #     return 2
 
     print("Completed Vim")
     return 0
