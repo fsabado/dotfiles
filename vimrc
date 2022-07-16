@@ -99,6 +99,9 @@ call plug#begin()
 " Vim git wrapper
 Plug 'tpope/vim-fugitive'
 
+" Vim solarized
+Plug 'altercation/vim-colors-solarized'
+
 " Syntax checking hacks in vim
 Plug 'scrooloose/syntastic'
 
