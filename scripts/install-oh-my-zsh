@@ -1,0 +1,43 @@
+#!/usr/bin/env python3
+
+"""Install zsh script
+Idempotent 
+
+Sources: 
+https://docs.python.org/3/library/argparse.html
+"""
+
+import os
+import sys
+import argparse
+from pathlib import Path
+
+def main(arguments):
+
+    parser = argparse.ArgumentParser(
+        description=__doc__,
+        formatter_class=argparse.RawDescriptionHelpFormatter
+    )
+
+    parser.add_argument('--verbose', '-v', help="Verbosity. Could be multiple to increase level.",
+                        action='count', default=0)
+
+    args = parser.parse_args(arguments)
+    print(args)
+    home = str(Path.home())
+    user = os.environ['USER']
+    zhome = home + "/.oh-my-zsh"
+    isInstalled = True
+    if not Path(zhome).exists():
+        isInstalled = os.system('sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"') == 0
+        print("Installing")
+    if isInstalled:
+        os.system('ln -sf /home/$USER/dotfiles/zshrc ' + zhome + '/custom/')
+        print("Setting paths")
+
+    return 0
+
+if __name__ == '__main__':
+    sys.exit(main(sys.argv[1:]))
+
+
