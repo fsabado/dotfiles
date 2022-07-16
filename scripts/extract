@@ -1,0 +1,125 @@
+#!/usr/bin/env python3
+
+"""Extract compressed files. 
+It automatically determine the proper application to
+extract the contents
+
+Supported:
+*.tar.bz2
+*.tar.gz
+*.bz2
+*.dmg
+*.rar
+*.gz
+*.tar
+*.tbz2
+*.tgz
+*.zip
+*.ZIP
+*.Z
+*.7z
+*.pax
+*.pax.Z
+*.rar
+*.xz
+*.rpm
+
+Sources: 
+https://docs.python.org/3/library/argparse.html
+"""
+
+import os
+import sys
+import argparse
+
+def main(args):
+
+    parser = argparse.ArgumentParser(
+        description=__doc__,
+        formatter_class=argparse.RawDescriptionHelpFormatter
+    )
+
+    parser.add_argument('--verbose', '-v', help="Verbosity. Could be multiple to increase level.",
+                        action='count', default=0)
+    parser.add_argument('-i','--infile', help="Input file", type=str)
+    parser.add_argument('-o', '--outfile', help="Output file",
+                        default=sys.stdout, type=str)
+
+
+    args = parser.parse_args(args)
+    
+    
+    # TODO
+    filename = ""
+    
+    if filename.endswith(".tar.bz2"):
+        command = "tar xvjf $s" % filename
+    elif filename.endswith(".tar.gz"):
+        command = "tar xvzf $s" % filename
+    elif filename.endswith(".bz2"):
+        command = "bunzip2 $s" % filename
+    elif filename.endswith(".dmg"):
+        command = "hdiutil mount $s" % filename
+    elif filename.endswith(".rar"):
+        command = "unrar x $s" % filename
+    elif filename.endswith(".gz"):
+        command = "gunzip $s" % filename
+    elif filename.endswith(".tar"):
+        command = "tar xvf $s" % filename
+    elif filename.endswith(".tbz2"):
+        command = "tar xvjf $s" % filename
+    elif filename.endswith(".tgz"):
+        command = "tar xvzf $s" % filename        
+    elif filename.endswith(".zip"):
+        command = "tar xvzf $s" % filename
+    elif filename.endswith(".tar.gz"):
+        command = "tar xvzf $s" % filename
+    elif filename.endswith(".tar.gz"):
+        command = "tar xvzf $s" % filename
+    elif filename.endswith(".tar.gz"):
+        command = "tar xvzf $s" % filename
+    elif filename.endswith(".tar.gz"):
+        command = "tar xvzf $s" % filename
+    elif filename.endswith(".tar.gz"):
+        command = "tar xvzf $s" % filename
+    elif filename.endswith(".tar.gz"):
+        command = "tar xvzf $s" % filename
+    elif filename.endswith(".tar.gz"):
+        command = "tar xvzf $s" % filename
+    elif filename.endswith(".tar.gz"):
+        command = "tar xvzf $s" % filename
+    elif filename.endswith(".tar.gz"):
+        command = "tar xvzf $s" % filename
+        
+        
+        
+    
+    #  case $1 in
+    #     *.tar.bz2) tar xvjf $1 ;;
+    #     *.tar.gz) tar xvzf $1 ;;
+    #     *.bz2) bunzip2 $1 ;;
+    #     *.dmg) hdiutil mount $1 ;;
+    #     *.rar) unrar x $1 ;;
+    #     *.gz) gunzip $1 ;;
+    #     *.tar) tar xvf $1 ;;
+    #     *.tbz2) tar xvjf $1 ;;
+    #     *.tgz) tar xvzf $1 ;;
+    #     *.zip) unzip $1 ;;
+    #     *.ZIP) unzip $1 ;;
+    #     *.Z) uncompress $1 ;;
+    #     *.7z) 7z x $1 ;;
+    #     *.pax) cat $1 | pax -r ;;
+    #     *.pax.Z) uncompress $1 --stdout | pax -r ;;
+    #     *.rar) unrar x $1 ;;
+    #     *.xz) tar -xJf $1 ;;
+    #     *.rpm) rpm2cpio $1 | cpio -idmv ;;
+    #     *) echo "don't know how to extract '$1'..." ;;
+
+    # print(args)
+
+if __name__ == '__main__':
+
+
+    sys.exit(main(sys.argv[1:]))
+
+
