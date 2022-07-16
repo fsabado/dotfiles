@@ -10,7 +10,7 @@ case "${unameOut}" in
 esac
 #echo ${machine}
 
-export PATH=${PATH}:/home/linuxbrew/.linuxbrew/bin
+export PATH=/home/linuxbrew/.linuxbrew/bin:${PATH}
 
 alias cask='brew install --cask'
 
