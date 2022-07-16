@@ -1,0 +1,46 @@
+#!/usr/bin/env python3
+
+"""Install zsh script
+Idempotent 
+
+Sources: 
+https://docs.python.org/3/library/argparse.html
+"""
+
+import os
+import sys
+import argparse
+from pathlib import Path
+import subprocess
+
+def main(arguments):
+
+    parser = argparse.ArgumentParser(
+        description=__doc__,
+        formatter_class=argparse.RawDescriptionHelpFormatter
+    )
+
+    parser.add_argument('--verbose', '-v', help="Verbosity. Could be multiple to increase level.",
+                        action='count', default=0)
+
+    args = parser.parse_args(arguments)
+    
+    plugURL = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    installed = os.system('curl -fsSLo ~/.vim/autoload/plug.vim --create-dirs ' + plugURL) == 0
+    if not installed:
+        print("Installation failed")
+        return 1
+    
+    # Install plugins
+    pluginsInstalled = os.system('vim -e -i NONE -c "PlugInstall" -c "qa"') == 0
+    if not pluginsInstalled:
+        print("Plugin installation failed")
+        return 2
+
+    print("Completed Vim")
+    return 0
+
+if __name__ == '__main__':
+    sys.exit(main(sys.argv[1:]))
+
+
