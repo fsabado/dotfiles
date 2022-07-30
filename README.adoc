@@ -14,8 +14,7 @@ Dotfiles uses [Dotbot][dotbot] for installation.
 
 ==
 
-SSH
-
+.SSH
 [source, bash, linenums]
 ----
 ssh-keygen -t rsa -b 4096
